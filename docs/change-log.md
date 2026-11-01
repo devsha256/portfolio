@@ -93,3 +93,4 @@ Each entry records what was done and why. Newest entries go last.
   - Fixes:
     - The browser showed the LinkedIn Learning logo vanishing on the dark card, so logos now sit on a white tile.
     - `Tabs` exceeded the 40-line limit, so it is split into `TabList` and the panel.
+- **Test infra**: Replaced jsdom with happy-dom (MIT) for the DOM test project. Why: a cold jsdom import takes 27 s on this machine, which repeatedly exceeded Vitest's worker-start timeout and was the root cause of the flaky DOM runs. With happy-dom the suite runs 37 of 37 in 24 s (it took 1 min or more on jsdom), and jsdom is uninstalled. The Post test warms the lazy Markdown chunk in `beforeAll`, so a cold transform does not count against a single test's timeout.

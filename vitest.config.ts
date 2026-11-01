@@ -9,7 +9,7 @@ export default defineConfig({
     projects: [
       {
         extends: true,
-        test: { name: 'dom', environment: 'jsdom', testTimeout: 20_000, isolate: false, fileParallelism: false, sequence: { groupOrder: 1 }, include: ['src/**/*.test.tsx'], setupFiles: ['src/test/setup.ts'] },
+        test: { name: 'dom', environment: 'happy-dom', testTimeout: 20_000, isolate: false, fileParallelism: false, sequence: { groupOrder: 1 }, include: ['src/**/*.test.tsx'], setupFiles: ['src/test/setup.ts'] },
       },
       {
         extends: true,
