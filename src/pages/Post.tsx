@@ -36,6 +36,6 @@ export default function Post() {
   const post = useApi(`/api/posts/${encodeURIComponent(slug)}`, PostDetail);
   if (post.status === 'loading') return <p className="pt-12 text-muted">Loading post…</p>;
   if (post.status === 'not-found') return <NotFound what="post" />;
-  if (post.status === 'error') return <p className="pt-12">This post could not be loaded. Refresh to try again.</p>;
+  if (post.status !== 'ready') return <p className="pt-12">This post could not be loaded. Refresh to try again.</p>;
   return <Article post={post.data} />;
 }

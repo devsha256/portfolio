@@ -19,9 +19,9 @@ const IsoDateTime = z.iso.datetime({ offset: true });
 
 export const PostInput = z.object({
   slug: Slug,
-  title: z.string().trim().min(1).max(200),
-  excerpt: z.string().trim().min(1).max(400),
-  bodyMd: z.string().min(1).max(100_000),
+  title: z.string().trim().min(1, 'Enter a title').max(200),
+  excerpt: z.string().trim().min(1, 'Enter a short excerpt').max(400),
+  bodyMd: z.string().min(1, 'Write the post body').max(100_000),
   tags: z.array(Slug).max(10).default([]),
   featured: z.boolean().default(false),
 });
@@ -50,11 +50,11 @@ export const PostListQuery = z.object({
 export type PostListQuery = z.infer<typeof PostListQuery>;
 
 const ProjectFields = z.object({
-  title: z.string().trim().min(1).max(200),
-  company: z.string().trim().min(1).max(120),
+  title: z.string().trim().min(1, 'Enter a title').max(200),
+  company: z.string().trim().min(1, 'Enter the company').max(120),
   startMonth: Month,
   endMonth: Month.nullable(),
-  description: z.string().trim().min(1).max(4000),
+  description: z.string().trim().min(1, 'Describe the project').max(4000),
   skills: z.array(z.string().trim().min(1).max(60)).max(20),
 });
 

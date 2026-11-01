@@ -62,3 +62,11 @@ describe('useApi with a session cache', () => {
     expect(spy).toHaveBeenCalledTimes(1);
   });
 });
+
+describe('useApi auth states', () => {
+  it('reports 401 as unauthorized so admin pages can offer sign-in', async () => {
+    mockFetch({ error: 'Sign in required' }, 401);
+    const { result } = renderHook(() => useApi('/api/auth/me', Thing));
+    await waitFor(() => expect(result.current).toEqual({ status: 'unauthorized' }));
+  });
+});

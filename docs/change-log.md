@@ -94,3 +94,16 @@ Each entry records what was done and why. Newest entries go last.
     - The browser showed the LinkedIn Learning logo vanishing on the dark card, so logos now sit on a white tile.
     - `Tabs` exceeded the 40-line limit, so it is split into `TabList` and the panel.
 - **Test infra**: Replaced jsdom with happy-dom (MIT) for the DOM test project. Why: a cold jsdom import takes 27 s on this machine, which repeatedly exceeded Vitest's worker-start timeout and was the root cause of the flaky DOM runs. With happy-dom the suite runs 37 of 37 in 24 s (it took 1 min or more on jsdom), and jsdom is uninstalled. The Post test warms the lazy Markdown chunk in `beforeAll`, so a cold transform does not count against a single test's timeout.
+- **U16**: Added the admin UI.
+  - `AdminLayout`: a UX-only guard (the server still checks every request). It shows a "Sign in with GitHub" screen on 401, an admin bar with "Signed in as", Posts/Projects nav and Sign out, and `noindex`. `useApi` gained an `unauthorized` state.
+  - `PostsAdmin`: a table of drafts and published posts.
+  - `PostEditor`: title auto-fills the slug until you edit it; tags are slugified; there's a featured toggle, a Markdown textarea with a lazy preview, Save/Publish/Unpublish/View/Delete (with confirm), and an `aria-live` status or alert.
+  - `ProjectsAdmin` and `ProjectEditor`: month inputs, where an empty end month means ongoing.
+  - Shared pieces:
+    - `Field`: label, `aria-invalid` and `aria-describedby` wired together.
+    - `useSaveState` and `lib/admin-client`: zod-validated responses, server field errors and messages.
+    - `lib/admin-forms`: pure conversion from draft to contract using the same zod schemas as the API, so field errors show before any request.
+  - The contracts now carry plain messages ("Enter a title" and similar) in place of zod defaults.
+  - Why: admin dashboard, phase 4 in CLAUDE.md.
+  - Verified: 13 tests red→green (sign-in on 401, signed-in bar, contract errors with no request, auto-slug plus POST, publish → status "Published" with an Unpublish button, 409 shown as an alert, form conversion), plus lint and typecheck. The browser showed the sign-in screen.
+  - Not verified: end-to-end OAuth, which needs your GitHub OAuth App.

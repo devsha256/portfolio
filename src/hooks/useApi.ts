@@ -1,7 +1,12 @@
 import { useEffect, useState } from 'react';
 import type { z } from 'zod';
 
-export type ApiState<T> = { status: 'loading' } | { status: 'not-found' } | { status: 'error' } | { status: 'ready'; data: T };
+export type ApiState<T> =
+  | { status: 'loading' }
+  | { status: 'not-found' }
+  | { status: 'unauthorized' }
+  | { status: 'error' }
+  | { status: 'ready'; data: T };
 
 type Options = {
   /** Keep a successful response in sessionStorage under this key (used for the rate-limited GitHub API). */
@@ -48,6 +53,7 @@ function fromCache<T extends z.ZodType>(cacheKey: string | undefined, schema: T)
 async function fetchJson<T extends z.ZodType>(path: string, schema: T, signal: AbortSignal): Promise<ApiState<z.infer<T>>> {
   const response = await fetch(path, { signal, credentials: 'same-origin' });
   if (response.status === 404) return { status: 'not-found' };
+  if (response.status === 401) return { status: 'unauthorized' };
   if (!response.ok) return { status: 'error' };
   const parsed = schema.safeParse(await response.json());
   return parsed.success ? { status: 'ready', data: parsed.data } : { status: 'error' };
