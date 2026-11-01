@@ -43,3 +43,13 @@ Each entry records what was done and why. Newest entries go last.
   - Why: `npm run dev` runs the full app with the same function files and no Vercel account.
   - Verified: 12 routing tests, plus live checks on the dev server (posts 200, post 200/404, projects 200, auth/me 401, admin 401, POST on a public route 405, rss/sitemap 200).
   - The live check found the feeds returning 500 because `readEnv()` demanded the OAuth secrets. I wrote a failing test, then added a narrow `readAppUrl()` and `ctx.appUrl()` so public feeds never depend on OAuth config.
+- **U11**: Built the UI foundation.
+  - Design tokens in `index.css`: Fog, Harbor, Steel, Signal amber and Pine, with a dark theme through the `.dark` class. Amber is never used for text (its contrast is below 3:1), and focus uses a darker amber (3.5:1). Reduced motion is respected.
+  - Fonts: Bricolage Grotesque and Source Serif 4, self-hosted through @fontsource.
+  - `ThemeToggle`, using pure `lib/theme.ts`, plus an inline pre-paint script so dark mode doesn't flash.
+  - `useApi`: zod-validated fetch with abort, reporting 404 as `not-found`.
+  - `Seo`: React 19 native head tags. `Layout`: skip link, nav from `PUBLIC_PAGES`, Suspense, footer with an RSS link.
+  - Lazy routes and `NotFound`.
+  - Why: every later page builds on these pieces.
+  - Verified: 15 tests red→green (theme rules, toggle persistence plus `aria-pressed`, useApi ready/contract error/404/idle, skip link, nav order, 404 title); lint, typecheck and build; checked the accessibility tree in the browser.
+- **Test infra**: The DOM project runs its files sequentially in one jsdom (`isolate: false`, its own group order). Why: parallel jsdom workers timed out on startup on this machine.
