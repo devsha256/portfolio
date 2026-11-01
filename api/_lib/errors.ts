@@ -1,25 +1,36 @@
 import { z } from 'zod';
 
+/** A write collided with a unique key (HTTP 409). */
 export class ConflictError extends Error {
   override name = 'ConflictError';
 }
 
-const PgError = z.object({ code: z.string() });
-const UNIQUE_VIOLATION = '23505';
-
-/** Drizzle wraps driver errors in `cause`; both PGlite and Neon expose the SQLSTATE as `code`. */
-function isUniqueViolation(error: unknown): boolean {
-  const parsed = PgError.safeParse(error);
-  if (parsed.success) return parsed.data.code === UNIQUE_VIOLATION;
-  return error instanceof Error && error.cause !== undefined && isUniqueViolation(error.cause);
+/** A write broke a CHECK constraint the request could not be validated against up front (HTTP 400). */
+export class InvalidError extends Error {
+  override name = 'InvalidError';
 }
 
-/** Runs a write and turns a unique-key violation into a ConflictError carrying `message`. */
-export async function uniquely<T>(write: () => Promise<T>, message: string): Promise<T> {
+const PgError = z.object({ code: z.string() });
+const UNIQUE_VIOLATION = '23505';
+const CHECK_VIOLATION = '23514';
+
+/** Drizzle wraps driver errors in `cause`; both PGlite and Neon expose the SQLSTATE as `code`. */
+function sqlState(error: unknown): string | null {
+  const parsed = PgError.safeParse(error);
+  if (parsed.success) return parsed.data.code;
+  return error instanceof Error && error.cause !== undefined ? sqlState(error.cause) : null;
+}
+
+type Messages = { unique: string; check?: string };
+
+/** Runs a write and turns constraint violations into domain errors carrying user-facing messages. */
+export async function constrained<T>(write: () => Promise<T>, messages: Messages): Promise<T> {
   try {
     return await write();
   } catch (error) {
-    if (isUniqueViolation(error)) throw new ConflictError(message, { cause: error });
+    const state = sqlState(error);
+    if (state === UNIQUE_VIOLATION) throw new ConflictError(messages.unique, { cause: error });
+    if (state === CHECK_VIOLATION && messages.check) throw new InvalidError(messages.check, { cause: error });
     throw error;
   }
 }
