@@ -60,7 +60,8 @@ const ProjectFields = z.object({
 
 const periodIsOrdered = (p: { startMonth?: string; endMonth?: string | null }) =>
   !p.startMonth || !p.endMonth || p.endMonth >= p.startMonth;
-const periodIssue = { message: 'End month must not be before start month', path: ['endMonth'] };
+export const PERIOD_ORDER_MESSAGE = 'End month must not be before start month';
+const periodIssue = { message: PERIOD_ORDER_MESSAGE, path: ['endMonth'] };
 
 export const ProjectInput = ProjectFields.refine(periodIsOrdered, periodIssue);
 export type ProjectInput = z.infer<typeof ProjectInput>;

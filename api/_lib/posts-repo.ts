@@ -2,7 +2,7 @@ import { and, arrayContains, count, desc, eq, getTableColumns, sql } from 'drizz
 import type { Db } from '../../db/client';
 import { posts } from '../../db/schema';
 import type { PostDto, PostInput, PostListQuery, PostPatch, PostSummary } from '../../src/domain/contracts';
-import { uniquely } from './errors';
+import { constrained } from './errors';
 
 type PostRow = typeof posts.$inferSelect;
 
@@ -56,7 +56,7 @@ export async function getPost(db: Db, id: number): Promise<PostDto | null> {
 }
 
 export async function createPost(db: Db, input: PostInput): Promise<PostDto> {
-  const [row] = await uniquely(() => db.insert(posts).values(input).returning(), SLUG_TAKEN);
+  const [row] = await constrained(() => db.insert(posts).values(input).returning(), { unique: SLUG_TAKEN });
   if (!row) throw new Error('Insert returned no row');
   return toDto(row);
 }
@@ -64,14 +64,14 @@ export async function createPost(db: Db, input: PostInput): Promise<PostDto> {
 /** The first publish stamps `publishedAt`; it is never moved or cleared, so this is one atomic statement. */
 export async function updatePost(db: Db, id: number, patch: PostPatch, now: Date): Promise<PostDto | null> {
   const publishedAt = patch.status === 'published' ? sql`coalesce(${posts.publishedAt}, ${now.toISOString()})` : undefined;
-  const [row] = await uniquely(
+  const [row] = await constrained(
     () =>
       db
         .update(posts)
         .set({ ...patch, ...(publishedAt && { publishedAt }), updatedAt: now })
         .where(eq(posts.id, id))
         .returning(),
-    SLUG_TAKEN,
+    { unique: SLUG_TAKEN },
   );
   return row ? toDto(row) : null;
 }

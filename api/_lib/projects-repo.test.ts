@@ -37,10 +37,10 @@ describe('projects repo', () => {
 
   it('updates and returns the project, or null when missing', async () => {
     const project = await repo.createProject(db, base);
-    expect(await repo.updateProject(db, project.id, { endMonth: '2025-09-01' })).toMatchObject({
+    expect(await repo.updateProject(db, project.id, { endMonth: '2025-09-01' }, new Date())).toMatchObject({
       endMonth: '2025-09-01',
     });
-    expect(await repo.updateProject(db, 999, { title: 'x' })).toBeNull();
+    expect(await repo.updateProject(db, 999, { title: 'x' }, new Date())).toBeNull();
   });
 
   it('deletes idempotently', async () => {

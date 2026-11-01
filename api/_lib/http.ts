@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import type { Db } from '../../db/client';
 import type { Env } from './env';
-import { ConflictError } from './errors';
+import { ConflictError, InvalidError } from './errors';
 
 export type Context = {
   db: Db;
@@ -71,6 +71,7 @@ export async function respond(handler: Handler, request: Request, ctx: Context):
   } catch (error) {
     if (error instanceof HttpError) return json({ error: error.message, issues: error.issues }, { status: error.status });
     if (error instanceof ConflictError) return json({ error: error.message }, { status: 409 });
+    if (error instanceof InvalidError) return json({ error: error.message }, { status: 400 });
     console.error(error);
     return json({ error: 'Internal error' }, { status: 500 });
   }
