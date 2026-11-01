@@ -107,3 +107,8 @@ Each entry records what was done and why. Newest entries go last.
   - Why: admin dashboard, phase 4 in CLAUDE.md.
   - Verified: 13 tests red→green (sign-in on 401, signed-in bar, contract errors with no request, auto-slug plus POST, publish → status "Published" with an Unpublish button, 409 shown as an alert, form conversion), plus lint and typecheck. The browser showed the sign-in screen.
   - Not verified: end-to-end OAuth, which needs your GitHub OAuth App.
+- **U17**: Added SEO polish.
+  - `robots.txt` is served by the existing feed function (still 9 Vercel functions) through a rewrite, because its Sitemap line needs the absolute origin. It disallows `/admin` and `/api/`.
+  - `index.html` gained `og:site_name` and `theme-color`. The favicon (connector glyph), the 404 page and per-page meta were already in place.
+  - Why: SEO-ready per CLAUDE.md.
+  - Verified: 2 tests red→green, and the live dev server serves text/plain with the right lines.

@@ -32,9 +32,15 @@ export function sitemapXml(posts: readonly PostSummary[], appUrl: string): strin
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${[...pages, ...articles].join('')}</urlset>\n`;
 }
 
+/** Served here rather than from /public because the Sitemap line needs the absolute origin. */
+export function robotsTxt(_posts: readonly PostSummary[], appUrl: string): string {
+  return `User-agent: *\nDisallow: /admin\nDisallow: /api/\n\nSitemap: ${appUrl}/sitemap.xml\n`;
+}
+
 const FORMATS = new Map([
   ['rss', { build: rssXml, type: 'application/rss+xml; charset=utf-8' }],
   ['sitemap', { build: sitemapXml, type: 'application/xml; charset=utf-8' }],
+  ['robots', { build: robotsTxt, type: 'text/plain; charset=utf-8' }],
 ]);
 
 /** `api/feed/[kind]`, served at /rss.xml and /sitemap.xml through vercel.json rewrites. */

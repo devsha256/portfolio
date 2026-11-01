@@ -1,5 +1,5 @@
 import type { PostSummary } from '../../src/domain/contracts';
-import { feed, rssXml, sitemapXml } from './feed';
+import { feed, robotsTxt, rssXml, sitemapXml } from './feed';
 import { respond } from './http';
 import { createPost, updatePost } from './posts-repo';
 import { testContext } from './test-context';
@@ -82,5 +82,19 @@ describe('GET /api/feed/:kind', () => {
 
   it('returns 404 for another kind', async () => {
     expect((await respond(feed, new Request('http://localhost/api/feed/atom'), await testContext())).status).toBe(404);
+  });
+});
+
+describe('robotsTxt', () => {
+  it('keeps crawlers out of admin and API routes and points at the sitemap', () => {
+    const text = robotsTxt([], APP);
+    expect(text).toContain('Disallow: /admin');
+    expect(text).toContain('Disallow: /api/');
+    expect(text).toContain(`Sitemap: ${APP}/sitemap.xml`);
+  });
+
+  it('is served as plain text', async () => {
+    const res = await respond(feed, new Request('http://localhost/api/feed/robots'), await testContext());
+    expect(res.headers.get('content-type')).toContain('text/plain');
   });
 });
