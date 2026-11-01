@@ -4,7 +4,7 @@ export const POST_STATUSES = ['draft', 'published'] as const;
 export const PostStatus = z.enum(POST_STATUSES);
 export type PostStatus = z.infer<typeof PostStatus>;
 
-const Slug = z
+export const Slug = z
   .string()
   .max(80)
   .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'Use lowercase letters, numbers and single dashes');
