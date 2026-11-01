@@ -3,6 +3,7 @@
   "rewrites": [
     { "source": "/rss.xml", "destination": "/api/feed/rss" },
     { "source": "/sitemap.xml", "destination": "/api/feed/sitemap" },
+    { "source": "/robots.txt", "destination": "/api/feed/robots" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
   "headers": [
