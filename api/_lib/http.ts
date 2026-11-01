@@ -6,6 +6,7 @@ import { ConflictError, InvalidError } from './errors';
 export type Context = {
   db: Db;
   env: () => Env;
+  appUrl: () => string;
   now: () => Date;
   fetch: typeof fetch;
 };

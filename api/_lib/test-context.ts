@@ -14,6 +14,7 @@ export async function testContext(overrides: Partial<Context> = {}): Promise<Con
   return {
     db: await testDb(),
     env: () => TEST_ENV,
+    appUrl: () => TEST_ENV.APP_URL,
     now: () => new Date('2026-11-01T10:00:00Z'),
     fetch: () => Promise.reject(new Error('Unexpected network call')),
     ...overrides,
