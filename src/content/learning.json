@@ -1,0 +1,2783 @@
+[
+  {
+    "id": "241c6e02-1d72-4888-8955-427decd4edd8",
+    "name": "Introduction to Model Context Protocol by Anthropic",
+    "authority": "LinkedIn Learning",
+    "date": "2026-11-01",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/13TwmCUH3G2smjvc2wnGqr3Lt4s5ZQXHZ/view?usp=drive_link"
+  },
+  {
+    "id": "c24119fd-7bb7-4a12-a858-8211f6a58ff8",
+    "name": "Basic Good Manufacturing Practices (GMP)",
+    "authority": "Udemy",
+    "date": "2023-10-05",
+    "image": "/img/logos/udemy.png",
+    "link": "https://www.udemy.com/",
+    "proof": "https://drive.google.com/file/d/1hfF5PCPH4A8sjI9chRTeH2hYKnEahQeN/view?usp=sharing"
+  },
+  {
+    "id": "98610641-9bfd-4631-b3aa-cdc4ce870fca",
+    "name": "Git Essentials: Learn Git with Bitbucket and Sourcetree",
+    "authority": "Udemy",
+    "date": "2021-07-08",
+    "image": "/img/logos/udemy.png",
+    "link": "https://www.udemy.com/",
+    "proof": "https://drive.google.com/file/d/1qeHTESrNuZ0emlcsH59dRRN3008z7mTY/view?usp=sharing"
+  },
+  {
+    "id": "cd14bf58-f815-4a98-a902-0cb69b3a3409",
+    "name": "Practical Pharmaceutical Supply Management: LMIC Focus",
+    "authority": "Udemy",
+    "date": "2023-09-29",
+    "image": "/img/logos/udemy.png",
+    "link": "https://www.udemy.com/",
+    "proof": "https://drive.google.com/file/d/1VtSaMlvvt64v5JCsfmjmTzzpz9j0c-9x/view?usp=sharing"
+  },
+  {
+    "id": "29a43a41-e662-49e7-9b06-b8946d5997b4",
+    "name": "Python for Beginners: Learn Python Programming (Python 3)",
+    "authority": "Udemy",
+    "date": "2020-06-17",
+    "image": "/img/logos/udemy.png",
+    "link": "https://www.udemy.com/",
+    "proof": "https://drive.google.com/file/d/1sayyGqzqdowhaU9D9dsYOzn_LcdUD4iC/view?usp=sharing"
+  },
+  {
+    "id": "4f710d94-7a87-4c8c-ac13-6f749feb9da6",
+    "name": "AWS Essentials",
+    "authority": "Udemy",
+    "date": "2023-08-21",
+    "image": "/img/logos/udemy.png",
+    "link": "https://www.udemy.com/",
+    "proof": "https://drive.google.com/file/d/1SS-Q8KpmGUNjryMAVe9U7K9wN_GVzNZe/view?usp=sharing"
+  },
+  {
+    "id": "3e055432-9752-4b7c-917f-d8381bc5b65e",
+    "name": "Become the Ultimate Certified MuleSoft Architect- MCIA/MCPA",
+    "authority": "Udemy",
+    "date": "2023-09-24",
+    "image": "/img/logos/udemy.png",
+    "link": "https://www.udemy.com/",
+    "proof": "https://drive.google.com/file/d/16S0mXZmUaHQcG1SHmyZZ6Uwqelh9Esza/view?usp=sharing"
+  },
+  {
+    "id": "7faf98ce-7177-4f05-9d9e-ddb3bd8cbb6d",
+    "name": "Ultimate Mulesoft Certified Platform Architect Course- MCPA",
+    "authority": "Udemy",
+    "date": "2023-07-01",
+    "image": "/img/logos/udemy.png",
+    "link": "https://www.udemy.com/",
+    "proof": "https://drive.google.com/file/d/1whAN3YH0fc5S_7j5T9o85B7LN-v9wVcd/view?usp=sharing"
+  },
+  {
+    "id": "9ab6a27b-7854-4314-8200-51701da54589",
+    "name": "Time Management: Working from",
+    "authority": "LinkedIn Learning",
+    "date": "2020-04-16",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1NEXaT2W4VtoAIEK60K1KWRRWhQ4dZ1Aa/view"
+  },
+  {
+    "id": "cc92d7b0-8d50-45ee-8200-02717e3d41bc",
+    "name": "Fighting Gender Bias at Work",
+    "authority": "LinkedIn Learning",
+    "date": "2020-04-16",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1QLpn8U4qXbV5iZTmI1j8Co2TGsTrboK4/view"
+  },
+  {
+    "id": "0c99b7c8-c4df-44cb-a0bb-2f032624de38",
+    "name": "Learning GraphQL (2018)",
+    "authority": "LinkedIn Learning",
+    "date": "2020-04-18",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/16B9CYEVrCHXBZfZ0NpVIl9k53QeCSJ5-/view"
+  },
+  {
+    "id": "ccc4dec2-0440-4909-920d-b35ddb82d2d7",
+    "name": "React.js Essential Training (2018)",
+    "authority": "LinkedIn Learning",
+    "date": "2020-04-18",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/17PBlMaOfd8qmGvKHQgCTneqqIx7WmZCM/view"
+  },
+  {
+    "id": "9141eef2-4ffd-45ae-943f-0ce9914deaa0",
+    "name": "Own Your Voice: Improve",
+    "authority": "LinkedIn Learning",
+    "date": "2020-04-18",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1EWV-WkHpgipo273kw-22vg7YBwADcyKo/view"
+  },
+  {
+    "id": "a3256bc2-9da2-4f13-bb3b-0b6e41da505a",
+    "name": "Developing Your Emotional",
+    "authority": "LinkedIn Learning",
+    "date": "2020-04-19",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1Tuc19Iuc0bGmZpuu9puERXwsZ7bOWDrT/view"
+  },
+  {
+    "id": "b30769fb-65c5-439b-8954-32b81564ef7a",
+    "name": "MERN Essential Training (2020)",
+    "authority": "LinkedIn Learning",
+    "date": "2020-04-27",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1v5zAG4dXEX7dbIzH9wiIpPKb65qfnwMJ/view"
+  },
+  {
+    "id": "d5fe9cce-bdd0-43a1-81de-b071e9ab1262",
+    "name": "Managing Stress for Positive Change",
+    "authority": "LinkedIn Learning",
+    "date": "2020-05-02",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1ZOI_Y2vjir3LOWjWw9mW3kbzI-pqsSEx/view"
+  },
+  {
+    "id": "162f1863-9251-45c6-ad73-8a4db77a5f2d",
+    "name": "Public Speaking Foundations",
+    "authority": "LinkedIn Learning",
+    "date": "2020-05-02",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1dnxh5rA-tL_QRE5gYj_BIG_CRi16LvCk/view"
+  },
+  {
+    "id": "2dac5e7b-06af-4c67-ac63-436f88663b77",
+    "name": "Improving Your Focus",
+    "authority": "LinkedIn Learning",
+    "date": "2020-05-04",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1giVod1gdj_B8h0hRgZtiVJhGf4XVV1JE/view"
+  },
+  {
+    "id": "5994390f-7326-464e-a453-470e8241aba4",
+    "name": "Building a Better To-Do List",
+    "authority": "LinkedIn Learning",
+    "date": "2020-05-03",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/102708sHqTaAu6NOAKLmpAFg37uR1tIyq/view"
+  },
+  {
+    "id": "40693ae8-236c-4539-8ec5-aa3bd374e5fb",
+    "name": "Anger Management",
+    "authority": "LinkedIn Learning",
+    "date": "2020-05-06",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1SO6i678cX15TsC9gWBWTLpkBNF6JrFjz/view"
+  },
+  {
+    "id": "05f4e533-e3f8-4be2-abae-fa274b02e37d",
+    "name": "Critical Thinking for Better Judgment",
+    "authority": "LinkedIn Learning",
+    "date": "2020-06-01",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/15QQIPJn-bnrzgGOYVCuNHDVRWJs-eBsg/view"
+  },
+  {
+    "id": "1ee1343d-3aea-430f-9a09-af1b396a999b",
+    "name": "Learning MongoDB (2017)",
+    "authority": "LinkedIn Learning",
+    "date": "2020-04-18",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1kvCqN3sfkCr2vlXCvl9ktaZ-uu0WIxtj/view"
+  },
+  {
+    "id": "5baa2ff5-bb4e-4256-98d7-aaa342aca5ec",
+    "name": "Learning MySQL Development (2014)",
+    "authority": "LinkedIn Learning",
+    "date": "2020-06-18",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1DPaGj4HOceSYDVTt8AYPrhnr-hIUJtQC/view"
+  },
+  {
+    "id": "5a0b6f86-ccf6-45e3-8bf4-297a6035f6f8",
+    "name": "Learning Zsh",
+    "authority": "LinkedIn Learning",
+    "date": "2020-06-22",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1uLyed3EOtH4ibakk3l4kwPGwwLn8cGpZ/view"
+  },
+  {
+    "id": "64a7acde-1532-4e87-adf4-febd6823edb3",
+    "name": "Linux: Bash Shell and Scripts",
+    "authority": "LinkedIn Learning",
+    "date": "2020-06-22",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/15b0H7EsFN3UZiTvrWu06rHFaF9iSYrqc/view"
+  },
+  {
+    "id": "27659312-bb41-4295-b2fd-2d9b894ee3e9",
+    "name": "Linux System Engineer: Bash Shell",
+    "authority": "LinkedIn Learning",
+    "date": "2020-06-24",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/10mAavqyVPl7lyZ5ZDYOsMqC6PwRUIuFj/view"
+  },
+  {
+    "id": "3134771f-b503-464f-bdcf-5ecb36a456a3",
+    "name": "Docker for Developers (2019)",
+    "authority": "LinkedIn Learning",
+    "date": "2020-06-24",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1mDgB6wnvfmamHaNI2arRCpDjApDFhQv4/view"
+  },
+  {
+    "id": "084b2f2d-5c5f-41dc-9de0-dcb775d086c4",
+    "name": "LinkedIn Quick Tips (2019)",
+    "authority": "LinkedIn Learning",
+    "date": "2020-06-27",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1Qtyu2tPzyg7TRc_k9Ldz5JRdZhy_ysaA/view"
+  },
+  {
+    "id": "2f154a7e-271f-46aa-8593-2c7c483107ab",
+    "name": "Grammar Girl’s Quick and Dirty Tips",
+    "authority": "LinkedIn Learning",
+    "date": "2020-06-27",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1fZH1p4RdxOns7g86VK3OqkoCYucYQRhb/view"
+  },
+  {
+    "id": "92e022dd-1261-49d8-a0b4-6958d71f4e99",
+    "name": "Success Habits",
+    "authority": "LinkedIn Learning",
+    "date": "2020-06-28",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/14wblKvSs-JUS57br2hIw6LwLoTEiM6zr/view"
+  },
+  {
+    "id": "df2ee375-b156-4d40-a327-af9a2b7aff69",
+    "name": "Learning Spring with Spring Boot",
+    "authority": "LinkedIn Learning",
+    "date": "2020-06-30",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1QQCrBmz92TJHUMbPY5uxLHsvBSgYlf-i/view"
+  },
+  {
+    "id": "5546f4ab-b4b9-4e0e-96e3-729fb34287d7",
+    "name": "Spring: Framework in Depth",
+    "authority": "LinkedIn Learning",
+    "date": "2020-07-02",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1Pie4GCIvIGpDytIlsOzBS4WbI1kWKS_R/view"
+  },
+  {
+    "id": "e292e2e6-f2f7-4f6b-b97d-ee1b554f610c",
+    "name": "Spring Boot 1.0 Essential Training",
+    "authority": "LinkedIn Learning",
+    "date": "2020-07-03",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1VCsHnHI3fwxjz04RFNl5VjplBuGirr3B/view"
+  },
+  {
+    "id": "bc4fc655-7582-4161-9de6-7a79bbda691b",
+    "name": "Spring Boot 2.0 Essential Training",
+    "authority": "LinkedIn Learning",
+    "date": "2020-07-03",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1KWGaXhzrL3LoTn-1w7288gq3gqGW5lh3/view"
+  },
+  {
+    "id": "3640051d-d6d2-4179-9bf0-693a925d79ee",
+    "name": "Learning Java 11",
+    "authority": "LinkedIn Learning",
+    "date": "2020-07-11",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1iTfipbUD8tRACk3qdljUAZxKsXag5fhe/view"
+  },
+  {
+    "id": "e35e539e-30f5-417b-bf1b-96d1f859c4c9",
+    "name": "Building Trust (2018)",
+    "authority": "LinkedIn Learning",
+    "date": "2020-08-25",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1nHSRF50wILxNAhCFOuoEyDjK8TN5WbMc/view"
+  },
+  {
+    "id": "77e6867c-b1fa-4e87-a450-ae3661a23bf0",
+    "name": "Being an Effective Team Member",
+    "authority": "LinkedIn Learning",
+    "date": "2020-08-25",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1VeH9kBjpFKSRY3wCkZ8XG5Ln_N-mGMNv/view"
+  },
+  {
+    "id": "a2e7f341-1701-4d30-bb32-2b4f1bd62b48",
+    "name": "Learning Agility",
+    "authority": "LinkedIn Learning",
+    "date": "2020-08-26",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/13fR4-s8IJCSCkvnSl9tyToE3qXthALrP/view"
+  },
+  {
+    "id": "211fd67f-49a2-4e92-9f9f-701cad3a9d83",
+    "name": "Teamwork Foundations (2015)",
+    "authority": "LinkedIn Learning",
+    "date": "2020-08-26",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1UOs7b-96JbHM01xeI5xiZVxwRoJQ9L9e/view"
+  },
+  {
+    "id": "9278247b-38e6-4057-a116-920fa9345f9e",
+    "name": "Communication within Teams (2017)",
+    "authority": "LinkedIn Learning",
+    "date": "2020-08-26",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1AkROPuEL-A_NJrB0vfzSkQEfEhk5WyWX/view"
+  },
+  {
+    "id": "8143ce5f-730b-47f7-9df3-a30a7d761bd9",
+    "name": "The Five-Step Creative Process",
+    "authority": "LinkedIn Learning",
+    "date": "2020-08-28",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1xxjD5DWFSBP8ZBXrK-GtA-kNdYLNI_d-/view"
+  },
+  {
+    "id": "b54a15dc-0967-4b28-857b-056635c787f0",
+    "name": "Jeff Dyer on Innovation",
+    "authority": "LinkedIn Learning",
+    "date": "2020-09-03",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1Ri6MnhDnTVhQ3QEfMvUumsLCIo4ezGvN/view"
+  },
+  {
+    "id": "4be829c7-620b-4862-aa76-90c8810618d2",
+    "name": "Creativity Boot Camp",
+    "authority": "LinkedIn Learning",
+    "date": "2020-09-03",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/15B6gzpVUYyUWYhy3iTy3WZvcuYFQa6lS/view"
+  },
+  {
+    "id": "053003cd-1a1a-4bb7-8b27-8413a5001cd4",
+    "name": "Learning Brainstorming",
+    "authority": "LinkedIn Learning",
+    "date": "2020-09-03",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/14vyh_FcIpCm0Ctxux6KIi-lEnN1CjJpl/view"
+  },
+  {
+    "id": "c7c1a0c6-6397-4ca4-86e0-d686285bd9b0",
+    "name": "Thinking Creatively",
+    "authority": "LinkedIn Learning",
+    "date": "2020-09-03",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1cieEQmJZlRD9p98jEVdxyL4RuU94Q5ma/view"
+  },
+  {
+    "id": "312e738a-c089-46c8-9c36-15e3185e27cb",
+    "name": "Customer Service: Managing",
+    "authority": "LinkedIn Learning",
+    "date": "2020-09-03",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1iXzibHB94SbzCzU9T-RyXEEqPb4PYmCc/view"
+  },
+  {
+    "id": "5af356b0-9acb-45e0-8550-c2f7f0fff610",
+    "name": "Leading a Customer-Centric Culture",
+    "authority": "LinkedIn Learning",
+    "date": "2020-09-03",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1bmU_wLJWCfMyme6SoOT4hYJ-F1slGDH0/view"
+  },
+  {
+    "id": "bc54f6f6-ec0d-4df8-a586-8629de0d42f6",
+    "name": "Building Rapport with Customers",
+    "authority": "LinkedIn Learning",
+    "date": "2020-09-04",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1QpKT4C73nRRq1Xu5DkmezzhomFFsXfKj/view"
+  },
+  {
+    "id": "da9a9601-8231-42c9-9f6c-1197e4f37c18",
+    "name": "Customer Service: Handling Abusive",
+    "authority": "LinkedIn Learning",
+    "date": "2020-09-06",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1Q7bTZNOJmbnUq0QqW98BH5T0O5pNLFj6/view"
+  },
+  {
+    "id": "7af9664d-fecb-4f4f-b105-fe6179a11834",
+    "name": "Creating a Positive Customer",
+    "authority": "LinkedIn Learning",
+    "date": "2020-09-06",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1-dEMOA1uk2qsvAB0FAYnNFkx_OEbsjN1/view"
+  },
+  {
+    "id": "0c9a4b84-42bb-4e4a-83ab-f2fe43149e05",
+    "name": "Using Questions to Foster Critical",
+    "authority": "LinkedIn Learning",
+    "date": "2020-09-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1FDMyu9b5rltbGyNDduBCEAsgzp9Wl1ot/view"
+  },
+  {
+    "id": "7fb8223a-ad19-4d64-81c0-e5395731c704",
+    "name": "Problem-Solving Techniques",
+    "authority": "LinkedIn Learning",
+    "date": "2020-09-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1m3lJ5mPvEijp6SZARfCWfNO37t2bGWLP/view"
+  },
+  {
+    "id": "f8980922-818d-4c09-a23e-803430da085a",
+    "name": "Business Analysis Foundations:",
+    "authority": "LinkedIn Learning",
+    "date": "2020-09-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1ZSyxE2_Y7crHJquAtFph8__v61onqpz1/view"
+  },
+  {
+    "id": "f2514518-3338-4e10-806c-e7559d1d7aa7",
+    "name": "Stepping Up: How Taking",
+    "authority": "LinkedIn Learning",
+    "date": "2020-09-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1lNNw6CLvUDmaosB-CHmT3BK96Gh364sH/view"
+  },
+  {
+    "id": "f715fb05-5f99-4ba5-87f1-907dc2845dfc",
+    "name": "Creating Your Personal Brand",
+    "authority": "LinkedIn Learning",
+    "date": "2020-09-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1MAG9HIr0-q642Ebvq0Q7XSzCs-Fp5NYl/view"
+  },
+  {
+    "id": "f348bf64-ba13-4d8b-b2ba-73b32fd11580",
+    "name": "Defining and Achieving Professional",
+    "authority": "LinkedIn Learning",
+    "date": "2020-09-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/133nJU3TVRNmbV3NpJfkvQ8hFrbsBLFiE/view"
+  },
+  {
+    "id": "f73d0008-b9c0-4677-a9b9-e1ee9c2b910c",
+    "name": "Developing Resourcefulness",
+    "authority": "LinkedIn Learning",
+    "date": "2020-09-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1dQuBeXiXH04rnaIhLUUBLu_o_c3FhES9/view"
+  },
+  {
+    "id": "b6825f75-7309-4306-a33e-da05672d8c80",
+    "name": "Be More Productive: Take Small",
+    "authority": "LinkedIn Learning",
+    "date": "2020-09-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1kAE0EefaPZVRxDxIOjcRxxRXSk9HEEQK/view"
+  },
+  {
+    "id": "7d42a254-792f-4e74-afee-507febf73cb8",
+    "name": "Holding Yourself Accountable",
+    "authority": "LinkedIn Learning",
+    "date": "2020-09-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1hQfznU7rqjijcFsAy-MU_rSMX9byAc7j/view"
+  },
+  {
+    "id": "4017603d-1630-418e-b02c-ea33a197c23c",
+    "name": "Ideas That Resonate",
+    "authority": "LinkedIn Learning",
+    "date": "2020-09-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1y9dhDt5RXt4SPg6Rz3svR8_GuuNFjXXU/view"
+  },
+  {
+    "id": "70212b66-8827-44d7-a6f1-ebe33b790302",
+    "name": "Being the Best You: Self-Improvement",
+    "authority": "LinkedIn Learning",
+    "date": "2020-09-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1tPZmx4zvYQwt3MhSdfzQXjDcpBLInL0W/view"
+  },
+  {
+    "id": "a7863a5b-036b-438e-a07d-bcc113f70d83",
+    "name": "First Look: Java 10 and Java 11",
+    "authority": "LinkedIn Learning",
+    "date": "2020-09-12",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1ddox3RmhLcLPiFEthwly5cr4QD2dqA4n/view"
+  },
+  {
+    "id": "0890214a-b090-4757-b284-134cb498e8d7",
+    "name": "Learning ITIL® (2019)",
+    "authority": "LinkedIn Learning",
+    "date": "2020-09-16",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1SRp-_0wFTO62qZBChlNc2WGyKSnMii4w/view"
+  },
+  {
+    "id": "115d24ed-a0a9-4da7-929b-016600d5ebc1",
+    "name": "ITIL® Foundation 4 First Look",
+    "authority": "LinkedIn Learning",
+    "date": "2020-09-18",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1fXXKWR1xWiL8-PmEO_NSdwy_UgjHG7hz/view"
+  },
+  {
+    "id": "b68dcc05-aabf-4373-a957-0eb189b12ccf",
+    "name": "Putting ITIL® Into Practice: Applying",
+    "authority": "LinkedIn Learning",
+    "date": "2020-09-18",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1oYBThajM5Dqa6B44M2IKfuINh0sHWujy/view"
+  },
+  {
+    "id": "922ec8be-fd4e-42b4-9553-f6a025067291",
+    "name": "Blockchain Basics (2017)",
+    "authority": "LinkedIn Learning",
+    "date": "2020-12-25",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1uod0vdBcgLidJfDf7_Fct_fNj6I-MFGk/view"
+  },
+  {
+    "id": "94238da1-7394-49d9-8df0-5133a8627e3b",
+    "name": "Learning Django",
+    "authority": "LinkedIn Learning",
+    "date": "2021-02-27",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1h3HadcJ0WwqLg4OXvlTZ1n57EtM5IE2I/view"
+  },
+  {
+    "id": "73d8a976-e900-491f-9d06-beec5cbf9636",
+    "name": "Speaking Confidently and Effectively",
+    "authority": "LinkedIn Learning",
+    "date": "2021-03-10",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1wcsPTL726g-1fVeRX4ZWvR2NNzbReMDy/view"
+  },
+  {
+    "id": "ce076e7a-06a6-42cf-965a-2ed1fb363262",
+    "name": "Creating Positive Conversations with",
+    "authority": "LinkedIn Learning",
+    "date": "2021-03-15",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1lpLqJYGAmSqDWLI_vv6EWN62LPSRtHVW/view"
+  },
+  {
+    "id": "249f7d30-e61d-49b3-bfc9-1ceea71fa30d",
+    "name": "Customer Service Foundations (2020)",
+    "authority": "LinkedIn Learning",
+    "date": "2020-09-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/10lvLZQTo_EvL-wp0b4yQk4liF8d21rN3/view"
+  },
+  {
+    "id": "6ae78b97-4413-4585-a3ee-dcdf21631c2d",
+    "name": "Managing Stress (2019)",
+    "authority": "LinkedIn Learning",
+    "date": "2020-07-03",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1UBl0odbOGe6KAGp0Aj2eUSvEfaG9LsZn/view"
+  },
+  {
+    "id": "491ff234-ee67-4e8f-90f1-9924a2cccb04",
+    "name": "Excel Essential Training (Microsoft",
+    "authority": "LinkedIn Learning",
+    "date": "2021-03-16",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/13mUqP4zKdjcU7KK-gCVsBL_gjS_30H1u/view"
+  },
+  {
+    "id": "1c7f5a07-4dd4-42d9-aee8-590e34a9cedf",
+    "name": "Enhancing Your Productivity",
+    "authority": "LinkedIn Learning",
+    "date": "2021-03-25",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1cbCl6z9Ev1DwOxayhI-nz6-DuWNr6K8Q/view"
+  },
+  {
+    "id": "0dbb9baf-57ab-450b-a1b3-8a3700c46483",
+    "name": "How to Manage Feeling",
+    "authority": "LinkedIn Learning",
+    "date": "2021-03-25",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/137YJayM2ekYadWAW6FFcSXfJtXw5SOsn/view"
+  },
+  {
+    "id": "3be98d8c-b348-4573-9f74-d0417bf5dae2",
+    "name": "Unlocking Your Potential",
+    "authority": "LinkedIn Learning",
+    "date": "2021-03-26",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1drB9lWQ89A-0DyG1xpOZdffaRxqLzjWN/view"
+  },
+  {
+    "id": "8fb19ec3-861d-452b-b036-8b20a89d5ccb",
+    "name": "Building Self-Confidence",
+    "authority": "LinkedIn Learning",
+    "date": "2020-09-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1JL2-BwwEnrGEc54YVHCMAL4wOjyLLyzp/view"
+  },
+  {
+    "id": "e3bf3285-3f80-4ed9-a347-507a29fdb859",
+    "name": "How to Rock an Interview",
+    "authority": "LinkedIn Learning",
+    "date": "2021-03-28",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1ItsEukvW6Ab3YmhKBAf-RdW1icwDL-3A/view"
+  },
+  {
+    "id": "83006d3a-5707-4b69-843d-9e0de7a43d83",
+    "name": "Leadership Tips, Tactics, and Advice",
+    "authority": "LinkedIn Learning",
+    "date": "2021-03-30",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1fploKHlvSSxf8JG0ZZLVEC_WCvT3dOiS/view"
+  },
+  {
+    "id": "ae48379c-9ba8-4583-a006-b4159cbd16e6",
+    "name": "Interpersonal Communication (2020)",
+    "authority": "LinkedIn Learning",
+    "date": "2021-03-26",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1qTVX3tqhqdGeIbv_jlKzOYM-zggimkuy/view"
+  },
+  {
+    "id": "55d08c00-7301-4f60-9d7e-250b83a64e50",
+    "name": "Java EE: Packaging and Deploying",
+    "authority": "LinkedIn Learning",
+    "date": "2021-06-12",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1cOHvSG9UU6abX70JBQYgz-KDRrMFYL2C/view"
+  },
+  {
+    "id": "591c1bb1-af94-47d6-b88c-1613a1c1cf73",
+    "name": "Learning NetBeans",
+    "authority": "LinkedIn Learning",
+    "date": "2021-06-12",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1P9p1uC6uSVuEUGD0JrukBeB9pO2I7Y3-/view"
+  },
+  {
+    "id": "cb929d74-204f-40c1-8fbb-83191b34da4d",
+    "name": "Programming Foundations: APIs and",
+    "authority": "LinkedIn Learning",
+    "date": "2021-06-12",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1usT3H3RqY-aAk8tVEDZrxXmrv9uWwbba/view"
+  },
+  {
+    "id": "0002320b-7241-4496-8adf-ae0edbb99518",
+    "name": "Java: IDE Overview (2016)",
+    "authority": "LinkedIn Learning",
+    "date": "2021-06-12",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1UUqUJ0URWr9zIHUTZ5fN9y0HGHsOgXjP/view"
+  },
+  {
+    "id": "78f4d514-b6bd-4697-bc92-d29a37563c64",
+    "name": "Accessibility for Web Design",
+    "authority": "LinkedIn Learning",
+    "date": "2021-06-12",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1zs1Dgv5kTHSpASWkldclEISLJquGlV03/view"
+  },
+  {
+    "id": "38697e5c-6d03-4156-af28-1dbf00bd8f6b",
+    "name": "MySQL Essential Training (2019)",
+    "authority": "LinkedIn Learning",
+    "date": "2021-06-12",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1phUq7AaYEftWGOuwFDu1utF_GMavUJDg/view"
+  },
+  {
+    "id": "f9fb7ea9-f6a6-4b58-b375-051469242477",
+    "name": "Java EE: JavaServer Faces JSF",
+    "authority": "LinkedIn Learning",
+    "date": "2021-06-12",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1LRs60TxRV-3ZGAfh0YqxMB8pv95oBz6-/view"
+  },
+  {
+    "id": "2caa9f8c-e4e3-4e91-b46d-485be21bfb1d",
+    "name": "Building a Full-Stack App with",
+    "authority": "LinkedIn Learning",
+    "date": "2021-06-12",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1x02ojBCaHE3-r0bVXLF4n3iYdb-fDVCU/view"
+  },
+  {
+    "id": "ad31c253-cec8-4b67-b4fe-a7bf5b111023",
+    "name": "Spring: Spring MVC (2018)",
+    "authority": "LinkedIn Learning",
+    "date": "2021-06-14",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1qWvI4skbP0Ex_fBXJAlmhVNqhtVA71BR/view"
+  },
+  {
+    "id": "3321ec58-7ae4-4822-9f02-544c0cbebce5",
+    "name": "Learning Apache Tomcat",
+    "authority": "LinkedIn Learning",
+    "date": "2021-06-14",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1LGBuN_jZJfjMRHB2sFqKGRqG1IUPngCx/view"
+  },
+  {
+    "id": "1f958514-3785-4529-9d3c-b8aeaa34be39",
+    "name": "Improving Your Judgment for Better",
+    "authority": "LinkedIn Learning",
+    "date": "2021-06-15",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1BiJAvi54mtK0UCgbv7L9L_5d_xybhVVu/view"
+  },
+  {
+    "id": "f3cf4230-b43d-443a-85b7-744f8920e642",
+    "name": "A3 Problem Solving for Continuous",
+    "authority": "LinkedIn Learning",
+    "date": "2021-06-15",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1MbvdCU3eNZ5SfP_h6kh3ssoPifhpmvI-/view"
+  },
+  {
+    "id": "c9f61d22-c804-4174-b745-79f57b463665",
+    "name": "Managing Up, Down, and Across the",
+    "authority": "LinkedIn Learning",
+    "date": "2021-06-15",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/10fley7HVgZLa2gVkoCk7xac7LpBrQTov/view"
+  },
+  {
+    "id": "f9a2dbbd-9c3e-4e19-b5f7-b807d8d5e508",
+    "name": "Critical Thinking",
+    "authority": "LinkedIn Learning",
+    "date": "2021-06-15",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1TckgAR1iE13ssNxg_5s9jKcuazZwltK-/view"
+  },
+  {
+    "id": "40960131-b94f-4514-8ce0-2a6fc3b5e3bc",
+    "name": "The Essential Elements of Predictive",
+    "authority": "LinkedIn Learning",
+    "date": "2021-06-15",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/17Uu41idnIl64ewRQZ2_qTlJVf3mPcxJ0/view"
+  },
+  {
+    "id": "eb35211e-cf54-45f3-99b6-31e6c6614c37",
+    "name": "Leading and Working in Teams",
+    "authority": "LinkedIn Learning",
+    "date": "2021-06-27",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1Re31V7NODNMdNoUzP3rBpPKpJ-fGsR0h/view"
+  },
+  {
+    "id": "0777d129-af20-4d01-b40c-b0119eaf644e",
+    "name": "Working on a Cross-Functional Team",
+    "authority": "LinkedIn Learning",
+    "date": "2021-06-27",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1VRnAaH3bgrn6vDar5vRmlBBObl5T_jPN/view"
+  },
+  {
+    "id": "477c37b7-ebec-4e31-8c29-b4d9dcf775b3",
+    "name": "Collaboration Principles and Process",
+    "authority": "LinkedIn Learning",
+    "date": "2021-06-27",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1uNMPLCOv3ouuuJj1A1BCjdIaTY_fqi_k/view"
+  },
+  {
+    "id": "8b6ffb20-7f29-4810-a927-bb63df4c143b",
+    "name": "Data Analytics for Business",
+    "authority": "LinkedIn Learning",
+    "date": "2021-06-27",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1HHrgnEfXcADtRZYsw-iDQbeFRsi4E_4F/view"
+  },
+  {
+    "id": "1f71e6af-f17a-478f-91d3-fa9b7d7a69c0",
+    "name": "Programming Foundations: Version",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-05",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1N3zFCKs4CDbZ_SDCdnYzM5ZPhKv4IPdo/view"
+  },
+  {
+    "id": "0be29c42-621d-4253-a81a-4d9150be50d0",
+    "name": "Git: Branches, Merges, and Remotes",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-05",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1BbM0Aa11ereGoMg4F9d0NZrHISBGmJBa/view"
+  },
+  {
+    "id": "2d3aeea6-7279-4c9d-9fa0-d58ee4006ade",
+    "name": "GitHub Essential Training",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-05",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1qmtBWurPeKBAzzkMaqiJ4MwyuAaG3EXO/view"
+  },
+  {
+    "id": "614f593d-fc9d-4439-b3a8-ab98f4e3902c",
+    "name": "Git for Teams",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-05",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1JlPsZLC4H4ykQIz3FsazReA-QM60-8CR/view"
+  },
+  {
+    "id": "bb9e9f00-4106-4244-9f61-85e2388af486",
+    "name": "Git Intermediate Techniques (2018)",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-05",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1wtrFZXlQnp81Pw8-YqOlbTY-LhAuoEu_/view"
+  },
+  {
+    "id": "3d50f134-46aa-4843-88fe-e76a5ca19f8d",
+    "name": "Git for System Administration",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-05",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1TVOkxhmCjHqbeURJnQxQv4s39CRaXn6K/view"
+  },
+  {
+    "id": "dfdf36af-19a0-43dd-b5d5-1fd85714a4d2",
+    "name": "Git Essential Training: The Basics",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-05",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1sG_5cjW6xvav1qJA8X1Pru4kgIWT_xkW/view"
+  },
+  {
+    "id": "99da97f1-d81f-45da-a2ae-c236baaa39e3",
+    "name": "Lean Six Sigma: Define and Measure",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-05",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1-S0rk5bTJdAEqZAtu57lK3tvxoYYASs-/view"
+  },
+  {
+    "id": "c084b5f9-3a95-4509-8081-bc13f76ac7e3",
+    "name": "Lean Six Sigma: Analyze, Improve,",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-05",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1fYXn8am6mIQBuNEzjSOr8oWd1eI8vkKh/view"
+  },
+  {
+    "id": "0be55886-7177-4f56-abd1-d58061dd6aa0",
+    "name": "JMeter: Performance and Load",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1khBLxF7QP2Z1NOfhjySXbcpdgUIdd90l/view"
+  },
+  {
+    "id": "4a1c9191-90ed-4452-82e7-3dd0a9224b35",
+    "name": "Microservices Foundations (2018)",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1VrvqVUtFJU9r5FCELthTE5uGte8gxfSe/view"
+  },
+  {
+    "id": "0322a518-dbfd-49fd-8e5f-bc131aa36174",
+    "name": "Node.js: Microservices (2019)",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1IlTq7Vbs_wfA4tPDc1BbsXCzrr8v3r9o/view"
+  },
+  {
+    "id": "bb622957-5deb-4e7b-8b92-2bcc360a5596",
+    "name": "Kubernetes: Microservices (2018)",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1s_lmcSIV9BSLjMSGRjbsMzwslebAoPsT/view"
+  },
+  {
+    "id": "45df48bb-ad38-4d8a-91f5-80230bdaf31f",
+    "name": "Mastering Microservices with Java",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1-C6Z_ZaSE5bsZ2iLusJY7hpZ46djx8OU/view"
+  },
+  {
+    "id": "57137945-4c5f-4003-8c69-014cd17f3c48",
+    "name": "Spring: Spring MVC",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1ak-yh3LM-FV0S5mmEltjfbbHAE0oCcLC/view"
+  },
+  {
+    "id": "b1e90209-d68d-489e-9bb5-4edc046b112d",
+    "name": "Spring: Spring Data 2 (2017)",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1D5Tte0V2jke2IQz61x6yjNNACY6x4512/view"
+  },
+  {
+    "id": "f4f02260-0a05-44ff-bd4d-5bb4bcf58147",
+    "name": "Spring: Spring Security (2018)",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1jIIVVXHxvTxjN6gyUvYCl-KaSUm2hgeJ/view"
+  },
+  {
+    "id": "6cd59638-3c1c-407d-bc78-8fa6e7eccacf",
+    "name": "Tips for Better Business Writing",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1N85XpmGIUySKYS5n7H7brZ4opKXn_sKN/view"
+  },
+  {
+    "id": "28d9899e-b61a-4483-b290-02386c5ffdb6",
+    "name": "Delivering Bad News Effectively",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1eZYW8MM8pOQwZfzwNrpF0ApG30aB6XOA/view"
+  },
+  {
+    "id": "2bc7fb77-5c9f-4873-8fe7-4a19699736be",
+    "name": "Cloud Architecture: Design Decisions",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1Y_wahm-CqTD3aWecRd23G6bio785o9QI/view"
+  },
+  {
+    "id": "82def495-346d-4af5-974e-a3127dff676b",
+    "name": "Cloud Architecture: Core Concepts",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1b93SveSp_IDgvNHFRb2nctwe6ts6ajAd/view"
+  },
+  {
+    "id": "4302811e-a617-469c-958e-b41568f842c7",
+    "name": "Communication Tips (2015)",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1cX4MUqKIH4kBKUmbKJMnIoHbzuGgSB5T/view"
+  },
+  {
+    "id": "22fae5c3-485d-4e7e-9e95-994d8a155a39",
+    "name": "Building High-Performance Teams",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1kluKZjvbzp_x0H_37Gt3c5lzPUh0AYth/view"
+  },
+  {
+    "id": "be0d74b3-58fb-4297-bdb9-467cc4696695",
+    "name": "Learn Java with Swing",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1BEIb9Vu7LRV2zEdMyalW-EZrMwrJdtAZ/view"
+  },
+  {
+    "id": "0f8f6f84-ce08-4da7-9457-1d1962c8c106",
+    "name": "Learning JavaFX GUI Development",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1xaoaw-WDFJjiWYuIG_l6BrkzStbia7Ki/view"
+  },
+  {
+    "id": "b7df9528-a428-4c59-8a61-2f02bb0bf0ba",
+    "name": "Programming Foundations: Object-",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1Ee20qcNs0U5ePByDLuNBXe1FaO55pg1Q/view"
+  },
+  {
+    "id": "b1bec155-f44f-4be1-939f-7fcb8cb07758",
+    "name": "Java 11+ Essential Training",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1_irazpLbEFhxCfQtKTFRJyqcV6dODGUT/view"
+  },
+  {
+    "id": "6e917b27-22ba-4aff-a131-79bab00b8638",
+    "name": "Learning Java Applications (2019)",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1TEu2O-X8dBwbTbu_itP7kWZivKXq0lX6/view"
+  },
+  {
+    "id": "f0f8e2d2-844d-4678-b7b1-adf58ab557ec",
+    "name": "Java Memory Management",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1yChAmA32-eNZAM3SccXzNZ7ybRysjUBr/view"
+  },
+  {
+    "id": "fe8585c1-e0fa-4ca9-84d7-7e65c9693ddc",
+    "name": "Java Persistence API (JPA): 1 The",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1pDsbh6HbVkG4sB7CPsYvzgj0IVTqIwwH/view"
+  },
+  {
+    "id": "c63e835d-d374-4193-92ba-d9b84617699c",
+    "name": "Cloud-Native Development Using",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1DlI-PGke4eim-uE_iT7URymg4U3QlQcn/view"
+  },
+  {
+    "id": "9e9e2cc2-aa64-4008-a80b-9c1bc741e7f2",
+    "name": "Java Persistence API (JPA): 2",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1Z6-aWv-7St0RoIDq6dcwUHA85N3hvjaF/view"
+  },
+  {
+    "id": "35c472c3-ef05-42bf-baa7-ea356756ab5a",
+    "name": "Nail Your Java Interview (2018)",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1RE_5KMbXPx3SPDGPuaCDVX4gibO3k6wd/view"
+  },
+  {
+    "id": "736f5abe-eb1c-4853-9b32-e283206a306a",
+    "name": "Python Data Structures: Dictionaries",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1SjTY3mQk9Z7AjIt9EFou0C9yhoKy0Crq/view"
+  },
+  {
+    "id": "1a19a503-c0b6-4680-9099-f3de2af1d529",
+    "name": "8 Things You Must Know in Python",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1I8Tx_bv4CivCyGFsfoh2BYahTJivVQCI/view"
+  },
+  {
+    "id": "84c99acc-5a26-456e-ba47-12b9245cf436",
+    "name": "Python Data Structures: Stacks,",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1nl1ZFt5KuCydKLxlVyAhZC7Nvw-Qyf_b/view"
+  },
+  {
+    "id": "175cee91-cf98-4911-8409-81f0bf82d77a",
+    "name": "Programming Foundations: Data",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1Gf6DcQnwSTQ6SMwdJ7TnQ9IcZE0TG7WI/view"
+  },
+  {
+    "id": "70a8f776-dcad-415c-9614-452932559d4b",
+    "name": "Python Standard Library Essential",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1NIkf74zeSenugfIbAv1VMb61noFayOAt/view"
+  },
+  {
+    "id": "b3adf46b-956f-4b5b-a11e-0061bc3977ca",
+    "name": "Learning Python (2020)",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1HSQb5fv13U3qbEq0GvgPVbyBr4hLJ7gy/view"
+  },
+  {
+    "id": "4dac92c8-4eae-414e-85dc-e2282344065d",
+    "name": "Performance Management: Setting",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1DTfbpohjUdyXxwAHrrvJdIAa3G5uYes2/view"
+  },
+  {
+    "id": "77d5713a-957b-409a-81bd-7ca023a6d144",
+    "name": "Creativity at Work: A Short Course",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-18",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1mz1s7KFuysq298wWGQonl9cZZH4gvrY_/view"
+  },
+  {
+    "id": "8dd78e14-0c88-4b31-8a15-069ddcfebef9",
+    "name": "Making Quick Decisions",
+    "authority": "LinkedIn Learning",
+    "date": "2021-08-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1Q42XfGhxkEDH00gEcD_7Qizq7yIDslWN/view"
+  },
+  {
+    "id": "e20650ef-7f4e-4bbe-b23c-196151076436",
+    "name": "Writing to Be Heard on LinkedIn",
+    "authority": "LinkedIn Learning",
+    "date": "2021-08-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1P1glVWlKhquivw4wyUZ-QcN8Y37yBBYN/view"
+  },
+  {
+    "id": "96aed852-74cd-479d-8e6c-3578730328c7",
+    "name": "Tips for Writing Business Emails",
+    "authority": "LinkedIn Learning",
+    "date": "2021-08-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1CD0GusrjmkbmvM4eYcytEhQYOoRmLXmD/view"
+  },
+  {
+    "id": "d49e024f-a213-4470-b7dd-6b929fb62a8a",
+    "name": "How to Present and Stay on Point",
+    "authority": "LinkedIn Learning",
+    "date": "2021-08-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1JbkghcIaeXHzOfB_Vt_j92qjRhqclnLz/view"
+  },
+  {
+    "id": "e5e51830-bf1c-4725-ac12-971b9ab9abd3",
+    "name": "Writing with Flair: How to Become an",
+    "authority": "LinkedIn Learning",
+    "date": "2021-08-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1prb6c-spcARDICmUe9Uf-STWWUDBGGgP/view"
+  },
+  {
+    "id": "46b1d037-552e-40e5-bc58-f786741131a2",
+    "name": "Java Database Access with Hibernate",
+    "authority": "LinkedIn Learning",
+    "date": "2021-06-12",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1sWOWan8pxJtmlcT11EyTUOey4S1hbHsa/view"
+  },
+  {
+    "id": "57d2b554-3ec6-42e9-9057-31c1d3af2901",
+    "name": "The Six Biases of Decision-Making",
+    "authority": "LinkedIn Learning",
+    "date": "2021-09-22",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1FkiDkpq1RPDNrhBBokLfitWTuUTBb_Xe/view"
+  },
+  {
+    "id": "3b1458d8-7e1c-4c69-b029-9e412d346675",
+    "name": "Time-Tested Methods for Making",
+    "authority": "LinkedIn Learning",
+    "date": "2021-09-22",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1JorsF52LDA3dFMSNq2rhIPfZCmQs448Q/view"
+  },
+  {
+    "id": "b1ea0718-1715-4d7e-903a-d6b12971bb20",
+    "name": "Managing for Better Ideas",
+    "authority": "LinkedIn Learning",
+    "date": "2021-09-22",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1B_YyLQNsENOblK1VHgzqwjBEgn6ELgMz/view"
+  },
+  {
+    "id": "d83b1df2-6668-4a6e-8a9a-ba97dbce7ef6",
+    "name": "Executive Decision-Making",
+    "authority": "LinkedIn Learning",
+    "date": "2021-09-22",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1cgTjYmSyrPdcvvAQuLRjaHZwOTNiBQyC/view"
+  },
+  {
+    "id": "0b4f1d98-49b7-4616-8a6a-77fc4f16c81f",
+    "name": "Communicating with Diplomacy and",
+    "authority": "LinkedIn Learning",
+    "date": "2021-09-22",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1Q8aAgGaRrXf-XtSIe2mSJY0ToPnDbJXT/view"
+  },
+  {
+    "id": "8f7274af-d060-42d0-9bb2-8ce3acf7d6dc",
+    "name": "Visio 2021 Essential Training (Office",
+    "authority": "LinkedIn Learning",
+    "date": "2021-10-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1g2fM3a72Dwdj5Y744N0mN2ViK706AWs2/view"
+  },
+  {
+    "id": "81494e9e-ad2e-4cd2-b61a-edb77bcb47f0",
+    "name": "The Secret to Better Decisions: Stop",
+    "authority": "LinkedIn Learning",
+    "date": "2021-10-10",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1OFRy3I2NwAKYPXS-T0hC-wYenazHb5JC/view"
+  },
+  {
+    "id": "29245699-da6f-487d-8004-fce3a77e0a3a",
+    "name": "Word: Mail Merge for Beginners",
+    "authority": "LinkedIn Learning",
+    "date": "2021-10-10",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/13LA4_GfRNAEtuPX8TEs4WI7a00ycthnA/view"
+  },
+  {
+    "id": "1b51cb03-f9ab-4176-9ffa-fb81c3ae4ef4",
+    "name": "Java: Build Automation with Maven",
+    "authority": "LinkedIn Learning",
+    "date": "2021-10-12",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/161dCrSvOK5dHUdeB6l9KK_kDjlpRPzkY/view"
+  },
+  {
+    "id": "d8935102-96aa-4afd-a04c-88ddbfb890f1",
+    "name": "Multi Module Build Automation with",
+    "authority": "LinkedIn Learning",
+    "date": "2021-10-12",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1tqIaak-fnHkxIpibnWq-WEBjd0JRc2iE/view"
+  },
+  {
+    "id": "86fa187c-a942-4c8d-a49d-dcd5ff33a5b0",
+    "name": "Learning Java Threads",
+    "authority": "LinkedIn Learning",
+    "date": "2021-10-13",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/16ipwAtfMwa--NER4rbwyumBOhUrNmiHm/view"
+  },
+  {
+    "id": "fb99ffac-a46f-4b1f-adfe-517b4d05086c",
+    "name": "Advanced Java Programming",
+    "authority": "LinkedIn Learning",
+    "date": "2021-10-14",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1v3uJhEvLB_i4m3BtYdH7GJYzUZq2AX_P/view"
+  },
+  {
+    "id": "d9f4a785-3c11-4c74-83dd-ecc6bcb1162f",
+    "name": "Java EE 8: Web Services",
+    "authority": "LinkedIn Learning",
+    "date": "2021-10-16",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1-wVW_CaPtwEuQVC4jsfzN6ZnqdNRo1G_/view"
+  },
+  {
+    "id": "75cb7fb2-5462-4b5e-8b96-2353d8029eec",
+    "name": "Introducing Functional Programming",
+    "authority": "LinkedIn Learning",
+    "date": "2021-10-16",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1ZPcxf4R6kwVMscyCaZMU0rNcgk66mFK1/view"
+  },
+  {
+    "id": "ea9db7cd-94f7-40be-a8d5-47503af27977",
+    "name": "Angular Essential Training (2019)",
+    "authority": "LinkedIn Learning",
+    "date": "2021-10-18",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1MndZHzwCALzitMQd-GN_lj3PZQ95W5Lm/view"
+  },
+  {
+    "id": "ecbd4397-cd26-4d1f-b630-106649364ee6",
+    "name": "HTTP Essential Training",
+    "authority": "LinkedIn Learning",
+    "date": "2021-10-19",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1uy3Yoj1K7obFcYQ23DxR6zU2uo-vTdz_/view"
+  },
+  {
+    "id": "c2dd86fb-05b1-49d3-8a23-3fe464a505e9",
+    "name": "Designing RESTful APIs",
+    "authority": "LinkedIn Learning",
+    "date": "2021-10-19",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/15Z3m1peoGns54hgblP_N46ozwGkhkFGp/view"
+  },
+  {
+    "id": "f085546e-02f7-425d-8062-711471492376",
+    "name": "Learning REST APIs",
+    "authority": "LinkedIn Learning",
+    "date": "2021-10-19",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1v_A53OJVWWGiHeJq-JAebRqtGkRqcd-D/view"
+  },
+  {
+    "id": "2a180ccb-8dea-44d2-9df4-3c614e7c27d7",
+    "name": "API Testing and Validation (2017)",
+    "authority": "LinkedIn Learning",
+    "date": "2021-10-19",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1GRZ_JA-or0Je5WWSNhIALMGkGkll3Y2w/view"
+  },
+  {
+    "id": "cc5f1d39-b93f-48db-9ff6-cf1d51d1b9e6",
+    "name": "Learning npm the Node Package",
+    "authority": "LinkedIn Learning",
+    "date": "2021-10-19",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1b7nP6gyY8gdNn-ggz-b6hY_0mXC1iAiT/view"
+  },
+  {
+    "id": "a2833a44-a634-4725-ac8c-1130fab973bd",
+    "name": "Building Full-Stack Apps with React",
+    "authority": "LinkedIn Learning",
+    "date": "2020-07-02",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1zF93ALS99KrHVWVvWQQv4WHKzq6Y77LQ/view"
+  },
+  {
+    "id": "c014ff73-cdba-46c8-ae34-abe1bf8abbc0",
+    "name": "Scala First Look",
+    "authority": "LinkedIn Learning",
+    "date": "2022-03-17",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1RiL6Ry4ZDjiJJnS7F9uSsbOgiT9Xnimh/view"
+  },
+  {
+    "id": "1d1e429f-bf90-4dcb-8b45-9c204cb3abd0",
+    "name": "Learning Angular (2018)",
+    "authority": "LinkedIn Learning",
+    "date": "2022-03-22",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1JG1HfZ8vTGee3GTO4rXScibkIGIchOxS/view"
+  },
+  {
+    "id": "17a2846c-db44-4323-9042-6f68deade8bc",
+    "name": "Learning the OWASP Top 10 (2018)",
+    "authority": "LinkedIn Learning",
+    "date": "2022-04-24",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/13HCPdqyG5dhcXUlBUBylzNNIcLEbAXeV/view"
+  },
+  {
+    "id": "396896d1-a74b-41b0-9c03-3e8369e26fd1",
+    "name": "Programming Foundations: Web",
+    "authority": "LinkedIn Learning",
+    "date": "2022-04-24",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1OsfjzqSmzeugWRRpO2j5lBXt0dIX2zTP/view"
+  },
+  {
+    "id": "db714e88-58ba-4dd1-8f80-da31ee383f81",
+    "name": "Dynamic Application Security Testing",
+    "authority": "LinkedIn Learning",
+    "date": "2022-04-24",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1aUu0F-K48reutLnhIhNc4RTem1-ho0od/view"
+  },
+  {
+    "id": "b0b0d5dc-96d0-4060-868e-422895160280",
+    "name": "Programming Foundations: Secure",
+    "authority": "LinkedIn Learning",
+    "date": "2022-04-24",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1YcIz_3T-CyojfBb_0G_rC_u_mAiHlk9i/view"
+  },
+  {
+    "id": "129b0536-9b19-4b41-863c-22e8a2cd9f19",
+    "name": "Node.js Essential Training (2019)",
+    "authority": "LinkedIn Learning",
+    "date": "2022-05-01",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1zRsKVyi3IbO8MgAod8_p-CHib0s_q-AH/view"
+  },
+  {
+    "id": "1e7606f9-bdab-474d-bfc4-07357f7a3c57",
+    "name": "React.js Essential Training (2020)",
+    "authority": "LinkedIn Learning",
+    "date": "2021-03-30",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1VRL2w8wolwRbMWpARE3dgKDGiFzGgk8b/view"
+  },
+  {
+    "id": "75a162bf-134a-411b-869a-2be02a399a45",
+    "name": "React.js: Building an Interface",
+    "authority": "LinkedIn Learning",
+    "date": "2022-05-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1pZPLhY-fYwb3yThXZyED5T3MiPUy76D-/view"
+  },
+  {
+    "id": "b2adf55e-c8f5-4f4e-908c-de21917ff071",
+    "name": "React: Creating and Hosting a Full-",
+    "authority": "LinkedIn Learning",
+    "date": "2022-05-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/180fyF53YCUf6DFkzljk89TKGH8E9eTln/view"
+  },
+  {
+    "id": "c3db23d3-b9df-4e66-9f1f-cf8ccfa1be7e",
+    "name": "Building Modern Projects with React",
+    "authority": "LinkedIn Learning",
+    "date": "2022-05-09",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1NHy-1z7FU1xD8KTy89Ir7cusGv4bfQqC/view"
+  },
+  {
+    "id": "e5951510-7626-4904-9efa-1dce9364db39",
+    "name": "Express Essentials: Build Powerful",
+    "authority": "LinkedIn Learning",
+    "date": "2022-05-23",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1bPqPsM-yiTvLaZ2__QlBzyJAlaHt5o6A/view"
+  },
+  {
+    "id": "98d9ebb0-08fe-4097-ab5b-ad87fe566156",
+    "name": "Oracle Database 12c: Basic SQL",
+    "authority": "LinkedIn Learning",
+    "date": "2020-06-24",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/14aB_rXX8qOrq8zExdYGbNhd7fNPiYjnj/view"
+  },
+  {
+    "id": "82bb4e43-901c-47b8-8168-0c93281a0bdd",
+    "name": "Azure DevOps for Beginners (2021)",
+    "authority": "LinkedIn Learning",
+    "date": "2021-08-26",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1UAjtjfMcbPZbk8d0h5981c1j8oZ5p-RJ/view"
+  },
+  {
+    "id": "f224a369-70d7-437d-8142-438e6c75ce68",
+    "name": "Learning Data Visualization with D3.js",
+    "authority": "LinkedIn Learning",
+    "date": "2022-09-24",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1ky-YIqKAQq_iBoCj64amAw8MouPILik-/view"
+  },
+  {
+    "id": "bf1fed86-12f3-4892-b7ea-e93923c63e80",
+    "name": "Python Essential Training (2022)",
+    "authority": "LinkedIn Learning",
+    "date": "2022-10-03",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1ZoyAqVLBqUw7Z8eRtkKM2HlKx5L2475f/view"
+  },
+  {
+    "id": "140f7a89-937c-49d0-ae4b-62588f4a389b",
+    "name": "Python Object-Oriented",
+    "authority": "LinkedIn Learning",
+    "date": "2022-10-03",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/15VhArU8jAR-3cIcdXCoAi1QbGA1iG_w0/view"
+  },
+  {
+    "id": "1f6478d4-f072-46d9-8c02-9435f3c1b521",
+    "name": "Nail Your Python Interview",
+    "authority": "LinkedIn Learning",
+    "date": "2022-10-03",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1ZNR1KuBw32aPReGzbtqTGwokcvuGU9du/view"
+  },
+  {
+    "id": "def684cc-9a56-4ee2-8ff4-bc138180879b",
+    "name": "AWS Certified Cloud Practitioner",
+    "authority": "LinkedIn Learning",
+    "date": "2021-08-27",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1WNkywWLKZQPZDr41FiXLxUlWGjOscsCX/view"
+  },
+  {
+    "id": "a0891179-4b8f-4546-a685-7742a46faee6",
+    "name": "Python Data Structures: Trees",
+    "authority": "LinkedIn Learning",
+    "date": "2022-10-05",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1kyGOj8jjaXGJQcBP-_xBla0jX8PhN2ng/view"
+  },
+  {
+    "id": "76e7fb69-d046-487d-a094-e5de01c20865",
+    "name": "Advanced Python (2018)",
+    "authority": "LinkedIn Learning",
+    "date": "2022-10-05",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1uf7ojYbijW8wmzGXVCCo-n_X9LclbTdJ/view"
+  },
+  {
+    "id": "21b2d541-b873-4154-b2f8-16c7cd6a5dc3",
+    "name": "Insights from Influencers and Business",
+    "authority": "LinkedIn Learning",
+    "date": "2022-11-01",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1pGmZ08aAJOVaExjxKPHTWjL1Hkd7sziU/view"
+  },
+  {
+    "id": "7e49db96-65a2-4d87-bc0b-deaf76d16bab",
+    "name": "How to Set Goals When Everything",
+    "authority": "LinkedIn Learning",
+    "date": "2022-11-19",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1Nw7dKNGoqqjjN4MwxBD3axIXZISp1PJ5/view"
+  },
+  {
+    "id": "ae1b0996-5234-4325-8889-86862c019623",
+    "name": "The Six Morning Habits of High",
+    "authority": "LinkedIn Learning",
+    "date": "2020-05-20",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1SYJxBufWpgSh7hv4tWB8HzrPkFxyOrXw/view"
+  },
+  {
+    "id": "999d81d6-19a4-41c7-8108-71bbdbcaef27",
+    "name": "Business Writing Principles",
+    "authority": "LinkedIn Learning",
+    "date": "2022-12-02",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1BkNgKj1DhaUMDRbns0GlfB16N6I9fWEu/view"
+  },
+  {
+    "id": "73cad55d-96e2-4ca2-988a-bc1e8c0c641a",
+    "name": "Building Accountability into Your",
+    "authority": "LinkedIn Learning",
+    "date": "2022-12-02",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1HJQItigRXGSJonqSiH5mQsMvOawYnGpc/view"
+  },
+  {
+    "id": "8fe18020-83cf-4268-9144-7275943c5339",
+    "name": "Establishing Credibility as a Speaker",
+    "authority": "LinkedIn Learning",
+    "date": "2022-12-02",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1Tc3_Jx4PEesmbhZ_ygBPJiV64Csxf5uN/view"
+  },
+  {
+    "id": "b7f3ddc2-ed78-4f10-a8ad-2dedbfb19779",
+    "name": "Addressing Unconscious Bias as a",
+    "authority": "LinkedIn Learning",
+    "date": "2022-12-03",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1jfpwMsFhrQrbVs8eHd_WbM837AWp4Np_/view"
+  },
+  {
+    "id": "8be7d313-619a-4bd4-8df9-a8e844a45edc",
+    "name": "Mindfulness, Diversity, and the Quest",
+    "authority": "LinkedIn Learning",
+    "date": "2022-12-03",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1vgF1NDl4Q_qee9UCd0IzFnfudcDlNsFp/view"
+  },
+  {
+    "id": "29928a75-34b6-48c3-b60b-cfaaedbf81ca",
+    "name": "Agile Foundations",
+    "authority": "LinkedIn Learning",
+    "date": "2020-05-30",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/14QRI_m6UKB-1J16sQTKOXnx-ufyRwW11/view"
+  },
+  {
+    "id": "6ea6c3e1-b763-4f0d-91dd-a869aedf11c3",
+    "name": "Cert Prep: PMI Agile Certified",
+    "authority": "LinkedIn Learning",
+    "date": "2022-12-15",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1NwsTsPYfEZwFNycT8QotspGbVp2IAbno/view"
+  },
+  {
+    "id": "1fa28dcc-5d10-4d19-ac2f-b28ff5c8fe23",
+    "name": "Be a Better Manager by Motivating",
+    "authority": "LinkedIn Learning",
+    "date": "2022-12-23",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1kUFdWRxz9l8YG9UR9XP8IuPzpaVAOSAy/view"
+  },
+  {
+    "id": "9ace7298-79b0-4011-b3f8-3585bc4c746b",
+    "name": "Getting Things Done",
+    "authority": "LinkedIn Learning",
+    "date": "2022-12-25",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1cgOZmZLOHNnhtHJgm81fh1C7dxo9fm0t/view"
+  },
+  {
+    "id": "1677bb45-fd2c-4878-aea7-603748d769f0",
+    "name": "Writing a Business Case",
+    "authority": "LinkedIn Learning",
+    "date": "2022-12-25",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1nzjsy9ZFMCb0HADe8jPcHbdpCovl_8QK/view"
+  },
+  {
+    "id": "5a49adf3-93f1-4936-a1b3-7914a5968b39",
+    "name": "Time Management for Managers",
+    "authority": "LinkedIn Learning",
+    "date": "2022-12-26",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1IU_OFTxhnyf0anDtheCgqPQ4P2mNU_ub/view"
+  },
+  {
+    "id": "be892a66-c2a1-4fb1-8516-15781eaccbc9",
+    "name": "Communicating Nonverbally",
+    "authority": "LinkedIn Learning",
+    "date": "2022-12-31",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1CrzFgLQSt7PcvJV0kxm21Xc8SweNuySF/view"
+  },
+  {
+    "id": "d99dc320-75c8-43b2-9eef-2c8b3b957c0a",
+    "name": "Social Success at Work",
+    "authority": "LinkedIn Learning",
+    "date": "2023-03-04",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1UQa8aTU-ZhOY6IPCbIqjoqa_jLyYSPnb/view"
+  },
+  {
+    "id": "9fd7c509-9d0a-428d-a055-1ccc8f9a58c8",
+    "name": "Building Customer Loyalty",
+    "authority": "LinkedIn Learning",
+    "date": "2023-03-04",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/19ro13i7XvtzwQhhKsvUEXl3NmG13sR40/view"
+  },
+  {
+    "id": "39863a5a-a4bf-4751-acf2-c0a876dfe844",
+    "name": "Solving Business Problems",
+    "authority": "LinkedIn Learning",
+    "date": "2023-03-04",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1xwtzzX_Cg9GN7CmvgH6zwMGAcAo_8qTv/view"
+  },
+  {
+    "id": "f9aa1468-b18d-4b73-817d-e790164b4eff",
+    "name": "Prioritizing Your Tasks",
+    "authority": "LinkedIn Learning",
+    "date": "2023-03-04",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1-5YERSJbXa-NzwIBaItM6rosBOKcdU5T/view"
+  },
+  {
+    "id": "936c8e07-e94a-4052-ac2b-2f583aba43cb",
+    "name": "Enhancing Team Innovation",
+    "authority": "LinkedIn Learning",
+    "date": "2023-03-04",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1CIEhGZ8C63sJ5iVYvFZh81eAEFQJGWcR/view"
+  },
+  {
+    "id": "820345dc-b337-4ec1-b2d5-f9b92fb96422",
+    "name": "Leading through Relationships (2019)",
+    "authority": "LinkedIn Learning",
+    "date": "2023-03-04",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1JmhDvLPaAuIoXCmbk9Y_i5hOlJ-bP7oy/view"
+  },
+  {
+    "id": "51b14580-20c9-4241-be8c-8c7134268230",
+    "name": "Master Confident Presentations",
+    "authority": "LinkedIn Learning",
+    "date": "2023-03-04",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1AEY04vQwcNkfCHDZDYagJMVMMvHfqUbc/view"
+  },
+  {
+    "id": "ce9857c3-00cb-413b-9ceb-35c51558db6f",
+    "name": "Decision-Making Strategies",
+    "authority": "LinkedIn Learning",
+    "date": "2023-03-04",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1WPMsp0YOBfCdzoLTfbxonbgJ13chYGuU/view"
+  },
+  {
+    "id": "eba555c2-bcea-4608-ae7b-aee8af535e40",
+    "name": "Postman Essential Training (2020)",
+    "authority": "LinkedIn Learning",
+    "date": "2023-03-04",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1HUDVgAEk7sbg69qH-M3S7B1uwcVlFj79/view"
+  },
+  {
+    "id": "5c203ea0-12f0-435c-9198-b2e09cffaa69",
+    "name": "SharePoint Online Essential Training:",
+    "authority": "LinkedIn Learning",
+    "date": "2023-03-04",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1v0860fVESh9ke8glarZAf8UsUokmrzX2/view"
+  },
+  {
+    "id": "79c2d7e7-6ff8-4828-81e7-c3875f6b5dd6",
+    "name": "Strategic Planning Foundations",
+    "authority": "LinkedIn Learning",
+    "date": "2023-03-04",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1fuyoevCJ4nP4gaUqeHHJATQs7-6KGqhe/view"
+  },
+  {
+    "id": "f5759795-5321-488a-b621-b73b6560844b",
+    "name": "AWS Certified Cloud Practitioner",
+    "authority": "LinkedIn Learning",
+    "date": "2021-08-27",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/193dqLrt_gfDiI2tkOE2O3K-7UdclMFjK/view"
+  },
+  {
+    "id": "92dd07aa-c6bb-4783-b6f6-5769329ef349",
+    "name": "AWS Certified Cloud Practitioner",
+    "authority": "LinkedIn Learning",
+    "date": "2021-06-28",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1y0BZGGnc-I_hYQSDhMEz56mJYp1bx0oG/view"
+  },
+  {
+    "id": "f399141b-ea31-484e-9d53-08e63588e8c4",
+    "name": "AWS Certified Cloud Practitioner",
+    "authority": "LinkedIn Learning",
+    "date": "2021-06-28",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1zOXuwhzQZ-sjRoM_oWkvhCGDnA75zsuU/view"
+  },
+  {
+    "id": "2ad84307-58a1-40c8-a219-f7519aa0c7e6",
+    "name": "Giving and Receiving Feedback",
+    "authority": "LinkedIn Learning",
+    "date": "2023-03-04",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1mBtE3SM0YdQr0PMPhMRryxqn2uLuwN-o/view"
+  },
+  {
+    "id": "78d1d21e-c6a3-442c-bc3d-eaa002f6130a",
+    "name": "Java Essential Training: Syntax and",
+    "authority": "LinkedIn Learning",
+    "date": "2023-06-17",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1nHiNIcnCIK3IyDJXH3mYraloglfOW7CJ/view"
+  },
+  {
+    "id": "00d550d3-93d0-4602-b9bc-e37b6618c443",
+    "name": "Java Essential Training: Objects and",
+    "authority": "LinkedIn Learning",
+    "date": "2023-06-17",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1NJLJQgH32Y8v2be9q4UeacxCHOkYr1_k/view"
+  },
+  {
+    "id": "18a44aa1-e0f5-4f9c-be1e-b93a61f7e2c0",
+    "name": "Learning JDBC (2019)",
+    "authority": "LinkedIn Learning",
+    "date": "2021-06-14",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1m_rqdbMETmi7TGk8v8RWO4_VoW6nMnDd/view"
+  },
+  {
+    "id": "0827eb96-93bf-49d6-8228-f3655b6dd60c",
+    "name": "Discover the Possibilities of",
+    "authority": "LinkedIn Learning",
+    "date": "2023-06-24",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1iBmY9hn7bUrisuUQyf8uyqaa81x4zbUj/view"
+  },
+  {
+    "id": "93cc48cc-3f3b-4ebf-9e99-8f257b53863f",
+    "name": "Learning Java Collections",
+    "authority": "LinkedIn Learning",
+    "date": "2023-07-01",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1_1mJ3b2Nv5dXkGQixtAqZzaMbLK2KWVO/view"
+  },
+  {
+    "id": "465a25d5-de15-434e-ac58-2b6e2b572301",
+    "name": "Java Memory Management: Values",
+    "authority": "LinkedIn Learning",
+    "date": "2023-07-02",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1wBw0bXyjGfiR6wmCmlaJN-nZ_mMGqifu/view"
+  },
+  {
+    "id": "07a3e28a-47b7-4013-b2c0-5c26da9f420f",
+    "name": "Java Memory Management:",
+    "authority": "LinkedIn Learning",
+    "date": "2023-07-03",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1S_Z8dnwq8_ZsxCL0QgRe6TtPksOxpCV2/view"
+  },
+  {
+    "id": "06c42b59-5a20-42ef-9498-727f64714c51",
+    "name": "Java Exception Handling",
+    "authority": "LinkedIn Learning",
+    "date": "2023-07-04",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1ep9xI4VwHWoMIfben1sto977-qow62sh/view"
+  },
+  {
+    "id": "5c39e95e-aa6c-452f-bd1a-0cb41977e227",
+    "name": "Introduction to Prompt Engineering",
+    "authority": "LinkedIn Learning",
+    "date": "2023-07-21",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1urNX403MJFE0faa_eAGAmpcwdaz7Tnt-/view"
+  },
+  {
+    "id": "8afa554b-0aa0-4da3-bb7e-1291db92f446",
+    "name": "Performing under Pressure",
+    "authority": "LinkedIn Learning",
+    "date": "2023-09-05",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/10G6gQnANc3HLWQceAfRkWy7EAsUOmefM/view"
+  },
+  {
+    "id": "c588f085-2e01-4e57-8f2c-22a161c45a89",
+    "name": "Acting Decisively",
+    "authority": "LinkedIn Learning",
+    "date": "2023-09-10",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1tK89vAQEQnXIELw1bqf4gyQ_pU_iZRc2/view"
+  },
+  {
+    "id": "dca49c4c-dc9c-4d1b-a2d7-6386fb31a654",
+    "name": "Persuading Others",
+    "authority": "LinkedIn Learning",
+    "date": "2023-09-09",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1nCN866TH_Nxlw8ikki2-JZJ52NOAtcWP/view"
+  },
+  {
+    "id": "6e574654-f980-461a-a610-d951df5b0b7b",
+    "name": "Building Resilience (2014)",
+    "authority": "LinkedIn Learning",
+    "date": "2023-09-17",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1uV8Z7guhrDysIbedX7c6rHbzHZ0PHRJ1/view"
+  },
+  {
+    "id": "cbccc059-395a-4154-8552-61b24c99863b",
+    "name": "Creating Your First Spring Boot",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1dM5VbiJy94oU-vXIW-ttv8aP5nc-6Dp8/view"
+  },
+  {
+    "id": "375728ff-5918-4263-a4af-92bb7f47cd29",
+    "name": "Communicating with Empathy",
+    "authority": "LinkedIn Learning",
+    "date": "2023-09-18",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/17jRmu_BeQFqPRjUpRPAKFzvFhraheeME/view"
+  },
+  {
+    "id": "537b1532-7643-4baa-82ac-efecc94808c4",
+    "name": "Overcoming Decision-Making Traps",
+    "authority": "LinkedIn Learning",
+    "date": "2023-09-20",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/12bvDM0J5A6oguPXrM3o-bXp9yhoRSQzB/view"
+  },
+  {
+    "id": "e6b7ccf1-b1bb-41a8-8873-4e64027d982b",
+    "name": "Selling with Stories, Part 2: Stories",
+    "authority": "LinkedIn Learning",
+    "date": "2023-09-20",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1-mVt3GgGu7N0AH8uTM8BWn-w4GZn7HQ1/view"
+  },
+  {
+    "id": "dcb5b440-9558-47f4-8165-9e6570b37248",
+    "name": "Negotiation Skills",
+    "authority": "LinkedIn Learning",
+    "date": "2023-09-20",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1vl7VhsSiDkeITd_xPvqbDZ3IG4qjtFeF/view"
+  },
+  {
+    "id": "0ab6a6fb-14d7-44c4-b8e3-acb716f9d2a8",
+    "name": "Developing Cross-Cultural",
+    "authority": "LinkedIn Learning",
+    "date": "2023-09-20",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1Bo426TLYwlWs3HSfWLP6P-U1uvd66zUe/view"
+  },
+  {
+    "id": "2eb398ed-bdf7-444c-926a-14643f02ab08",
+    "name": "Managing a Diverse Team (2023)",
+    "authority": "LinkedIn Learning",
+    "date": "2023-09-20",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1HZ7Zx_ouvsJSwV5CDBCFCi1zVevpCU54/view"
+  },
+  {
+    "id": "e48e3f5d-533d-4a7e-81e8-b16d812b08f4",
+    "name": "Creating Significance: Choosing to",
+    "authority": "LinkedIn Learning",
+    "date": "2023-09-20",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1wczX8P2SlDEcJ3meJ4xZiv1hp-SHD0CE/view"
+  },
+  {
+    "id": "04aa56eb-9129-46a1-95c1-75a2cca877a5",
+    "name": "Personal Effectiveness Tips",
+    "authority": "LinkedIn Learning",
+    "date": "2023-09-20",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1V92VmVPTzAqV4b_rZRUpv7d5DD1JWTm_/view"
+  },
+  {
+    "id": "fa066dd2-050d-470c-837d-49caf74b21c5",
+    "name": "Be an Effective Hybrid or Virtual",
+    "authority": "LinkedIn Learning",
+    "date": "2023-09-22",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1IS_tH3ileAEcs6k_eIVKamIFrRzAzuVv/view"
+  },
+  {
+    "id": "0d97204a-590c-458e-aa83-d4b0e6cf3c3f",
+    "name": "Negotiating Work Flexibility",
+    "authority": "LinkedIn Learning",
+    "date": "2023-09-22",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1R3cZYLnwS4okCFwUy_tPHQLFYYulrfhl/view"
+  },
+  {
+    "id": "8d4f7f7e-c657-40a3-bbc4-c12c388a3ae2",
+    "name": "Staying Organized While Working",
+    "authority": "LinkedIn Learning",
+    "date": "2023-09-22",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1AwRwcDfCfKgRj9bk9V8OgPJtXITbmOdG/view"
+  },
+  {
+    "id": "06e30a1d-9e96-493b-ab3c-0831064d3e95",
+    "name": "How to Stand Out Remotely",
+    "authority": "LinkedIn Learning",
+    "date": "2023-09-22",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1ImSMoskP7GQPgcPXDelJeVeB2naN8gke/view"
+  },
+  {
+    "id": "5e34ee37-abc3-423c-8c6f-248fabd177d6",
+    "name": "Virtual and Hybrid Meeting Essentials",
+    "authority": "LinkedIn Learning",
+    "date": "2023-09-22",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/12pVF2xsKG6l7DEHOPL_hw4KEimq5fyYi/view"
+  },
+  {
+    "id": "89fe42b0-ea2e-44e2-ad12-b63400346c8d",
+    "name": "How to Set Boundaries and Protect",
+    "authority": "LinkedIn Learning",
+    "date": "2023-09-22",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1xTWgTq3pE9-3nvyfdoNPR0_atiyR70NX/view"
+  },
+  {
+    "id": "64b85365-878f-4e5a-814e-2f59854f2ee9",
+    "name": "AWS Certified Solutions Architect -",
+    "authority": "LinkedIn Learning",
+    "date": "2023-09-22",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1RgR8xTwnI3HKj0cVLKGfgi8_s_eWggVh/view"
+  },
+  {
+    "id": "b25fe56d-eea2-4647-8695-00075f8592be",
+    "name": "Writing and Delivering Speeches",
+    "authority": "LinkedIn Learning",
+    "date": "2023-09-23",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1OFvxGXdMqkZcZ22GtJZE-kNP8neJZIF2/view"
+  },
+  {
+    "id": "e4ecda7a-83ef-4dae-98ee-79cb46f197ae",
+    "name": "Django Essential Training (2021)",
+    "authority": "LinkedIn Learning",
+    "date": "2023-09-24",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1Dh3I6mgSCbJeXhu5N721muy56QmotPIB/view"
+  },
+  {
+    "id": "e3557b29-4d0e-4fca-8c57-30d15b1169b5",
+    "name": "How to Speak with Effortless",
+    "authority": "LinkedIn Learning",
+    "date": "2023-09-25",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/17qWK_lCR7AJ2ZMa-Ii08vMCj4qpnoc-I/view"
+  },
+  {
+    "id": "8e76c8dc-1b20-43e5-83a3-b031f0cb9778",
+    "name": "Communicating with Confidence",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-06",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/11OGtKNVX8Hei7NHWW9v_nesMsZcRLeGU/view"
+  },
+  {
+    "id": "6e36d16a-b149-4e62-9bf2-61c44cb5c929",
+    "name": "Learning Spring with Spring Boot",
+    "authority": "LinkedIn Learning",
+    "date": "2023-06-18",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1UChcWpixcrvMX4G829L37uBlpyZLyroZ/view"
+  },
+  {
+    "id": "26a4d973-5148-46ca-8687-7611fbf68286",
+    "name": "Developing a Learning Mindset",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-14",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1gMpEEzCyGnV0-Ataz8I2ivfVviq-XOwi/view"
+  },
+  {
+    "id": "778127e7-9328-4cfb-a850-1fcf7844a848",
+    "name": "Asserting Yourself, an Empowered",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-14",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1-XbHbKnEe6C_6N9jhRAs59wfBBAhshbo/view"
+  },
+  {
+    "id": "6fa159fe-f1e7-4550-9699-3896617a8cc9",
+    "name": "Discovering Your Strengths",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-14",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1dpGPF8NoAz0MW-Ji4NHiw1QfXK5qwupM/view"
+  },
+  {
+    "id": "c1ab2f80-37c0-4683-b18e-2adb993f28de",
+    "name": "Learn Emotional Intelligence, the Key",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-14",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1fDcCoh2bMPNII8BYoF4szDIeJcUwAY9N/view"
+  },
+  {
+    "id": "84a1237d-c598-4360-83b8-f47a4fb12192",
+    "name": "Igniting Emotional Engagement",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-14",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1YSbdjZS0TdIisAWaDgUXWW4O6tg49_iA/view"
+  },
+  {
+    "id": "612a32ff-d2c2-4889-b449-522686ec1146",
+    "name": "Mixtape: Learning Highlights on",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-14",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1X2ZFzowVkf2yZpLtZ_XFPYjQuHvUPwG6/view"
+  },
+  {
+    "id": "64927559-3499-4a25-9f23-c4d7d1c305f7",
+    "name": "The Surprising Power of Seeing",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-14",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1P9hesxPypyvxiv2F2ndLHW_FPSbBy1yy/view"
+  },
+  {
+    "id": "ac884c26-5993-4ce6-9382-8761eb7782db",
+    "name": "Lessons in Enlightened Leadership",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-16",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1R-bN5etZh0cZA5ZIK8KdPsAstt2MZIJz/view"
+  },
+  {
+    "id": "f69ca1e1-0277-4f33-aa4d-2bee1f0901d6",
+    "name": "Leading like a Futurist",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-16",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1_BSKlARcAoftB8lPRER56MTmg8CTcc9w/view"
+  },
+  {
+    "id": "29bb1992-0046-4d3f-b83a-00919e820bf5",
+    "name": "Subtle Shifts in Thinking for",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-17",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1iM__B01GblSV0_hxx9JQcl2h9bJ_VgVb/view"
+  },
+  {
+    "id": "781ecf79-f021-40cc-ab50-0522b3de6cf8",
+    "name": "Being Positive at Work",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-17",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/16_mZRQne8NFCqUQcpOElgbVuYE2Mokep/view"
+  },
+  {
+    "id": "d75392bd-137a-4b4c-a3b4-a8c518e5e46b",
+    "name": "Developing Adaptability as a",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-17",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1DgI51x_ZTxSpOhOMNi36YMwZBT9ZBR0i/view"
+  },
+  {
+    "id": "ca9a97d1-16b7-41ac-b716-26a26b9c2fe8",
+    "name": "Aaron Dignan on Transformational",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-17",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1iuNYhSBm8U-zshBlm7RD__The-_zFih2/view"
+  },
+  {
+    "id": "261c7d52-9855-4ad5-9837-9efb037f6bd3",
+    "name": "Leading Your Team Through Change",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-17",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1mxpwVKmjaxdhY7YFi8R_Mut0VClkAynB/view"
+  },
+  {
+    "id": "926dcf64-051f-4e2c-b54b-63ff9ec08181",
+    "name": "Coaching Employees through",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-18",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1nXNHm6wwddcgyb1BNNp2pVM_KDOJsKQ6/view"
+  },
+  {
+    "id": "735078fb-7b66-4e14-8a65-00f62281bec2",
+    "name": "Working with High-Conflict People as",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-18",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1b91HtSLvDsn7HkTmBlShJzH4QnMJtL1i/view"
+  },
+  {
+    "id": "5b10f8c5-74ba-43da-829a-0ce0923825b5",
+    "name": "Difficult Situations: Solutions for",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-18",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1zVGSBHhPvxCcGLGDpPomi2U3NAuMTNke/view"
+  },
+  {
+    "id": "37e6683a-6fa9-48d8-bb65-bc19760bded9",
+    "name": "Leadership Stories: 5-Minute Lessons",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-16",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/19--dtXeYqMnPGGj3x0y6q7-hGaDT3um3/view"
+  },
+  {
+    "id": "96f61692-947d-4b44-9b8b-8e6f85a3e1be",
+    "name": "Managing in Difficult Times",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-17",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1zmvt-Ql74pxdv6H3Cp3DCsVh0yQ-Zxa1/view"
+  },
+  {
+    "id": "c583b954-1f6d-41f7-937e-177795a6e342",
+    "name": "Consulting Foundations: Client",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-20",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1ZD-aPzCw7I6tt46eqfH-JCEKXBomVKQY/view"
+  },
+  {
+    "id": "d7b3991b-b7e7-4928-91c8-b1eafb5243af",
+    "name": "Business Development Foundations",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-20",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1y0IYp42pkwhNQ8h4bT1FFHAPvgaZWWy8/view"
+  },
+  {
+    "id": "bcd345b3-28b3-4e2d-8b66-e7a28b816d25",
+    "name": "AWS and React: Creating Full-Stack",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-20",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1X3rg-lfHg3c6ygavs4OI9Ga_bkc3QsWh/view"
+  },
+  {
+    "id": "d2284737-a6ae-4268-85e9-9e6052c26f15",
+    "name": "Organization Design",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-20",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1sKtKDIZR2-5j-zCnmYTmg2DE7rYc8Tfx/view"
+  },
+  {
+    "id": "b3db83f6-f74b-4149-ad5e-08a82654c486",
+    "name": "Developing Credibility as a Leader",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-21",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/10n-A5QuPcsyAlm3bKygCfXCp9yUVexPZ/view"
+  },
+  {
+    "id": "6457a458-2ecb-4e31-84e6-18bd6c276e81",
+    "name": "Learning webpack 4",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-21",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/10ta1gaa5akou43FFW_kiXutqK5RKjtZD/view"
+  },
+  {
+    "id": "cd62bf02-43cd-4e14-8cc1-c0f0f5c660dc",
+    "name": "Fred Kofman on Managing Conflict",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-22",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1-y0Mg5__aVyLAisng6UqcSYSPKfmu7qz/view"
+  },
+  {
+    "id": "8e1ba7a7-e05a-477a-8c4b-6392e98f8d70",
+    "name": "Developing CI/CD Solutions with",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-23",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1Nbuk9yudz4FNNLXvVuJSxOFw1BKrploN/view"
+  },
+  {
+    "id": "0b53743e-6f10-422e-8713-3760615d923a",
+    "name": "Fred Kofman on Accountability",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-22",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1Ft1wQ2Uqd6EV7QfAdkxlPlqJS1WrcGxd/view"
+  },
+  {
+    "id": "1a99f3d4-ed46-4141-936b-7ee639210143",
+    "name": "Fred Kofman on Making",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-24",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/15qHA2zynnRBezBYyf7F6q8ma9CI-9-Wq/view"
+  },
+  {
+    "id": "313fc34d-55de-42e9-acf0-bbb60845fc7e",
+    "name": "Conflict Resolution Foundations",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-24",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1Ga_eZNDb0drsCO42AhAsuhsM3xrkNdSJ/view"
+  },
+  {
+    "id": "8cd81a56-2cdb-49f8-a232-e915903528e8",
+    "name": "Delivering Results Effectively",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-24",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1col0A2C0WO9uWB7WusrkzbnRjAt4mi7T/view"
+  },
+  {
+    "id": "711115fa-fe15-4532-b643-abf27ff44bdd",
+    "name": "Introducing Maven",
+    "authority": "LinkedIn Learning",
+    "date": "2020-06-30",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1TRif_LI79cB6bS9HUO9xFGqrg4X2OhBF/view"
+  },
+  {
+    "id": "26b8c2af-7cf0-47c6-a41e-15d90a701f88",
+    "name": "Powerless to Powerful: Taking Control",
+    "authority": "LinkedIn Learning",
+    "date": "2023-10-21",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1STN9gV7yCzVua0sZz1u4w0jH44A9R6bh/view"
+  },
+  {
+    "id": "7f5c3038-ef23-4f9b-bcd0-55c4d49b6cab",
+    "name": "React Hooks",
+    "authority": "LinkedIn Learning",
+    "date": "2022-05-08",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1i829cyFElcLl05MvFYR8yvzPsIxjayei/view"
+  },
+  {
+    "id": "76e79289-facc-4fde-a169-cf789151c626",
+    "name": "Enhancing Resilience",
+    "authority": "LinkedIn Learning",
+    "date": "2023-12-17",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1cdDj40yDrSfUse4UZ_O_JIOfbDJ1S_n7/view"
+  },
+  {
+    "id": "8f8107ed-08ae-4d4d-bfce-e2c23147e191",
+    "name": "Microsoft Azure DevOps Engineer Expert (AZ-400)",
+    "authority": "LinkedIn Learning",
+    "date": "2024-01-02",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1IavWVPE45ZG9mklVyhDUKbjFLuBxWQgI/view"
+  },
+  {
+    "id": "9d9c9994-7f9a-4d82-98f2-c60288b5f024",
+    "name": "Microsoft Azure DevOps Engineer Expert (AZ-400)",
+    "authority": "LinkedIn Learning",
+    "date": "2024-01-02",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1_gIiNG6EPrjE8lYFpi9bcDKg8fGo04Uf/view"
+  },
+  {
+    "id": "cb008a30-d1cb-4e0d-9557-39797f65217b",
+    "name": "Microsoft Azure DevOps Engineer Expert (AZ-400)",
+    "authority": "LinkedIn Learning",
+    "date": "2024-01-13",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1QDpY8D6gKtSdWV15XUauSEpRHPgpBjr7/view"
+  },
+  {
+    "id": "215e3f43-29c7-4586-95e1-52b7f9065a11",
+    "name": "Take a More Creative Approach to",
+    "authority": "LinkedIn Learning",
+    "date": "2023-12-17",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1D6YO95A_IZV6tEf0V5ZMHaldrHCjiwcS/view"
+  },
+  {
+    "id": "850ee55e-5aeb-48be-8552-b4d298dc8696",
+    "name": "LinkedIn AI Academy AI-100: 1",
+    "authority": "LinkedIn Learning",
+    "date": "2024-02-11",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1q6sw9Imu2QWDivDmLme3SuYtAoEUgV2D/view"
+  },
+  {
+    "id": "efe6f5bc-ec1a-4136-aa35-7ee6bda24231",
+    "name": "LinkedIn AI Academy AI-100: 2",
+    "authority": "LinkedIn Learning",
+    "date": "2024-02-11",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1dMiJ-KkEL4z-ILojew1d3nwLB1aTUGRT/view"
+  },
+  {
+    "id": "7bd25c03-3923-4f2c-b2e0-efcc02fb1294",
+    "name": "Building RESTful APIs with Node.js",
+    "authority": "LinkedIn Learning",
+    "date": "2024-05-06",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/189w6OOahkC1IXMtLCGECJWgkgSQ76hTr/view"
+  },
+  {
+    "id": "eb6ff511-d8d1-4af8-bfd8-ad3cc1b86bb9",
+    "name": "Learning Node.js",
+    "authority": "LinkedIn Learning",
+    "date": "2022-02-21",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1v7wfUB5xbDAT-lOtgev93yW7cNhVX21Q/view"
+  },
+  {
+    "id": "0c76130c-c318-402d-8e67-34d74f22297f",
+    "name": "Learning End-to-End Testing with Jest",
+    "authority": "LinkedIn Learning",
+    "date": "2023-01-10",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/15mcahq8GB5Z_43yadiAsUaA2AlrKFfuA/view"
+  },
+  {
+    "id": "8eaafcf0-4870-41d1-a856-64b3c582e4a6",
+    "name": "Spring Boot 2.0 Essential Training",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1ZfrN8_FaeGSvgERDBwKXsyRYAsZZq_h_/view"
+  },
+  {
+    "id": "76a21083-9bf4-49f9-9840-256274ec5fe6",
+    "name": "Extending, Securing, and Dockerizing",
+    "authority": "LinkedIn Learning",
+    "date": "2021-07-07",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/18xCpEUKezjXniO1L-QI63C0FROAiIOZt/view"
+  },
+  {
+    "id": "7ae2d0c5-0837-4834-bf84-a4b3b2d84ae2",
+    "name": "React.js Essential Training",
+    "authority": "LinkedIn Learning",
+    "date": "2023-06-09",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1vpLc54C0al7eZjs6eLziLOzmuGyAM8Ob/view"
+  },
+  {
+    "id": "2888b536-1e49-4781-a427-fc99795ebad7",
+    "name": "Building Modern UIs with React",
+    "authority": "LinkedIn Learning",
+    "date": "2023-11-25",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1pbbdwJeyQhsDzbq3z0OAtid3iPu8I0QO/view"
+  },
+  {
+    "id": "24718083-93cd-4dc3-9988-da0d5a0f8081",
+    "name": "React: Design Patterns (2021)",
+    "authority": "LinkedIn Learning",
+    "date": "2022-05-18",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1CNwW_1ydme_ZuDmhk6ItUt28Y2RFJSfm/view"
+  },
+  {
+    "id": "76afde98-3f12-4abc-8548-db1437bbf162",
+    "name": "How Getting Curious Helps You",
+    "authority": "LinkedIn Learning",
+    "date": "2025-03-16",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1rPfcPYCViImgL413tIPngZsFOABtl-Qv/view"
+  },
+  {
+    "id": "ab922fe1-1edc-4a76-86a0-c497d37a8170",
+    "name": "Crafting Problem and Solution",
+    "authority": "LinkedIn Learning",
+    "date": "2025-03-16",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1HVk6K9OO3xmUeqtc3RTK_QNEHL37szlM/view"
+  },
+  {
+    "id": "2a7e9be7-dcc2-47a7-bb23-0987369fb164",
+    "name": "Customer Service: Problem Solving",
+    "authority": "LinkedIn Learning",
+    "date": "2025-03-16",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1yAbvxeS61DByaaK9F7ev5g9D5amYRJID/view"
+  },
+  {
+    "id": "acc26953-2169-497d-913d-d1417de7dc58",
+    "name": "Managing Self-Doubt to Tackle",
+    "authority": "LinkedIn Learning",
+    "date": "2025-03-16",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1ju0d2kgFfCzP0EdMH-E9ZXxdii_0Ke3k/view"
+  },
+  {
+    "id": "7edec06f-7586-4f6a-96fb-827e17965ada",
+    "name": "Project Management: Solving",
+    "authority": "LinkedIn Learning",
+    "date": "2025-03-17",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1yD2wOFfVAg_6XZ_H1ob09Ry0A9Fucj8_/view"
+  },
+  {
+    "id": "8e3405c1-4193-4e67-8998-6f5a7b6bda1b",
+    "name": "Learning Design Thinking: Lead",
+    "authority": "LinkedIn Learning",
+    "date": "2025-03-17",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1eukp9X8oPmyiyziftj4wCu3vqupCRwN7/view"
+  },
+  {
+    "id": "ee3b8c22-70ef-42b6-af74-91265ced80d6",
+    "name": "Leading with Innovation",
+    "authority": "LinkedIn Learning",
+    "date": "2025-03-17",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1bzE-EeXcfb4jIfZCA8UnbMsEKpSUNFdk/view"
+  },
+  {
+    "id": "1fed320c-671d-4b66-b771-d6614badad52",
+    "name": "Unlock Your Team's Creativity",
+    "authority": "LinkedIn Learning",
+    "date": "2025-03-17",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1NMtS-pkLyIgm5kGn_hVVjCI7IaQ88wKW/view"
+  },
+  {
+    "id": "f1fd4e85-7d56-48fd-876b-b69f38edd18f",
+    "name": "Creating GitHub Portfolios",
+    "authority": "LinkedIn Learning",
+    "date": "2025-02-03",
+    "image": "/img/logos/linkedin_learning.png",
+    "link": "http://linkedin.com/learning",
+    "proof": "https://drive.google.com/file/d/1LSOF1xV5OcpSHeazIEldfp_QClxFBtRL/view"
+  }
+]

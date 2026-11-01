@@ -1,0 +1,61 @@
+[
+  {
+    "id": "5b7edb31-75b8-43c9-9b35-5182ef512fad",
+    "name": "MuleSoft Certified Developer - Level 1",
+    "authority": "MuleSoft",
+    "date": "2020-12-05",
+    "credentialId": "MCD-L1",
+    "image": "/img/certifications/mcd-l1.png",
+    "link": "https://trailhead.salesforce.com/en/credentials/mulesoftdeveloperi",
+    "proof": "https://drive.google.com/file/d/1Vran6Lc7eB843nJf83fgAPiBFU4yiTQk/view?usp=drive_link"
+  },
+  {
+    "id": "62e4fddc-fd80-42ab-b5ed-86870d3f83c7",
+    "name": "MuleSoft Certified Developer - Level 1 (Maintenance)",
+    "authority": "MuleSoft",
+    "date": "2022-06-04",
+    "credentialId": "MCD-L1 (Maintenance)",
+    "image": "/img/certifications/mcd-l1.png",
+    "link": "https://trailhead.salesforce.com/en/credentials/mulesoftdeveloperi",
+    "proof": "https://drive.google.com/file/d/1yxDdGLc0pceGgSeosuUJrsz4GgTEPlfp/view?usp=sharing"
+  },
+  {
+    "id": "13df8f13-5d02-4fce-984f-6335f104bfa3",
+    "name": "AWS Certified Cloud Practitioner",
+    "authority": "Amazon Web Services",
+    "date": "2023-08-21",
+    "credentialId": "AWS-CP",
+    "image": "/img/certifications/aws-cp.png",
+    "link": "https://aws.amazon.com/certification/certified-cloud-practitioner/",
+    "proof": "https://drive.google.com/file/d/1Pbjdt3XGjdjRrDADzU3aN-R6WSt8qauq/view?usp=sharing"
+  },
+  {
+    "id": "ca80a7e8-e1fc-4fe5-8214-69ada59829bd",
+    "name": "MuleSoft Certified Developer - Level 2",
+    "authority": "MuleSoft",
+    "date": "2022-07-31",
+    "credentialId": "MCD-L2",
+    "image": "/img/certifications/mcd-l2.png",
+    "link": "https://trailhead.salesforce.com/en/credentials/mulesoftdeveloperii",
+    "proof": "https://drive.google.com/file/d/12Mj-N-uz8g6dMJAisgGDcAcijljt3NF8/view?usp=drive_link"
+  },
+  {
+    "id": "baf53636-3055-4522-9b08-dec7c41acc2e",
+    "name": "MuleSoft Certified Platform Architect - Level 1",
+    "authority": "MuleSoft",
+    "date": "2023-12-14",
+    "credentialId": "MCPA-L1",
+    "image": "/img/certifications/mcpa-l1.png",
+    "link": "https://trailhead.salesforce.com/en/credentials/mulesoftplatformarchitecti",
+    "proof": "https://drive.google.com/file/d/1fmR5DpyZw8s5JIvD9FM9Kc1q-pEeS0P_/view?usp=drive_link"
+  },
+  {
+    "id": "6f1f6a06-da1c-4451-8af2-2a67e8e6171b",
+    "name": "Edureka Certified Solution Architect (Microservices)",
+    "authority": "Edureka",
+    "date": "2021-09-08",
+    "credentialId": "XJ9QVA5R",
+    "image": "/img/certifications/edureka.png",
+    "proof": "https://drive.google.com/file/d/1GrH749RrkIeqtLHUp8mMGTpp0Sdw9ZLM/view?usp=sharing"
+  }
+]

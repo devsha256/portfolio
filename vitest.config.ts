@@ -9,11 +9,11 @@ export default defineConfig({
     projects: [
       {
         extends: true,
-        test: { name: 'ui', environment: 'jsdom', include: ['src/**/*.test.{ts,tsx}'], setupFiles: ['src/test/setup.ts'] },
+        test: { name: 'dom', environment: 'jsdom', include: ['src/**/*.test.tsx'], setupFiles: ['src/test/setup.ts'] },
       },
       {
         extends: true,
-        test: { name: 'server', environment: 'node', testTimeout: 20_000, hookTimeout: 20_000, include: ['api/**/*.test.ts', 'db/**/*.test.ts', 'dev/**/*.test.ts'] },
+        test: { name: 'node', environment: 'node', testTimeout: 20_000, hookTimeout: 20_000, include: ['**/*.test.ts'], exclude: ['node_modules/**'] },
       },
     ],
     coverage: { include: ['src/**', 'api/**', 'db/**'], exclude: ['**/*.test.*', 'src/test/**', 'db/migrations/**'] },
