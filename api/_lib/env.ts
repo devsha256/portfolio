@@ -15,8 +15,18 @@ export class EnvError extends Error {
 }
 
 /** Parses environment variables at the edge; call per request, never cache in module state. */
+/** Parses environment variables at the edge; call per request, never cache in module state. */
 export function readEnv(source: Record<string, string | undefined> = process.env): Env {
-  const result = EnvSchema.safeParse(source);
+  return parse(EnvSchema, source);
+}
+
+/** Scripts such as migrate and seed need only the database. */
+export function readDatabaseUrl(source: Record<string, string | undefined> = process.env): string {
+  return parse(EnvSchema.pick({ DATABASE_URL: true }), source).DATABASE_URL;
+}
+
+function parse<T>(schema: z.ZodType<T>, source: Record<string, string | undefined>): T {
+  const result = schema.safeParse(source);
   if (result.success) return result.data;
   const names = result.error.issues.map((issue) => issue.path.join('.')).join(', ');
   throw new EnvError(`Invalid or missing environment variables: ${names}`);

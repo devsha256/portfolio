@@ -106,3 +106,7 @@ The dark theme inverts to Harbor-deep `#0E2238` with a Fog foreground. The old t
 - `Markdown` (react-markdown + remark-gfm) and all admin pages are lazy-loaded chunks, to keep the public bundle lean.
 
 
+
+### Amendments during build
+- U2 (postgres skill): primary keys are `bigint generated always as identity`, not `uuid`. `status` is `text` with a CHECK constraint instead of an enum type. Projects have a natural key `UNIQUE (company, start_month)` so the seed can upsert. Why: the skill advises against random UUID keys (index fragmentation) and enums (hard to change).
+- U0 (approved): GitHub OAuth is a small `fetch`-based module because `arctic` is deprecated.
