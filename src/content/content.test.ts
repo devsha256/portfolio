@@ -1,4 +1,6 @@
-import { certifications, feedbacks, learning } from './index';
+import { certifications } from './certifications';
+import { feedbacks } from './feedbacks';
+import { learning } from './learning';
 
 describe('static credentials content', () => {
   it.each([

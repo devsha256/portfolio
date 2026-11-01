@@ -53,3 +53,17 @@ Each entry records what was done and why. Newest entries go last.
   - Why: every later page builds on these pieces.
   - Verified: 15 tests red→green (theme rules, toggle persistence plus `aria-pressed`, useApi ready/contract error/404/idle, skip link, nav order, 404 title); lint, typecheck and build; checked the accessibility tree in the browser.
 - **Test infra**: The DOM project runs its files sequentially in one jsdom (`isolate: false`, its own group order). Why: parallel jsdom workers timed out on startup on this machine.
+- **U12**: Added Home, About and Contact.
+  - Home: the hero is a source → transform → target connector with one pulse on load, then the name, tagline, summary with computed years, calls to action, and recent posts.
+  - About: summary, a résumé link, skills gathered from projects (most used first, each linking to `/projects?skill=`) and the certification cards.
+  - Contact: mailto and social links.
+  - Shared pieces: `PostList`, `Summary`, `FlowLine`, `lib/format`, `lib/summary`, `lib/api-schemas` and `lib/social`, which the footer reuses as well.
+  - Content port: kept your summary text verbatim, but fixed the old site's "{years} years" duplication ("6 Years 9 Months years").
+  - Why: these pages carry the existing site's content.
+  - Verified: tests red→green; lint, typecheck and build; screenshots at desktop (light) and mobile (dark).
+  - Fixes from the screenshots:
+    - The target node was matched by `:last-of-type`; it now uses a modifier class.
+    - The mobile nav scrolled sideways; it now wraps.
+    - The dev plugin turned StrictMode fetch aborts into a Vite error overlay; it now ignores aborted requests and skips body reads for GET.
+  - Fix from the bundle report: splitting the credential modules per kind took the About chunk from 102 KB to 4.9 KB.
+  - Test infra: explicit RTL `cleanup` in setup, because `isolate: false` registers auto-cleanup only once.
