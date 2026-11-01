@@ -1,1 +1,120 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import '@fontsource-variable/bricolage-grotesque';
+@import '@fontsource-variable/source-serif-4';
+@import '@fontsource-variable/source-serif-4/wght-italic.css';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Palette: an integration diagram drawn on fog. Harbor ink, steel annotations,
+ * one amber signal for connectors and focus, pine for "live" state.
+ * Amber is never used for text: it is below 3:1 on fog.
+ */
+:root {
+  --surface: #eef1f4;
+  --panel: #ffffff;
+  --ink: #12355b;
+  --muted: #5b6b7a;
+  --line: #c6d0da;
+  --signal: #e8a33d;
+  --focus: #a35f00;
+  --live: #2f7d5b;
+  color-scheme: light;
+}
+
+.dark {
+  --surface: #0e2238;
+  --panel: #12355b;
+  --ink: #eef1f4;
+  --muted: #a7b4c2;
+  --line: #2a4a6e;
+  --signal: #f0b85e;
+  --focus: #f0b85e;
+  --live: #6cc59b;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-surface: var(--surface);
+  --color-panel: var(--panel);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-signal: var(--signal);
+  --color-live: var(--live);
+  --font-sans: 'Bricolage Grotesque Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Source Serif 4 Variable', Georgia, serif;
+}
+
+@layer base {
+  html {
+    background: var(--surface);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    min-height: 100dvh;
+    font-size: 1.0625rem;
+    line-height: 1.55;
+  }
+
+  a {
+    text-decoration-color: var(--signal);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -4rem;
+    padding: 0.5rem 1rem;
+    background: var(--ink);
+    color: var(--surface);
+    z-index: 10;
+  }
+  .skip-link:focus {
+    top: 1rem;
+  }
+
+  .nav-link[aria-current='page'] {
+    text-decoration-line: underline;
+  }
+
+  .theme-toggle {
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--ink);
+  }
+  .theme-toggle__half {
+    fill: var(--surface);
+  }
+  .theme-toggle[aria-pressed='true'] .theme-toggle__half {
+    fill: var(--signal);
+  }
+}
