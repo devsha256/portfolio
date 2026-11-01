@@ -1,0 +1,11 @@
+node_modules/
+dist/
+coverage/
+reports/
+.stryker-tmp/
+.data/
+.env
+.env.local
+.env.*.local
+.vercel/
+*.log
