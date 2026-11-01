@@ -75,3 +75,12 @@ Each entry records what was done and why. Newest entries go last.
   - `mockApi` now also matches absolute URLs.
   - Why: this ports the old Projects and Repositories pages into one.
   - Verified: 8 new tests red→green (timeline order and periods, URL filter, forks excluded, GitHub fallback, cache hit, stale cache ignored, RepoList parses its own output). Lint, typecheck and build pass, and the live check returned real GitHub repos.
+- **U14**: Added the Blog list and Post page.
+  - Blog list: `?tag=` filter, Newer/Older pagination (10 per page) and an empty state. The pure helpers in `lib/blog.ts` fall back to page 1 when the query is invalid.
+  - Post page: date, reading time, tags and Markdown. Markdown is a lazy-loaded react-markdown + remark-gfm chunk (161 KB, 48 KB gzipped) that only post readers download. `skipHtml` drops raw HTML, and a test asserts that a `<script>` never renders.
+  - Reading styles: `.prose` in Source Serif at 68ch with 1.7 leading. No typography plugin dependency.
+  - An unknown or draft slug renders `NotFound what="post"`. `PostList` gained tag links.
+  - Why: blog rendering, phase 2 in CLAUDE.md.
+  - Verified: 11 tests red→green, plus lint, typecheck and build; the browser showed a real ported post.
+  - Recovery note: an interrupted session left only the two test files on disk. I recreated the rest from scratch.
+  - Test infra: the DOM test timeout is now 20 s, and the Markdown tests wait 15 s for the lazy chunk on a cold transform cache.
