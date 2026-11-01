@@ -23,3 +23,9 @@ Each entry records what was done and why. Newest entries go last.
   - Why: content goes in before the UI; a seed that can run twice is safe.
   - Verified: red → 7 green tests (seed twice gives 3 published posts and 7 projects, the original date is kept, the JSON parses), and `npm run db:seed` twice. The schema check caught one certification with a null link, so `link` is now optional.
 - **Test infra**: `*.test.ts` files run in the node environment and only `*.test.tsx` uses jsdom. Why: the jsdom worker timed out on startup, and pure tests don't need a DOM.
+- **U6**: Added the HTTP layer in `api/_lib/http.ts`:
+  - `respond()` maps `HttpError`→status, `ConflictError`→409 and anything else→a generic 500 with no leaked message.
+  - `parseWith`/`readJson` use zod and return 400 with flattened issues.
+  - `cachedJson` sends `s-maxage=300, stale-while-revalidate`.
+  - `pathParam` reads the dynamic segment.
+  Also added public handlers in `public-api.ts` and `serve()`, which builds the production context and reuses one DB connection per URL. Three Vercel functions now exist: `api/posts/index.ts`, `api/posts/[slug].ts` and `api/projects/index.ts`. Why: handlers only parse, call and respond, and CDN caching keeps Neon asleep on the free tier. Verified: 10 tests red→green (200 shape plus cache header, 400 for a bad limit or slug, 404 for a draft or missing slug, 500 hides details, DB reused).
