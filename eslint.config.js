@@ -15,6 +15,7 @@ export default tseslint.config(
       complexity: ['error', 10],
       'max-lines-per-function': ['error', { max: 40, skipBlankLines: true, skipComments: true }],
       '@typescript-eslint/consistent-type-assertions': ['error', { assertionStyle: 'never' }],
+      '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: '^_', argsIgnorePattern: '^_' }],
     },
   },
   {
