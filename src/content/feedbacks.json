@@ -1,0 +1,151 @@
+[
+  {
+    "id": "26ad777c-c271-4c96-a4b4-6b4586ecc10a",
+    "name": "iEvovle Learning History (TCS)",
+    "authority": "TCS",
+    "date": "2025-07-01",
+    "image": "/img/logos/tcs.png",
+    "link": "https://www.tcs.com/",
+    "proof": "https://drive.google.com/file/d/1chbV64zpZ1w22ALzJ7WpZQgQg7dOnYQd/view?usp=sharing"
+  },
+  {
+    "id": "e26d4381-43c2-404c-9f71-ee1753b014dc",
+    "name": "Service & Commitment Award (5 years)",
+    "authority": "TCS",
+    "date": "2025-02-24",
+    "credentialId": "service-and-commitment-5-years",
+    "image": "/img/logos/tcs.png",
+    "link": "https://www.tcs.com/",
+    "proof": "https://drive.google.com/file/d/1C7EHx43UYkV-SFe6v8wwnsmMXRv4_iS-/view?usp=sharing"
+  },
+  {
+    "id": "653cabab-5fcd-4093-ac9b-10eaaf3647eb",
+    "name": "Service & Commitment Award (3 years)",
+    "authority": "TCS",
+    "date": "2023-02-24",
+    "credentialId": "service-and-commitment-3-years",
+    "image": "/img/logos/tcs.png",
+    "link": "https://www.tcs.com/",
+    "proof": "https://drive.google.com/file/d/1UrngsoUXEr3f_5DrjJ5Fm0cEk9zsY98W/view?usp=sharing"
+  },
+  {
+    "id": "5ed13e01-d707-457b-8dd2-19ac861ce3c1",
+    "name": "Contextual Master (Life Science)",
+    "authority": "TCS",
+    "date": "2024-02-08",
+    "credentialId": "TCS Contextual Master, 2024",
+    "image": "/img/logos/tcs.png",
+    "link": "https://www.tcs.com/",
+    "proof": "https://drive.google.com/file/d/1qxQZNcBmN7hO4YOaJ2X_-xfnhb1jl6-H/view?usp=sharing"
+  },
+  {
+    "id": "f58091df-32c4-498a-b36d-33b45f10ce4f",
+    "name": "Star of the Quarter, [Q3-2022]",
+    "authority": "TCS",
+    "date": "2022-10-26",
+    "credentialId": "TCS Star of the Quarter, 2022",
+    "image": "/img/logos/tcs.png",
+    "link": "https://www.tcs.com/",
+    "proof": "https://drive.google.com/file/d/1PM_3P2QnBCNoL_HHInM_1Y1oDk9R8UcM/view?usp=sharing"
+  },
+  {
+    "id": "52f1bcd7-b3de-43fc-80b1-c683984488c8",
+    "name": "Star of the Month, [April-2022]",
+    "authority": "TCS",
+    "date": "2022-04-01",
+    "credentialId": "TCS Star of the Month, 04-2022",
+    "image": "/img/logos/tcs.png",
+    "link": "https://www.tcs.com/",
+    "proof": "https://drive.google.com/file/d/1ZhndibmOfqbQ7AKVraI1Jm_D1KugrJag/view?usp=sharing"
+  },
+  {
+    "id": "c63d250e-6a42-44e1-99df-57635998e1e7",
+    "name": "Smile(s) Award [August-2024]",
+    "authority": "TCS",
+    "date": "2024-08-05",
+    "credentialId": "TCS HR Rewards",
+    "image": "/img/logos/tcs.png",
+    "link": "https://www.tcs.com/",
+    "proof": "https://drive.google.com/file/d/11Te_GNqJL8fZ3MB0hMeoyRQDZ6yyEwS5/view?usp=sharing"
+  },
+  {
+    "id": "e6326f48-8c0e-4f38-8761-87850b6bcb58",
+    "name": "Best Team Award",
+    "authority": "TCS",
+    "date": "2023-06-23",
+    "credentialId": "TCS Best Team Award by Supervisor",
+    "image": "/img/logos/tcs.png",
+    "link": "https://www.tcs.com/",
+    "proof": "https://drive.google.com/file/d/1Z9KJAzYvaYSmsLKF4pGsUJa5pSqR5XMH/view?usp=sharing"
+  },
+  {
+    "id": "41fe0ff7-26bf-491b-b8c7-67ac43a311ca",
+    "name": "On the Spot (Team) Award",
+    "authority": "TCS",
+    "date": "2024-02-26",
+    "credentialId": "TCS On the Spot (Team) Award by Supervisor",
+    "image": "/img/logos/tcs.png",
+    "link": "https://www.tcs.com/",
+    "proof": "https://drive.google.com/file/d/1I6se8yq6NUxlSRUKJpmH37bsn8eJ3pLt/view?usp=sharing"
+  },
+  {
+    "id": "fc036288-297b-41c1-bfca-0711dc6da55a",
+    "name": "Elevate Wings1 Enthusiast",
+    "authority": "TCS",
+    "date": "2023-11-27",
+    "credentialId": "TCS Elevate Wings1 (Talent Development Team)",
+    "image": "/img/logos/tcs.png",
+    "link": "https://www.tcs.com/",
+    "proof": "https://drive.google.com/file/d/1f18QNdobNaus06f3MCYU9ebhyoez7vKr/view?usp=sharing"
+  },
+  {
+    "id": "8f938144-f208-4701-a0de-967298bc0241",
+    "name": "Team Member Feedback",
+    "authority": "TCS",
+    "date": "2025-01-03",
+    "credentialId": "TCS Gems Appreciation Feedback",
+    "image": "/img/logos/tcs.png",
+    "link": "https://www.tcs.com/",
+    "proof": "https://drive.google.com/file/d/1L_xsRXH_5nrapISkEGzERbiNxvA9odHZ/view?usp=sharing"
+  },
+  {
+    "id": "6d8037ba-326b-457e-a119-309efc25dfee",
+    "name": "Team Member Feedback",
+    "authority": "TCS",
+    "date": "2023-04-12",
+    "credentialId": "TCS Gems Appreciation Feedback",
+    "image": "/img/logos/tcs.png",
+    "link": "https://www.tcs.com/",
+    "proof": "https://drive.google.com/file/d/1kNEWjGB-q1h46VtOCR4wu7nqBhLsuiGK/view?usp=sharing"
+  },
+  {
+    "id": "9eb0db16-fde1-4e3c-a897-d21ccb6e5704",
+    "name": "360 Degree Feedback Enabler Certificate",
+    "authority": "TCS",
+    "date": "2023-09-28",
+    "credentialId": "TCS 360 Degree Feedback Team",
+    "image": "/img/logos/tcs.png",
+    "link": "https://www.tcs.com/",
+    "proof": "https://drive.google.com/file/d/1fACnWvwFK8gTZdoH2wYE4y-oDjer108e/view?usp=sharing"
+  },
+  {
+    "id": "bca4a0b5-4dc4-4d4f-a575-82fea4fc4854",
+    "name": "360 Degree Feedback Champion Award",
+    "authority": "TCS",
+    "date": "2023-10-09",
+    "credentialId": "TCS 360 Degree Feedback Team",
+    "image": "/img/logos/tcs.png",
+    "link": "https://www.tcs.com/",
+    "proof": "https://drive.google.com/file/d/1PNO1pA-sMMyRiIfglLjpPET4zVlCgW4w/view?usp=sharing"
+  },
+  {
+    "id": "e767b4a6-7183-4337-946b-ae72c29285d1",
+    "name": "Special Initiative Award",
+    "authority": "TCS",
+    "date": "2024-06-25",
+    "credentialId": "TCS HR Team Award",
+    "image": "/img/logos/tcs.png",
+    "link": "https://www.tcs.com/",
+    "proof": "https://drive.google.com/file/d/1vEzWXtwzr9hov2jwrdsCEm4K60PRNarb/view?usp=sharing"
+  }
+]

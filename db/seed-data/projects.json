@@ -1,0 +1,106 @@
+[
+  {
+    "title": "System Integration and Consulting for Enhanced Healthcare Solutions",
+    "company": "Accenture",
+    "startMonth": "2025-07-01",
+    "endMonth": null,
+    "description": "Led a large-scale migration project, where I was responsible for reading and analyzing Boomi code to design and architect the migration of nine modules to the MuleSoft platform. Successfully executed the migration without supervision, demonstrating a rapid learning curve by mastering Boomi code and design patterns within three weeks. Strategically designed the new MuleSoft integrations to minimize license usage and reduce customer costs, aligning with the client's demand for a cost-effective solution.",
+    "skills": [
+      "MuleSoft Anypoint Platform",
+      "DataWeave",
+      "Boomi",
+      "MUnit",
+      "Salesforce",
+      "SAP"
+    ]
+  },
+  {
+    "title": "System Integration and Consulting for Enhanced Healthcare Solutions",
+    "company": "Tata Consultancy Services",
+    "startMonth": "2024-07-01",
+    "endMonth": "2025-07-01",
+    "description": "I have been working as a MuleSoft consultant, designing multiple services for the customer’s healthcare scientific search projects. I helped connect various systems through API-led connectivity, enabling new business capabilities with MuleSoft technologies. I also served as a code reviewer and contributed to architectural discussions to solve challenges and improve the customer’s systems.",
+    "skills": [
+      "MuleSoft Anypoint Platform",
+      "DataWeave",
+      "Karate",
+      "MUnit",
+      "GitHub Actions"
+    ]
+  },
+  {
+    "title": "CloudHub VPC Migration and API Automation for MuleSoft",
+    "company": "Tata Consultancy Services",
+    "startMonth": "2024-01-01",
+    "endMonth": "2024-06-01",
+    "description": "I worked as a MuleSoft platform architect to help a customer migrate their CloudHub applications from their company’s VPC to their parent company’s VPC. This project involved analyzing over 100 existing APIs and planning their migration to the new VPC. The customer also wanted to fix minor issues during the migration. I wrote automated JavaScript scripts in Postman to pull API details from CloudHub 1.0 using the CloudHub REST API and migrated them with these scripts. The migration included Mule APIs, Anypoint MQs, and Azure DevOps pipeline scripts.",
+    "skills": [
+      "MuleSoft Anypoint Platform",
+      "MuleSoft CloudHub",
+      "Azure DevOps Services",
+      "Maven",
+      "JavaScript",
+      "Postman"
+    ]
+  },
+  {
+    "title": "Real-Time Data Integration for Veeva Using SDK and Anypoint MQ",
+    "company": "Tata Consultancy Services",
+    "startMonth": "2023-10-01",
+    "endMonth": "2023-12-01",
+    "description": "I worked as a Java developer to create a Veeva SDK extension that subscribed to real-time events in the Veeva system and transferred them to Anypoint MQ using the Veeva Java SDK, Spark Queue, and Anypoint MQ REST API. This project allowed customers to receive data almost in real time, freeing them from the need to write ETLs for scheduled data extraction. The SDK extension I helped deploy made this possible by enabling seamless event streaming from Veeva.",
+    "skills": [
+      "Java",
+      "Veeva Vault",
+      "Veeva SDK",
+      "Anypoint MQ",
+      "MuleSoft Anypoint Platform"
+    ]
+  },
+  {
+    "title": "Event-Driven API for Health Sciences Data Integration with MuleSoft and Oracle",
+    "company": "Tata Consultancy Services",
+    "startMonth": "2023-03-01",
+    "endMonth": "2023-10-01",
+    "description": "I worked on building an event-driven API using MuleSoft to create API-led connectivity. This project allowed consumers to send health sciences data related to authentication and authorization to an Oracle database in transactional mode. I helped establish a reliable, loss-preventing data pattern using RAML and Anypoint MQ. Additionally, I contributed to a metadata-driven MuleSoft API to synchronize tables from Oracle to Snowflake, preventing transactional operations from overloading Snowflake. This API offered a no-code approach for users to sync database tables by simply availing some metadata of their source and target objects. I also created complex Snowflake views using SQL Scripting that used the MD5 hash function to compare snapshots, extracting delta data based on timestamp differences to fix any missed data from API integrations with the source table which contains history data.",
+    "skills": [
+      "SQL Scripting",
+      "Snowflake",
+      "Oracle Database",
+      "RAML",
+      "Anypoint MQ"
+    ]
+  },
+  {
+    "title": "On-Demand Schema Extraction and Data Migration using AWS, MuleSoft and Snowflake",
+    "company": "Tata Consultancy Services",
+    "startMonth": "2021-08-01",
+    "endMonth": "2023-02-01",
+    "description": "I worked on a project to build an ETL pipeline using AWS S3, Lambda, and Snowflake, with languages like JavaScript, Python, and DataWeave. This pipeline could pull schema from Veeva CRM on demand and generate SQL DDL to replicate and synchronise schemas on Snowflake. I created several Snowflake stored procedures using JavaScript to manage different ETL stages, including extracting files from the S3 bucket using dynamic COPY INTO statements, validating JSON data using dynamically generated SQL queries, and migrating data to a canonical table format. As a co-designer and developer, I wrote test cases to ensure quality and helped write scripts for deploying the Mule project to CloudHub 1.0 with Azure DevOps. This project set a new standard for replication, with automated table correction and specialized error reporting, earning multiple accolades and recognition.",
+    "skills": [
+      "JavaScript",
+      "Python",
+      "AWS S3",
+      "AWS Lambda",
+      "Snowflake Cloud",
+      "RAML",
+      "DataWeave",
+      "MuleSoft Anypoint Platform",
+      "Azure DevOps Services"
+    ]
+  },
+  {
+    "title": "Migrating OSB Monolith to Mulesoft Microservices",
+    "company": "Tata Consultancy Services",
+    "startMonth": "2020-07-01",
+    "endMonth": "2021-08-01",
+    "description": "I worked as a new MuleSoft developer on a project migrating from an Oracle Service Bus (OSB) monolith to MuleSoft micro-services. My role involved studying and understanding the existing OSB setup and then converting it into MuleSoft APIs, transforming them into micro-services. I used DataWeave to create complex transformations, ensuring the business output met the required SLA. I also wrote a DataWeave library that could locate a specific key within nested JSON objects without needing to know its exact path. Throughout the project, I handled various data types in transformation, including XML & JSON.",
+    "skills": [
+      "MuleSoft Anypoint Platform",
+      "RAML",
+      "DataWeave",
+      "XML Schema Definition (XSD)",
+      "JSON"
+    ]
+  }
+]
