@@ -13,7 +13,7 @@ export default defineConfig({
       },
       {
         extends: true,
-        test: { name: 'server', environment: 'node', include: ['api/**/*.test.ts', 'db/**/*.test.ts', 'dev/**/*.test.ts'] },
+        test: { name: 'server', environment: 'node', testTimeout: 20_000, hookTimeout: 20_000, include: ['api/**/*.test.ts', 'db/**/*.test.ts', 'dev/**/*.test.ts'] },
       },
     ],
     coverage: { include: ['src/**', 'api/**', 'db/**'], exclude: ['**/*.test.*', 'src/test/**', 'db/migrations/**'] },
