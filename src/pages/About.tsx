@@ -1,12 +1,12 @@
 import { Link } from 'react-router';
 import { Seo } from '../components/Seo';
+import { CredentialCard } from '../components/CredentialCard';
 import { Summary } from '../components/Summary';
 import { certifications } from '../content/certifications';
 import { collectSkills } from '../domain/project';
 import { SITE } from '../domain/site';
 import { useApi } from '../hooks/useApi';
 import { ProjectList } from '../lib/api-schemas';
-import { formatDate } from '../lib/format';
 
 function Skills() {
   const projects = useApi('/api/projects', ProjectList);
@@ -32,14 +32,8 @@ function Certifications() {
   return (
     <ul className="grid gap-4 sm:grid-cols-2">
       {certifications.map((cert) => (
-        <li key={cert.id} className="flex items-center gap-4 rounded-lg border border-line bg-panel p-4">
-          <img src={cert.image} alt="" width="56" height="56" loading="lazy" className="h-14 w-14 object-contain" />
-          <div>
-            <p className="font-semibold leading-snug">{cert.name}</p>
-            <p className="text-sm text-muted">
-              {cert.authority}, {formatDate(cert.date)}
-            </p>
-          </div>
+        <li key={cert.id}>
+          <CredentialCard credential={cert} />
         </li>
       ))}
     </ul>
