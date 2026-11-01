@@ -1,5 +1,5 @@
 import { openDatabase, type Database } from '../../db/client';
-import { readDatabaseUrl, readEnv } from './env';
+import { readAppUrl, readDatabaseUrl, readEnv } from './env';
 import { json, respond, type Context, type Handler } from './http';
 
 /**
@@ -18,7 +18,7 @@ function databaseFor(url: string): Promise<Database> {
 
 async function productionContext(): Promise<Context> {
   const { db } = await databaseFor(readDatabaseUrl());
-  return { db, env: () => readEnv(), now: () => new Date(), fetch: (input, init) => fetch(input, init) };
+  return { db, env: () => readEnv(), appUrl: () => readAppUrl(), now: () => new Date(), fetch: (input, init) => fetch(input, init) };
 }
 
 /** Adapts a handler to a Vercel Web-standard function export (`export const GET = serve(...)`). */

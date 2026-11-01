@@ -69,6 +69,17 @@ describe('GET /api/feed/:kind', () => {
     expect(res.headers.get('content-type')).toContain('application/xml');
   });
 
+  it('does not need the OAuth secrets', async () => {
+    const ctx = await testContext({
+      env: () => {
+        throw new Error('GITHUB_CLIENT_SECRET missing');
+      },
+    });
+    const res = await respond(feed, new Request('http://localhost/api/feed/sitemap'), ctx);
+    expect(res.status).toBe(200);
+    expect(await res.text()).toContain('<loc>http://localhost:5173/projects</loc>');
+  });
+
   it('returns 404 for another kind', async () => {
     expect((await respond(feed, new Request('http://localhost/api/feed/atom'), await testContext())).status).toBe(404);
   });

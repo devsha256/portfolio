@@ -1,4 +1,4 @@
-import { EnvError, readDatabaseUrl, readEnv } from './env';
+import { EnvError, readAppUrl, readDatabaseUrl, readEnv } from './env';
 
 const valid = {
   DATABASE_URL: 'pglite://memory',
@@ -35,5 +35,11 @@ describe('readDatabaseUrl', () => {
 
   it('fails with a named error when missing', () => {
     expect(() => readDatabaseUrl({})).toThrow(/DATABASE_URL/);
+  });
+});
+
+describe('readAppUrl', () => {
+  it('needs only APP_URL and normalises it', () => {
+    expect(readAppUrl({ APP_URL: 'https://x.dev/' })).toBe('https://x.dev');
   });
 });

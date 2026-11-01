@@ -42,7 +42,7 @@ export const feed: Handler = async (request, ctx) => {
   const format = FORMATS.get(pathParam(request));
   if (!format) throw notFound('Feed');
   const { items } = await listPublished(ctx.db, { page: 1, limit: FEED_LIMIT });
-  const appUrl = ctx.env().APP_URL;
+  const appUrl = ctx.appUrl();
   return new Response(format.build(items, appUrl), {
     headers: { 'content-type': format.type, 'cache-control': FEED_CACHE },
   });

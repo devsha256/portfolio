@@ -15,9 +15,13 @@ export class EnvError extends Error {
 }
 
 /** Parses environment variables at the edge; call per request, never cache in module state. */
-/** Parses environment variables at the edge; call per request, never cache in module state. */
 export function readEnv(source: Record<string, string | undefined> = process.env): Env {
   return parse(EnvSchema, source);
+}
+
+/** Public endpoints (feeds) need only the canonical origin, never the OAuth secrets. */
+export function readAppUrl(source: Record<string, string | undefined> = process.env): string {
+  return parse(EnvSchema.pick({ APP_URL: true }), source).APP_URL;
 }
 
 /** Scripts such as migrate and seed need only the database. */
