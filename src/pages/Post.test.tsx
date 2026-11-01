@@ -9,6 +9,11 @@ import Post from './Post';
 const MARKDOWN_WAIT = { timeout: 15_000 };
 const body = ['## Recursive mapping', '', 'Use `mapObject`.', '', '<script>alert("x")</script>', '', '| a | b |', '|---|---|', '| 1 | 2 |'].join('\n');
 
+// Warm the lazy Markdown chunk once so a cold transform does not count against individual tests.
+beforeAll(async () => {
+  await import('../components/Markdown');
+}, 60_000);
+
 function renderPost(slug: string) {
   return renderAt(
     <Routes>
