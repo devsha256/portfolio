@@ -84,3 +84,12 @@ Each entry records what was done and why. Newest entries go last.
   - Verified: 11 tests red→green, plus lint, typecheck and build; the browser showed a real ported post.
   - Recovery note: an interrupted session left only the two test files on disk. I recreated the rest from scratch.
   - Test infra: the DOM test timeout is now 20 s, and the Markdown tests wait 15 s for the lazy chunk on a cold transform cache.
+- **U15**: Added the Credentials page.
+  - Tabs: WAI-ARIA `Tabs` (arrow keys, Home and End, roving tabindex) for certifications, feedback and learning history, with the selected tab kept in `?tab=`.
+  - Learning history: word search across name and issuer (pure `lib/credentials.ts`) with a live "Showing N of M" count and "Show 20 more" paging.
+  - Shared card: `CredentialCard` (Verify and Certificate links) is now also used by About.
+  - Why: this ports the old /credentials/* pages into one route.
+  - Verified: 8 tests red→green (default tab, keyboard navigation and focus, tab from the URL, search narrowing to 1 of 1, paging to 40), plus lint, typecheck and build. The route chunk is 100 KB (26 KB gzipped) because it holds all 330 entries, and only this page loads it.
+  - Fixes:
+    - The browser showed the LinkedIn Learning logo vanishing on the dark card, so logos now sit on a white tile.
+    - `Tabs` exceeded the 40-line limit, so it is split into `TabList` and the panel.
