@@ -1,4 +1,4 @@
-import { EnvError, readEnv } from './env';
+import { EnvError, readDatabaseUrl, readEnv } from './env';
 
 const valid = {
   DATABASE_URL: 'pglite://memory',
@@ -25,5 +25,15 @@ describe('readEnv', () => {
 
   it('strips a trailing slash from APP_URL', () => {
     expect(readEnv({ ...valid, APP_URL: 'https://x.dev/' }).APP_URL).toBe('https://x.dev');
+  });
+});
+
+describe('readDatabaseUrl', () => {
+  it('needs only DATABASE_URL', () => {
+    expect(readDatabaseUrl({ DATABASE_URL: 'pglite://memory' })).toBe('pglite://memory');
+  });
+
+  it('fails with a named error when missing', () => {
+    expect(() => readDatabaseUrl({})).toThrow(/DATABASE_URL/);
   });
 });
