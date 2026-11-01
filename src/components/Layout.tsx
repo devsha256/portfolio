@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { Link, NavLink, Outlet } from 'react-router';
 import { PUBLIC_PAGES, SITE } from '../domain/site';
+import { SOCIAL_LINKS } from '../lib/social';
 import { ThemeToggle } from './ThemeToggle';
 
 const NAV_PAGES = PUBLIC_PAGES.filter((page) => page.path !== '/');
@@ -16,8 +17,8 @@ function Header() {
         </svg>
         {SITE.name}
       </Link>
-      <nav aria-label="Main" className="order-3 w-full overflow-x-auto sm:order-none sm:w-auto sm:flex-1">
-        <ul className="flex gap-5 text-[0.95rem] whitespace-nowrap">
+      <nav aria-label="Main" className="order-3 w-full sm:order-none sm:w-auto sm:flex-1">
+        <ul className="flex flex-wrap gap-x-5 gap-y-2 text-[0.95rem]">
           {NAV_PAGES.map((page) => (
             <li key={page.path}>
               <NavLink to={page.path} className="nav-link no-underline hover:underline">
@@ -35,13 +36,7 @@ function Header() {
 }
 
 function Footer() {
-  const links = [
-    { href: `mailto:${SITE.email}`, label: 'Email' },
-    { href: SITE.links.github, label: 'GitHub' },
-    { href: SITE.links.linkedin, label: 'LinkedIn' },
-    { href: SITE.links.youtube, label: 'YouTube' },
-    { href: '/rss.xml', label: 'RSS' },
-  ];
+  const links = [{ href: `mailto:${SITE.email}`, label: 'Email' }, ...SOCIAL_LINKS, { href: '/rss.xml', label: 'RSS' }];
   return (
     <footer className="mx-auto mt-24 max-w-5xl border-t border-line px-5 py-8 text-sm text-muted">
       <ul className="flex flex-wrap gap-x-6 gap-y-2">

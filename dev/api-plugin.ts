@@ -20,11 +20,15 @@ async function toWebRequest(req: IncomingMessage): Promise<Request> {
   for (const [key, value] of Object.entries(req.headers)) {
     if (value !== undefined) headers.set(key, Array.isArray(value) ? value.join(', ') : value);
   }
+  const method = req.method ?? 'GET';
+  const body = method === 'GET' || method === 'HEAD' ? undefined : await readBody(req);
+  return new Request(`http://${req.headers.host ?? 'localhost'}${req.url ?? '/'}`, { method, headers, body });
+}
+
+async function readBody(req: IncomingMessage): Promise<Uint8Array<ArrayBuffer>> {
   const chunks: Buffer[] = [];
   for await (const chunk of req) chunks.push(Buffer.from(chunk));
-  const method = req.method ?? 'GET';
-  const body = method === 'GET' || method === 'HEAD' ? undefined : Buffer.concat(chunks);
-  return new Request(`http://${req.headers.host ?? 'localhost'}${req.url ?? '/'}`, { method, headers, body });
+  return new Uint8Array(Buffer.concat(chunks));
 }
 
 async function sendWebResponse(res: ServerResponse, response: Response): Promise<void> {
@@ -61,7 +65,11 @@ export function apiPlugin(): Plugin {
           const handler = await loadHandler(server, file, req.method ?? 'GET');
           if (!handler) return sendWebResponse(res, new Response('Method not allowed', { status: 405 }));
           await sendWebResponse(res, await handler(await toWebRequest(req)));
-        })().catch(next);
+        })().catch((error: unknown) => {
+          // A client that navigated away or aborted its fetch is not a server error.
+          if (req.destroyed || res.writableEnded) return;
+          next(error);
+        });
       });
     },
   };

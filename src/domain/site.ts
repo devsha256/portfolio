@@ -6,6 +6,11 @@ export const SITE = {
     'MuleSoft integration and architecture consultant. Projects, certifications and notes on DataWeave, CloudHub and API-led design.',
   tagline: 'MuleSoft · Integration · Architecture',
   careerStart: '2020-02-24',
+  /** Ported verbatim from summaries.yml (the duplicated "years" after {years} is dropped). */
+  summary: [
+    `With over {years} of experience specializing in API integration, particularly with technologies like MuleSoft, I have developed strong skills in software development. Along the way, I've earned industry-recognized certifications, including those in MuleSoft Development and Anypoint Platform Architecture. While MuleSoft has been central to my career, my experience extends beyond it. In my current organization, I am also an "Elevated Wings1 Certified - Full-Stack JavaScript Developer (MERN)," a program that deepened my expertise in integration patterns using JavaScript.`,
+    `Automation has helped drive to my success, especially in testing—be it automated testing. I'm well-versed in various architectural patterns, including Pub/Sub and streaming pipelines. Happy to discuss potential projects!`,
+  ],
   email: 'dev.hsaddam@gmail.com',
   github: 'devsha256',
   links: {
