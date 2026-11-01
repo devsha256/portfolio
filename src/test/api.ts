@@ -3,7 +3,7 @@ export function mockApi(routes: Record<string, unknown>) {
   return vi.spyOn(globalThis, 'fetch').mockImplementation(async (input) => {
     const url = new URL(String(input instanceof Request ? input.url : input), 'http://localhost');
     const path = url.pathname + url.search;
-    const match = Object.keys(routes).find((prefix) => path.startsWith(prefix));
+    const match = Object.keys(routes).find((prefix) => path.startsWith(prefix) || url.href.startsWith(prefix));
     return match ? Response.json(routes[match]) : Response.json({ error: 'Not found' }, { status: 404 });
   });
 }

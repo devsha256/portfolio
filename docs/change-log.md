@@ -67,3 +67,11 @@ Each entry records what was done and why. Newest entries go last.
     - The dev plugin turned StrictMode fetch aborts into a Vite error overlay; it now ignores aborted requests and skips body reads for GET.
   - Fix from the bundle report: splitting the credential modules per kind took the About chunk from 102 KB to 4.9 KB.
   - Test infra: explicit RTL `cleanup` in setup, because `isolate: false` registers auto-cleanup only once.
+- **U13**: Added the Projects page.
+  - The timeline hangs off one amber connector, which fits because the projects are a real sequence.
+  - A labelled `<select>` filters by skill through `?skill=`, with a "Show all projects" link and an empty state when nothing matches.
+  - Each project's skill tags link to their filter.
+  - "Open source" lists your public, non-fork GitHub repos. `useApi` gained an optional `cacheKey` (sessionStorage, with the cached value re-validated by zod), so the 60-requests-per-hour anonymous GitHub limit is used at most once per browser session. If GitHub fails, the page shows a profile link.
+  - `mockApi` now also matches absolute URLs.
+  - Why: this ports the old Projects and Repositories pages into one.
+  - Verified: 8 new tests red→green (timeline order and periods, URL filter, forks excluded, GitHub fallback, cache hit, stale cache ignored, RepoList parses its own output). Lint, typecheck and build pass, and the live check returned real GitHub repos.
