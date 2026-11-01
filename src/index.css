@@ -201,3 +201,30 @@
     color: var(--surface);
   }
 }
+
+/* Project timeline: the projects are a real sequence, so they hang off one connector. */
+@layer components {
+  .timeline {
+    border-left: 2px solid var(--signal);
+    margin-left: 0.4375rem;
+  }
+  .timeline > li {
+    position: relative;
+    padding: 0 0 3rem 2rem;
+  }
+  .timeline > li::before {
+    content: '';
+    position: absolute;
+    left: -0.5625rem;
+    top: 0.3rem;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid var(--signal);
+    border-radius: 999px;
+    background: var(--surface);
+  }
+  .timeline > li:first-child::before {
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+}

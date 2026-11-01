@@ -39,3 +39,26 @@ describe('useApi', () => {
     expect(result.current.status).toBe('loading');
   });
 });
+
+describe('useApi with a session cache', () => {
+  beforeEach(() => {
+    sessionStorage.clear();
+  });
+
+  it('stores a successful response and serves the next mount from the cache', async () => {
+    const spy = mockFetch({ name: 'ok' });
+    const first = renderHook(() => useApi('/api/thing', Thing, { cacheKey: 'thing' }));
+    await waitFor(() => expect(first.result.current.status).toBe('ready'));
+    const second = renderHook(() => useApi('/api/thing', Thing, { cacheKey: 'thing' }));
+    expect(second.result.current).toEqual({ status: 'ready', data: { name: 'ok' } });
+    expect(spy).toHaveBeenCalledTimes(1);
+  });
+
+  it('ignores a cached value that no longer matches the contract', async () => {
+    sessionStorage.setItem('thing', JSON.stringify({ name: 7 }));
+    const spy = mockFetch({ name: 'fresh' });
+    const { result } = renderHook(() => useApi('/api/thing', Thing, { cacheKey: 'thing' }));
+    await waitFor(() => expect(result.current).toEqual({ status: 'ready', data: { name: 'fresh' } }));
+    expect(spy).toHaveBeenCalledTimes(1);
+  });
+});
