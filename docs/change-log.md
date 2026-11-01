@@ -29,3 +29,9 @@ Each entry records what was done and why. Newest entries go last.
   - `cachedJson` sends `s-maxage=300, stale-while-revalidate`.
   - `pathParam` reads the dynamic segment.
   Also added public handlers in `public-api.ts` and `serve()`, which builds the production context and reuses one DB connection per URL. Three Vercel functions now exist: `api/posts/index.ts`, `api/posts/[slug].ts` and `api/projects/index.ts`. Why: handlers only parse, call and respond, and CDN caching keeps Neon asleep on the free tier. Verified: 10 tests red→green (200 shape plus cache header, 400 for a bad limit or slug, 404 for a draft or missing slug, 500 hides details, DB reused).
+- **U7**: Added auth.
+  - `session.ts`: a 32-byte random token goes in an HttpOnly, SameSite=Lax cookie (Secure on https) for 7 days. The DB stores only its SHA-256 hash, and expired rows are purged at login.
+  - `github-oauth.ts`: hand-rolled with `fetch` (arctic is deprecated). It requests no scopes and validates GitHub's responses with zod.
+  - `auth.ts`: `requireAdmin` is the single server-side gate. It returns 401 with no session, 403 when the login is no longer allowlisted, and 403 for a cross-origin write (Origin ≠ APP_URL). `api/auth/[action].ts` handles login (state cookie and 302), callback (state must match, allowlist compared case-insensitively), me (no-store) and logout (idempotent).
+  - Why: admin access must be enforced on the server, and a stolen DB row must not be a usable cookie.
+  - Verified: 20 tests red→green, with GitHub mocked through `ctx.fetch`. The review found that `/api/auth/toString` would resolve to a prototype method. I wrote a failing test, then fixed it with a `Map` lookup.
