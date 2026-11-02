@@ -19,7 +19,7 @@ describe('GET /api/posts', () => {
   it('returns a cached page of published summaries', async () => {
     const res = await respond(listPublishedPosts, url('/api/posts?limit=5'), ctx);
     expect(res.status).toBe(200);
-    expect(res.headers.get('cache-control')).toMatch(/s-maxage=\d+/);
+    expect(res.headers.get('vercel-cdn-cache-control')).toMatch(/^max-age=\d+/);
     const body = await res.json();
     expect(body).toMatchObject({ page: 1, limit: 5, total: 1, items: [{ slug: 'live' }] });
   });
@@ -52,7 +52,7 @@ describe('GET /api/posts/:slug', () => {
 describe('GET /api/projects', () => {
   it('returns cached projects', async () => {
     const res = await respond(listPublicProjects, url('/api/projects'), ctx);
-    expect(res.headers.get('cache-control')).toMatch(/s-maxage/);
+    expect(res.headers.get('vercel-cdn-cache-control')).toMatch(/^max-age=\d+/);
     expect(await res.json()).toMatchObject({ items: [{ company: 'C', startMonth: '2025-01-01' }] });
   });
 });

@@ -1,10 +1,10 @@
 import type { PostSummary } from '../../src/domain/contracts';
 import { PUBLIC_PAGES, SITE } from '../../src/domain/site';
-import type { Handler } from './http';
+import { cdnCached, type Handler } from './http';
 import { listPublished } from './posts-repo';
 
 const FEED_LIMIT = 50;
-const FEED_CACHE = 'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400';
+const FEED_CDN_SECONDS = 3600;
 
 const ESCAPES: Record<string, string> = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;' };
 const escapeXml = (text: string) => text.replace(/[&<>"']/g, (char) => ESCAPES[char] ?? char);
@@ -42,7 +42,7 @@ type Build = (posts: readonly PostSummary[], appUrl: string) => string;
 function feedHandler(build: Build, type: string): Handler {
   return async (_request, ctx) => {
     const { items } = await listPublished(ctx.db, { page: 1, limit: FEED_LIMIT });
-    return new Response(build(items, ctx.appUrl()), { headers: { 'content-type': type, 'cache-control': FEED_CACHE } });
+    return new Response(build(items, ctx.appUrl()), { headers: { 'content-type': type, ...cdnCached(FEED_CDN_SECONDS) } });
   };
 }
 
