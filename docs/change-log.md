@@ -153,3 +153,12 @@ Each entry records what was done and why. Newest entries go last.
   - `0002_credentials_proof_key` only swaps a constraint; no data changes. `down/0002` restores the old key and intentionally fails if rows that share a name and date exist, rather than dropping any. Down scripts run newest first.
   - Updated the spec and design.
   - Verified: tests red→green (a duplicate certificate is rejected by `credentials_kind_proof_key`, a shared name and date is allowed, and the down 0002 → down 0001 → migrate round trip works). Migrated the local DB twice; lint and typecheck pass.
+- **A3**: Seeded the admin content into the database.
+  - Moved the credential JSON with `git mv` to `db/seed-data/credentials/`. The bundled `src/content` loaders read it from there until A7 switches the pages to the API, and `tsconfig.app.json` includes the folder until then.
+  - `db/seeder.ts` maps the JSON `date` field to `issuedOn`, validates every row with `CredentialInput`, and upserts on `(kind, proof)`.
+  - The profile is inserted from `DEFAULT_PROFILE` only when missing (`ON CONFLICT DO NOTHING`). Why: rerunning the seed must never overwrite profile text edited in the admin. Posts, projects and credentials keep the existing upsert-and-refresh behaviour.
+  - Split the seeder into small functions to stay within the 40-line limit.
+  - Why: unit A3 of the admin-content plan.
+  - Verified: 4 tests red (no rows) → green (6, 15 and 309 rows plus 1 profile after two runs; MCD-L2 mapped field by field; profile equals `DEFAULT_PROFILE`; an admin-edited tagline survives a reseed).
+  - Ran `npm run db:seed` twice on local PGlite with the same counts. The credentials table is 352 kB with indexes, negligible against Neon's 0.5 GB.
+  - Final checks: lint, typecheck and build pass (the Credentials chunk is unchanged at 100 KB until A7), and 249 of 249 tests pass.
