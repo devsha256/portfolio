@@ -15,7 +15,7 @@
       "runtimeExecutable": "node",
       "runtimeArgs": [
         "-e",
-        "process.env.DATABASE_URL='pglite://./.data/preview'; import('vite').then((v) => v.createServer({ server: { port: 5180, strictPort: true } })).then((s) => s.listen())"
+        "process.env.DATABASE_URL='pglite://./.data/preview'; process.env.APP_URL='http://localhost:5180'; import('vite').then((v) => v.createServer({ server: { port: 5180, strictPort: true } })).then((s) => s.listen())"
       ],
       "port": 5180
     }

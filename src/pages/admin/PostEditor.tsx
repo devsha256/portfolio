@@ -1,6 +1,7 @@
-import { lazy, Suspense, useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router';
 import { Field, inputClass } from '../../components/Field';
+import { PreviewField } from '../../components/PreviewField';
 import type { PostDto, PostStatus } from '../../domain/contracts';
 import { slugify } from '../../domain/slug';
 import { useApi } from '../../hooks/useApi';
@@ -10,7 +11,6 @@ import { postDraftFrom, toPostInput, type FieldErrors, type PostDraft } from '..
 import { PostDetail } from '../../lib/api-schemas';
 import { LoadNotice, NoticeLine } from './LoadNotice';
 
-const Markdown = lazy(() => import('../../components/Markdown'));
 type Change = (field: keyof PostDraft, value: string | boolean) => void;
 
 function usePostEditor(post: PostDto | undefined) {
@@ -52,30 +52,6 @@ function usePostEditor(post: PostDto | undefined) {
   return { draft, saved, change, save, setStatus, remove, ...state };
 }
 
-function BodyField({ value, error, onChange }: { value: string; error: string | undefined; onChange: (value: string) => void }) {
-  const [preview, setPreview] = useState(false);
-  return (
-    <div className="space-y-2">
-      <button type="button" aria-pressed={preview} onClick={() => setPreview(!preview)} className="text-sm underline">
-        Preview
-      </button>
-      {preview ? (
-        <Suspense fallback={<p className="text-muted">Loading preview…</p>}>
-          <div className="rounded-md border border-line p-4">
-            <Markdown>{value}</Markdown>
-          </div>
-        </Suspense>
-      ) : (
-        <Field id="bodyMd" label="Body (Markdown)" error={error}>
-          {(control) => (
-            <textarea {...control} rows={18} value={value} onChange={(e) => onChange(e.target.value)} className={`${inputClass} font-mono text-sm`} />
-          )}
-        </Field>
-      )}
-    </div>
-  );
-}
-
 function PostFields({ draft, errors, change }: { draft: PostDraft; errors: FieldErrors; change: Change }) {
   const text = (field: 'title' | 'slug' | 'excerpt' | 'tags', label: string, hint?: string) => (
     <Field id={field} label={label} error={errors[field]} {...(hint && { hint })}>
@@ -92,7 +68,7 @@ function PostFields({ draft, errors, change }: { draft: PostDraft; errors: Field
         <input type="checkbox" checked={draft.featured} onChange={(e) => change('featured', e.target.checked)} />
         Feature this post
       </label>
-      <BodyField value={draft.bodyMd} error={errors.bodyMd} onChange={(value) => change('bodyMd', value)} />
+      <PreviewField id="bodyMd" label="Body (Markdown)" rows={18} value={draft.bodyMd} error={errors.bodyMd} onChange={(value) => change('bodyMd', value)} />
     </div>
   );
 }

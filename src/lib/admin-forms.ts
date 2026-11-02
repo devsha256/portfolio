@@ -3,6 +3,7 @@ import {
   CredentialInput,
   PostInput,
   ProjectInput,
+  SiteProfile,
   type CredentialDto,
   type CredentialKind,
   type PostDto,
@@ -84,4 +85,9 @@ export function credentialDraftFrom(credential: CredentialDto | undefined, kind:
 /** Empty optional inputs become null, so saving an edit can clear them. */
 export function toCredentialInput(draft: CredentialDraft): Parsed<CredentialInput> {
   return parse(CredentialInput, { ...draft, credentialId: draft.credentialId || null, link: draft.link || null });
+}
+
+/** The profile form edits the contract's own string fields, so the draft is the profile itself. */
+export function toProfileInput(draft: SiteProfile): Parsed<SiteProfile> {
+  return parse(SiteProfile, draft);
 }
