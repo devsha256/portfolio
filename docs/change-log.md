@@ -131,3 +131,12 @@ Each entry records what was done and why. Newest entries go last.
   - `npm audit --omit=dev` finds 0 vulnerabilities. There are 20 moderate advisories, all in dev-only tooling: esbuild (drizzle-kit), minimatch (ESLint 9) and qs (Stryker). The only fixes npm offers are breaking downgrades.
   - The final run caught two type/lint errors in the new test files: an unused import, and an untyped `db.execute` result, now replaced by a typed Drizzle select.
 - **Mutation gate skipped (your decision)**: Stryker was stopped from outside the session at 498 of 575 mutants (85 survived) and was not rerun. `stryker.config.json` and `npm run quality:mutation` are ready to resume.
+
+## admin-content
+
+- **A1**: Added the contracts in `src/domain/contracts.ts`.
+  - Credentials: `CredentialKind` (certification, feedback, learning), `CredentialInput` (plain messages "Enter a name", "Enter the issuer", "Pick an image under /img"; optional nullable ID and verify link), `CredentialPatch` (partial with no defaults, so a patch never resets unsent fields, and it can clear the link with `null`) and `CredentialDto` (`id`, plus nulls as the DB returns them).
+  - Profile: `SiteProfile` (tagline 1–120, ISO career start, summary 1–4000 that must contain `{years}`, About intro up to 8000 and possibly empty) and `YEARS_TOKEN`.
+  - Moved `SITE.tagline`, `SITE.careerStart` and `SITE.summary` into a typed `DEFAULT_PROFILE` in `src/domain/site.ts`. The summary is one Markdown string with paragraphs separated by blank lines. `summaryParagraphs` and the Home tagline read from it.
+  - Why: the design keeps these fields only as the fallback and seed source, so the text stays in one place.
+  - Verified: 15 new tests red (exports missing) → green. The existing Home test pins the rendered summary through the refactor. Lint, typecheck and 237 of 237 tests pass.

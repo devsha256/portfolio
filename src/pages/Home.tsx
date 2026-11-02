@@ -3,7 +3,7 @@ import { FlowLine } from '../components/FlowLine';
 import { PostList } from '../components/PostList';
 import { Seo } from '../components/Seo';
 import { Summary } from '../components/Summary';
-import { SITE } from '../domain/site';
+import { DEFAULT_PROFILE, SITE } from '../domain/site';
 import { useApi } from '../hooks/useApi';
 import { PostPage } from '../lib/api-schemas';
 
@@ -27,7 +27,7 @@ export default function Home() {
       <section className="pt-12 sm:pt-20">
         <FlowLine />
         <h1 className="text-[clamp(3rem,10vw,6.5rem)] leading-[0.95] font-bold tracking-[-0.03em]">{SITE.name}</h1>
-        <p className="mt-4 text-xl text-muted">{SITE.tagline}</p>
+        <p className="mt-4 text-xl text-muted">{DEFAULT_PROFILE.tagline}</p>
         <Summary className="mt-10" />
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <Link to="/projects" className="button button--primary">

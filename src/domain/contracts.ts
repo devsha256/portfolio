@@ -75,3 +75,47 @@ export type ProjectDto = z.infer<typeof ProjectDto>;
 export function pageOf<T extends z.ZodType>(item: T) {
   return z.object({ items: z.array(item), page: z.number().int(), limit: z.number().int(), total: z.number().int() });
 }
+
+export const CREDENTIAL_KINDS = ['certification', 'feedback', 'learning'] as const;
+export const CredentialKind = z.enum(CREDENTIAL_KINDS);
+export type CredentialKind = z.infer<typeof CredentialKind>;
+
+const CredentialFields = z.object({
+  kind: CredentialKind,
+  name: z.string().trim().min(1, 'Enter a name').max(300),
+  authority: z.string().trim().min(1, 'Enter the issuer').max(120),
+  issuedOn: z.iso.date(),
+  credentialId: z.string().trim().max(120).nullable().optional(),
+  image: z.string().regex(/^\/img\//, 'Pick an image under /img'),
+  link: z.url().nullable().optional(),
+  proof: z.url(),
+});
+
+export const CredentialInput = CredentialFields;
+export type CredentialInput = z.infer<typeof CredentialInput>;
+
+/** No defaults, so a patch never resets fields the caller did not send. */
+export const CredentialPatch = CredentialFields.partial();
+export type CredentialPatch = z.infer<typeof CredentialPatch>;
+
+export const CredentialDto = CredentialFields.extend({
+  id: z.number().int(),
+  credentialId: z.string().nullable(),
+  link: z.url().nullable(),
+});
+export type CredentialDto = z.infer<typeof CredentialDto>;
+
+export const YEARS_TOKEN = '{years}';
+
+export const SiteProfile = z.object({
+  tagline: z.string().trim().min(1, 'Enter a tagline').max(120),
+  careerStart: z.iso.date(),
+  summaryMd: z
+    .string()
+    .trim()
+    .min(1, 'Write the summary')
+    .max(4000)
+    .refine((text) => text.includes(YEARS_TOKEN), `Keep ${YEARS_TOKEN} where the experience should appear`),
+  aboutMd: z.string().trim().max(8000),
+});
+export type SiteProfile = z.infer<typeof SiteProfile>;
