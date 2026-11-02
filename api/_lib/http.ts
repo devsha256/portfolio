@@ -23,7 +23,19 @@ export class HttpError extends Error {
   }
 }
 
-const PUBLIC_CACHE = 'public, max-age=0, s-maxage=300, stale-while-revalidate=86400';
+const PUBLIC_CDN_SECONDS = 300;
+
+/**
+ * The CDN may keep and serve a copy (free-tier guard), but browsers must revalidate every time:
+ * `stale-while-revalidate` in Cache-Control would let a browser show the old text right after an admin edit.
+ * Vercel's edge reads Vercel-CDN-Cache-Control and does not forward it to browsers.
+ */
+export function cdnCached(seconds: number): Record<string, string> {
+  return {
+    'cache-control': 'public, max-age=0, must-revalidate',
+    'vercel-cdn-cache-control': `max-age=${seconds}, stale-while-revalidate=86400`,
+  };
+}
 
 export function json(data: unknown, init: ResponseInit = {}): Response {
   return Response.json(data, init);
@@ -31,7 +43,7 @@ export function json(data: unknown, init: ResponseInit = {}): Response {
 
 /** Public reads are cached at the CDN so most visits never wake the database (free-tier guard). */
 export function cachedJson(data: unknown): Response {
-  return json(data, { headers: { 'cache-control': PUBLIC_CACHE } });
+  return json(data, { headers: cdnCached(PUBLIC_CDN_SECONDS) });
 }
 
 export function noContent(headers?: HeadersInit): Response {

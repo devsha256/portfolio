@@ -31,7 +31,7 @@ describe('GET /api/content/credentials', () => {
     await createCredential(ctx.db, credential({ kind: 'certification', name: 'Cert' }));
     const res = await get(ctx, '/api/content/credentials?kind=learning');
     expect(res.status).toBe(200);
-    expect(res.headers.get('cache-control')).toMatch(/s-maxage=\d+/);
+    expect(res.headers.get('vercel-cdn-cache-control')).toMatch(/^max-age=\d+/);
     const body = await res.json();
     expect(body.items.map((item: { name: string }) => item.name)).toEqual(['Newer', 'Older']);
   });
@@ -45,7 +45,7 @@ describe('GET /api/content/credentials', () => {
 describe('GET /api/content/profile', () => {
   it('serves the ported default on a fresh database, cached', async () => {
     const res = await get(ctx, '/api/content/profile');
-    expect(res.headers.get('cache-control')).toMatch(/s-maxage=\d+/);
+    expect(res.headers.get('vercel-cdn-cache-control')).toMatch(/^max-age=\d+/);
     expect(await res.json()).toEqual(DEFAULT_PROFILE);
   });
 
@@ -62,7 +62,7 @@ describe('GET /api/content/{rss,sitemap,robots}', () => {
     await createPost(ctx.db, { slug: 'secret-draft', title: 'D', excerpt: 'e', bodyMd: 'b', tags: [], featured: false });
     const res = await get(ctx, '/api/content/rss');
     expect(res.headers.get('content-type')).toContain('application/rss+xml');
-    expect(res.headers.get('cache-control')).toMatch(/s-maxage/);
+    expect(res.headers.get('vercel-cdn-cache-control')).toMatch(/^max-age=\d+/);
     const body = await res.text();
     expect(body).toContain('/blog/live');
     expect(body).not.toContain('secret-draft');
