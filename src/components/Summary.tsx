@@ -1,11 +1,12 @@
 import { useState } from 'react';
+import type { SiteProfile } from '../domain/contracts';
 import { summaryParagraphs } from '../lib/summary';
 
-export function Summary({ className = '' }: { className?: string }) {
-  const [paragraphs] = useState(() => summaryParagraphs(new Date()));
+export function Summary({ profile, className = '' }: { profile: SiteProfile; className?: string }) {
+  const [now] = useState(() => new Date());
   return (
     <div className={`max-w-prose space-y-4 text-lg leading-relaxed ${className}`}>
-      {paragraphs.map((text) => (
+      {summaryParagraphs(profile, now).map((text) => (
         <p key={text}>{text}</p>
       ))}
     </div>

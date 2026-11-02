@@ -1,8 +1,9 @@
-import type { Credential } from '../content/schema';
+import type { CredentialDto, CredentialKind } from '../domain/contracts';
+import { useCredentials } from '../hooks/useCredentials';
 import { formatDate } from '../lib/format';
 
 /** Issuer logo, name, issuer and date, with links to verify and to the certificate copy. */
-export function CredentialCard({ credential }: { credential: Credential }) {
+function CredentialCard({ credential }: { credential: CredentialDto }) {
   return (
     <div className="flex h-full items-center gap-4 rounded-lg border border-line bg-panel p-4">
       {/* Issuer logos are drawn for light backgrounds, so they sit on a white tile in both themes. */}
@@ -17,7 +18,7 @@ export function CredentialCard({ credential }: { credential: Credential }) {
       <div className="min-w-0">
         <p className="font-semibold leading-snug">{credential.name}</p>
         <p className="text-sm text-muted">
-          {credential.authority}, <time dateTime={credential.date}>{formatDate(credential.date)}</time>
+          {credential.authority}, <time dateTime={credential.issuedOn}>{formatDate(credential.issuedOn)}</time>
         </p>
         <p className="mt-1 flex gap-4 text-sm">
           {credential.link && <a href={credential.link}>Verify</a>}
@@ -26,4 +27,25 @@ export function CredentialCard({ credential }: { credential: Credential }) {
       </div>
     </div>
   );
+}
+
+export function CredentialGrid({ items }: { items: readonly CredentialDto[] }) {
+  return (
+    <ul className="grid gap-4 sm:grid-cols-2">
+      {items.map((item) => (
+        <li key={item.id}>
+          <CredentialCard credential={item} />
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/** Loads one kind and renders its grid, with plain loading and failure messages. */
+export function CredentialsOf({ kind, label }: { kind: CredentialKind; label: string }) {
+  const credentials = useCredentials(kind);
+  if (credentials.status === 'loading') return <p className="text-muted">Loading {label}…</p>;
+  if (credentials.status !== 'ready') return <p>The {label} could not be loaded. Refresh to try again.</p>;
+  if (credentials.data.items.length === 0) return <p className="text-muted">No {label} yet.</p>;
+  return <CredentialGrid items={credentials.data.items} />;
 }

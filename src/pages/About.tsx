@@ -1,12 +1,15 @@
+import { lazy, Suspense } from 'react';
 import { Link } from 'react-router';
+import { CredentialsOf } from '../components/CredentialCard';
 import { Seo } from '../components/Seo';
-import { CredentialCard } from '../components/CredentialCard';
 import { Summary } from '../components/Summary';
-import { certifications } from '../content/certifications';
 import { collectSkills } from '../domain/project';
 import { SITE } from '../domain/site';
 import { useApi } from '../hooks/useApi';
+import { useProfile } from '../hooks/useProfile';
 import { ProjectList } from '../lib/api-schemas';
+
+const Markdown = lazy(() => import('../components/Markdown'));
 
 function Skills() {
   const projects = useApi('/api/projects', ProjectList);
@@ -28,24 +31,26 @@ function Skills() {
   );
 }
 
-function Certifications() {
+/** Optional Markdown above the summary; the Markdown chunk only loads when there is something to render. */
+function Intro({ markdown }: { markdown: string }) {
+  if (!markdown) return null;
   return (
-    <ul className="grid gap-4 sm:grid-cols-2">
-      {certifications.map((cert) => (
-        <li key={cert.id}>
-          <CredentialCard credential={cert} />
-        </li>
-      ))}
-    </ul>
+    <Suspense fallback={null}>
+      <div className="mt-8">
+        <Markdown>{markdown}</Markdown>
+      </div>
+    </Suspense>
   );
 }
 
 export default function About() {
+  const profile = useProfile();
   return (
     <>
       <Seo title="About" path="/about" />
       <h1 className="pt-12 text-5xl font-bold tracking-tight">About</h1>
-      <Summary className="mt-8" />
+      <Intro markdown={profile.aboutMd} />
+      <Summary profile={profile} className="mt-8" />
       <p className="mt-6">
         <a href={SITE.links.resume}>Download my résumé</a>
       </p>
@@ -57,7 +62,7 @@ export default function About() {
       </section>
       <section className="mt-16">
         <h2 className="mb-5 text-2xl font-semibold tracking-tight">Certifications</h2>
-        <Certifications />
+        <CredentialsOf kind="certification" label="certifications" />
         <p className="mt-5">
           <Link to="/credentials">All credentials, feedback and learning history</Link>
         </p>

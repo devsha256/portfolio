@@ -1,37 +1,23 @@
 import { useState } from 'react';
 import { useSearchParams } from 'react-router';
-import { CredentialCard } from '../components/CredentialCard';
+import { CredentialGrid, CredentialsOf } from '../components/CredentialCard';
 import { Seo } from '../components/Seo';
 import { Tabs } from '../components/Tabs';
-import { certifications } from '../content/certifications';
-import { feedbacks } from '../content/feedbacks';
-import { learning } from '../content/learning';
-import type { Credential } from '../content/schema';
+import type { CredentialDto } from '../domain/contracts';
+import { useCredentials } from '../hooks/useCredentials';
 import { searchCredentials } from '../lib/credentials';
 
 const PAGE = 20;
 const TABS = [
-  { id: 'certifications', label: 'Certifications', items: certifications },
-  { id: 'feedback', label: 'Feedback', items: feedbacks },
-  { id: 'learning', label: 'Learning history', items: learning },
+  { id: 'certifications', label: 'Certifications', kind: 'certification' },
+  { id: 'feedback', label: 'Feedback', kind: 'feedback' },
+  { id: 'learning', label: 'Learning history', kind: 'learning' },
 ] as const;
 
-function CredentialGrid({ items }: { items: readonly Credential[] }) {
-  return (
-    <ul className="grid gap-4 sm:grid-cols-2">
-      {items.map((item) => (
-        <li key={item.id}>
-          <CredentialCard credential={item} />
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-function LearningHistory() {
+function LearningSearch({ items }: { items: readonly CredentialDto[] }) {
   const [query, setQuery] = useState('');
   const [shown, setShown] = useState(PAGE);
-  const matches = searchCredentials(learning, query);
+  const matches = searchCredentials(items, query);
   const visible = matches.slice(0, shown);
   return (
     <>
@@ -61,6 +47,13 @@ function LearningHistory() {
   );
 }
 
+function LearningHistory() {
+  const learning = useCredentials('learning');
+  if (learning.status === 'loading') return <p className="text-muted">Loading learning history…</p>;
+  if (learning.status !== 'ready') return <p>The learning history could not be loaded. Refresh to try again.</p>;
+  return <LearningSearch items={learning.data.items} />;
+}
+
 export default function Credentials() {
   const [searchParams, setSearchParams] = useSearchParams();
   const selected = TABS.find((tab) => tab.id === searchParams.get('tab')) ?? TABS[0];
@@ -75,7 +68,11 @@ export default function Credentials() {
         selected={selected.id}
         onSelect={(id) => setSearchParams(id === TABS[0].id ? {} : { tab: id }, { replace: true })}
       >
-        {selected.id === 'learning' ? <LearningHistory /> : <CredentialGrid items={selected.items} />}
+        {selected.kind === 'learning' ? (
+          <LearningHistory />
+        ) : (
+          <CredentialsOf key={selected.kind} kind={selected.kind} label={selected.label.toLowerCase()} />
+        )}
       </Tabs>
     </>
   );
