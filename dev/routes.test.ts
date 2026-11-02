@@ -4,7 +4,7 @@ const files = [
   'admin/posts/[id].ts',
   'admin/posts/index.ts',
   'auth/[action].ts',
-  'feed/[kind].ts',
+  'content/[kind].ts',
   'posts/[slug].ts',
   'posts/index.ts',
   'posts/featured.ts',
@@ -31,12 +31,12 @@ describe('resolveRoute', () => {
 
 describe('applyRewrites', () => {
   const rewrites = [
-    { source: '/rss.xml', destination: '/api/feed/rss' },
+    { source: '/rss.xml', destination: '/api/content/rss' },
     { source: '/((?!api/).*)', destination: '/index.html' },
   ];
 
   it('applies exact-path rewrites', () => {
-    expect(applyRewrites('/rss.xml', rewrites)).toBe('/api/feed/rss');
+    expect(applyRewrites('/rss.xml', rewrites)).toBe('/api/content/rss');
   });
 
   it('leaves pattern rewrites to Vite (the SPA fallback)', () => {

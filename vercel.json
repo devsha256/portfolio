@@ -1,9 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
-    { "source": "/rss.xml", "destination": "/api/feed/rss" },
-    { "source": "/sitemap.xml", "destination": "/api/feed/sitemap" },
-    { "source": "/robots.txt", "destination": "/api/feed/robots" },
+    { "source": "/rss.xml", "destination": "/api/content/rss" },
+    { "source": "/sitemap.xml", "destination": "/api/content/sitemap" },
+    { "source": "/robots.txt", "destination": "/api/content/robots" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
   "headers": [
