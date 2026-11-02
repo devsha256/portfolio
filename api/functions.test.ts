@@ -2,7 +2,7 @@ import { readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
 const API_DIR = fileURLToPath(new URL('.', import.meta.url));
-const METHODS = ['GET', 'POST', 'PATCH', 'DELETE'];
+const METHODS = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'];
 const VERCEL_HOBBY_FUNCTION_LIMIT = 12;
 
 const functionFiles = readdirSync(API_DIR, { recursive: true, encoding: 'utf8' })
