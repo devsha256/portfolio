@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router';
 import { mockApi } from '../../test/api';
 import { postSummary } from '../../test/fixtures';
 import { renderAt } from '../../test/render';
-import { AdminLayout } from './AdminLayout';
+import AdminLayout from './AdminLayout';
 import PostEditor from './PostEditor';
 
 const draft = { ...postSummary({ id: 7, slug: 'draft-post', title: 'Draft post', status: 'draft', publishedAt: null }), bodyMd: 'Body' };

@@ -38,7 +38,7 @@ function AdminBar({ login }: { login: string }) {
 }
 
 /** UX gate only: the server checks the session on every admin request regardless. */
-export function AdminLayout() {
+export default function AdminLayout() {
   const me = useApi('/api/auth/me', Me);
   return (
     <>
@@ -57,4 +57,3 @@ export function AdminLayout() {
   );
 }
 
-export default AdminLayout;

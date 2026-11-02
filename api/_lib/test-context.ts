@@ -1,7 +1,7 @@
 import { testDb } from '../../db/test-db';
 import type { Context } from './http';
 
-export const TEST_ENV = {
+const TEST_ENV = {
   DATABASE_URL: 'pglite://memory',
   GITHUB_CLIENT_ID: 'client-id',
   GITHUB_CLIENT_SECRET: 'client-secret',

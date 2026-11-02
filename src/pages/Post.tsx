@@ -7,7 +7,7 @@ import { readingMinutes } from '../domain/post';
 import { useApi } from '../hooks/useApi';
 import { PostDetail } from '../lib/api-schemas';
 import { formatDate } from '../lib/format';
-import { NotFound } from './NotFound';
+import NotFound from './NotFound';
 
 const Markdown = lazy(() => import('../components/Markdown'));
 

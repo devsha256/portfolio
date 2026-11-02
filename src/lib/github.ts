@@ -17,4 +17,3 @@ const Repo = z.object({
 export const RepoList = z
   .array(Repo)
   .transform((repos) => repos.filter((repo) => !repo.fork).sort((a, b) => b.updated_at.localeCompare(a.updated_at)));
-export type Repo = z.infer<typeof Repo>;
