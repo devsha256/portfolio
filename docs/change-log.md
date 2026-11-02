@@ -195,3 +195,26 @@ Each entry records what was done and why. Newest entries go last.
   - Why: unit A7. The bundled JSON is gone and the admin's edits now reach the site.
   - Verified: tests red → green (fallback while loading; API tagline and summary replace it; About certifications and Markdown intro from the API; credentials tab rows, keyboard tabs, search, paging over 45 entries and a failure message; `summaryParagraphs`). Lint, typecheck, build and 287 of 287 tests pass, and knip is clean. The Credentials chunk went from 100 KB to 3.4 KB (target under 10 KB); About is 2.3 KB and Home 1.6 KB.
   - Screenshots: taken on a separate server (port 5180) using its own seeded database (`.data/preview`, added as the `portfolio-preview-db` launch config), so your server keeps sole use of `.data/dev`. I confirmed from Vite's `loadEnv` source that the explicit `DATABASE_URL` wins over `.env.local`. Desktop light: learning history "Showing 20 of 309" with no horizontal overflow. Mobile dark: About shows 6 certifications from the API with logos, and Edureka correctly has no Verify link.
+- **A8 (/05-ui)**: Added the admin credentials screens.
+  - The admin nav gains "Credentials". The Profile entry waits for A9, so the nav never links to a page that doesn't exist yet.
+  - `/admin/credentials` (`CredentialsAdmin`):
+    - Tabs show a count each ("Learning history (309)").
+    - Search and "Show more" paging work within the selected tab.
+    - Every card has an Edit link named for its credential.
+    - "New credential" carries the selected tab's kind.
+  - `/admin/credentials/:id` and `/new?kind=` (`CredentialEditor`):
+    - Kind is a radio group, preselected from the link.
+    - Fields: name, issuer, issued on (date), optional credential ID, optional verify link, certificate link.
+    - The image is picked from a select of the known `public/img` files, with a live preview tile.
+    - Save shows "Saved". Delete asks for confirmation.
+    - Errors use the contract's messages next to the field, and nothing is sent. A 409 shows as an alert.
+  - Reuse:
+    - The public learning-history search moved into `SearchableCredentials`, now shared by the public page and every admin tab.
+    - `CredentialCard` and `CredentialGrid` take an optional edit link.
+    - The tab definitions moved to `CREDENTIAL_TABS`/`tabFrom` in `lib/credentials.ts`, used by both pages.
+  - Logic in `lib`: `KNOWN_IMAGES` (`lib/images.ts`) and `credentialDraftFrom`/`toCredentialInput` (empty optional inputs are sent as `null`, so an edit can clear them).
+  - Why: unit A8.
+  - Verified: tests red → green. Draft conversion; a known-image test that uses Vite's `import.meta.glob` on `public/img`, so it fails if a listed file is missing or a new one isn't offered; and UI tests for tab counts, search, edit links, the new link's kind, contract errors with no request, the preview following the select, the null optionals on create, the 409 alert, delete with confirmation, and cancel keeping the credential.
+  - Lint and typecheck caught a redundant alt text ("Preview of the selected image", now "Selected logo") and a Node `fs` import in a browser-side test (replaced by the glob).
+  - Final checks: lint, typecheck, build, 309+ tests and knip all pass. Chunks: CredentialEditor 3.9 KB, CredentialsAdmin 1.2 KB.
+  - Screenshots: on the isolated preview server (port 5180, `.data/preview`), using a session created directly in that database. Your `.data/dev` and server were not touched, and the temporary token files are deleted. Desktop showed the real counts 6/15/309, "Showing 20 of 309" and Edit links. Mobile: the editor loads record 22 prefilled (kind learning, date, image) with no horizontal overflow, and the image preview has loaded beside a 263 px select.

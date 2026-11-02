@@ -1,4 +1,5 @@
-import { postDraftFrom, projectDraftFrom, toPostInput, toProjectInput } from './admin-forms';
+import { KNOWN_IMAGES } from './images';
+import { credentialDraftFrom, postDraftFrom, projectDraftFrom, toCredentialInput, toPostInput, toProjectInput } from './admin-forms';
 
 describe('post drafts', () => {
   it('starts empty for a new post', () => {
@@ -37,5 +38,36 @@ describe('project drafts', () => {
   it('flags an end month before the start month on the end field', () => {
     const result = toProjectInput({ ...draft, endMonth: '2024-01' });
     expect(result.ok ? null : result.errors.endMonth).toMatch(/End month/);
+  });
+});
+
+describe('credential drafts', () => {
+  const draft = {
+    kind: 'learning' as const,
+    name: 'Git Essentials',
+    authority: 'Udemy',
+    issuedOn: '2021-07-08',
+    credentialId: '',
+    image: '/img/logos/udemy.png',
+    link: '',
+    proof: 'https://drive.google.com/file/d/x/view',
+  };
+
+  it('starts a new credential with the requested kind and the first known image', () => {
+    expect(credentialDraftFrom(undefined, 'feedback')).toMatchObject({ kind: 'feedback', name: '', image: KNOWN_IMAGES[0] });
+  });
+
+  it('sends empty optional fields as null so an edit can clear them', () => {
+    expect(toCredentialInput(draft)).toEqual({ ok: true, input: { ...draft, credentialId: null, link: null } });
+  });
+
+  it('round-trips an existing credential, showing nulls as empty inputs', () => {
+    const dto = { ...draft, id: 4, credentialId: null, link: null };
+    expect(credentialDraftFrom(dto, 'certification')).toEqual(draft);
+  });
+
+  it('reports the contract messages by field', () => {
+    const result = toCredentialInput({ ...draft, name: '', link: 'not a url' });
+    expect(result.ok ? null : result.errors).toMatchObject({ name: 'Enter a name', link: expect.any(String) });
   });
 });
