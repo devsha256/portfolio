@@ -17,6 +17,7 @@ const ProjectsAdmin = lazy(() => import('./pages/admin/ProjectsAdmin'));
 const ProjectEditor = lazy(() => import('./pages/admin/ProjectEditor'));
 const CredentialsAdmin = lazy(() => import('./pages/admin/CredentialsAdmin'));
 const CredentialEditor = lazy(() => import('./pages/admin/CredentialEditor'));
+const ProfileEditor = lazy(() => import('./pages/admin/ProfileEditor'));
 
 export function AppRoutes() {
   return (
@@ -36,6 +37,7 @@ export function AppRoutes() {
           <Route path="projects/:id" element={<ProjectEditor />} />
           <Route path="credentials" element={<CredentialsAdmin />} />
           <Route path="credentials/:id" element={<CredentialEditor />} />
+          <Route path="profile" element={<ProfileEditor />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Route>

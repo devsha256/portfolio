@@ -31,6 +31,9 @@ function AdminBar({ login }: { login: string }) {
         <NavLink to="/admin/credentials" className="nav-link">
           Credentials
         </NavLink>
+        <NavLink to="/admin/profile" className="nav-link">
+          Profile
+        </NavLink>
       </nav>
       <p className="ml-auto text-sm text-muted">Signed in as {login}</p>
       <button type="button" className="text-sm underline" onClick={() => void signOut().then(() => navigate('/'))}>

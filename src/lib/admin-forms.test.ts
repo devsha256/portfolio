@@ -1,5 +1,6 @@
 import { KNOWN_IMAGES } from './images';
-import { credentialDraftFrom, postDraftFrom, projectDraftFrom, toCredentialInput, toPostInput, toProjectInput } from './admin-forms';
+import { credentialDraftFrom, postDraftFrom, projectDraftFrom, toCredentialInput, toPostInput, toProfileInput, toProjectInput } from './admin-forms';
+import { DEFAULT_PROFILE } from '../domain/site';
 
 describe('post drafts', () => {
   it('starts empty for a new post', () => {
@@ -69,5 +70,16 @@ describe('credential drafts', () => {
   it('reports the contract messages by field', () => {
     const result = toCredentialInput({ ...draft, name: '', link: 'not a url' });
     expect(result.ok ? null : result.errors).toMatchObject({ name: 'Enter a name', link: expect.any(String) });
+  });
+});
+
+describe('profile drafts', () => {
+  it('accepts the ported default', () => {
+    expect(toProfileInput(DEFAULT_PROFILE)).toEqual({ ok: true, input: DEFAULT_PROFILE });
+  });
+
+  it('reports a summary without {years} on that field', () => {
+    const result = toProfileInput({ ...DEFAULT_PROFILE, summaryMd: 'Ten years.' });
+    expect(result.ok ? null : result.errors).toEqual({ summaryMd: 'Keep {years} where the experience should appear' });
   });
 });

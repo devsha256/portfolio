@@ -19,7 +19,7 @@ async function failure(response: Response): Promise<Failure> {
 
 /** Admin writes. The browser adds the Origin header the server checks; the session cookie rides along. */
 export async function sendJson<T extends z.ZodType>(
-  method: 'POST' | 'PATCH',
+  method: 'POST' | 'PUT' | 'PATCH',
   path: string,
   body: unknown,
   schema: T,
