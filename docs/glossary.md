@@ -7,3 +7,5 @@
 - **AdminSession**: a server-side login record. The cookie holds a random token, and the DB stores only its SHA-256 hash.
 - **Allowlist**: the one GitHub login allowed to administer the site, set by `ADMIN_GITHUB_LOGIN`.
 - **Skill slug**: a URL-safe form of a skill name (`MuleSoft Anypoint Platform` → `mulesoft-anypoint-platform`), derived and never stored.
+- **SiteProfile**: the single editable row (`site_profile`) holding the Home tagline, career start, summary (with a `{years}` placeholder) and About introduction. `DEFAULT_PROFILE` is its fallback and seed.
+- **CredentialKind**: `certification`, `feedback` or `learning`. Since admin-content, credentials live in the `credentials` table.

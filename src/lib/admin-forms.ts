@@ -16,7 +16,7 @@ const splitList = (text: string) =>
     .filter(Boolean);
 
 /** First message per field, keyed by the contract's field name. */
-export function firstErrors(error: z.ZodError): FieldErrors {
+function firstErrors(error: z.ZodError): FieldErrors {
   const errors: FieldErrors = {};
   for (const issue of error.issues) {
     const field = String(issue.path[0] ?? 'form');

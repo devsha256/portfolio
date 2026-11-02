@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-export type ControlProps = { id: string; 'aria-invalid': boolean; 'aria-describedby': string | undefined };
+type ControlProps = { id: string; 'aria-invalid': boolean; 'aria-describedby': string | undefined };
 
 type FieldProps = {
   id: string;

@@ -112,3 +112,22 @@ Each entry records what was done and why. Newest entries go last.
   - `index.html` gained `og:site_name` and `theme-color`. The favicon (connector glyph), the 404 page and per-page meta were already in place.
   - Why: SEO-ready per CLAUDE.md.
   - Verified: 2 tests red→green, and the live dev server serves text/plain with the right lines.
+- **U18 (/07-test)**: Ran the quality gates.
+  - **Gate 1 (lint, typecheck, tests with coverage):** all green. 205 tests; coverage 83% statements, 87% lines, 75% branches.
+    - Closed gaps: added `api/functions.test.ts`, which checks every Vercel function exports only method handlers and pins the count at 12 or fewer (Hobby limit), and `AdminLists.test.tsx` (posts table, empty state, project list, project create with an ongoing end month, missing project, delete with confirm and cancel).
+    - Left uncovered on purpose: the migrate/seed CLIs (verified by running them), `main.tsx`, and the Neon branch of `openDatabase` (needs a real Neon URL).
+  - **Gate 2 (complexity):** ESLint `complexity` 10 and `max-lines-per-function` 40 are enforced in lint. Earlier units split `Tabs` and `PostsAdmin` when they hit the limit.
+  - **Gate 3 (duplication):** `jscpd src api --min-lines 6` found 0 clones in 99 files.
+  - **Gate 5 (dead code):** knip found 4 needless exports and 2 duplicate named+default exports. I removed them. The fonts and Tailwind are imported from CSS, so knip is told to ignore them. Added `quality:dup`, `quality:mutation` and `quality:dead` npm scripts. knip now exits 0.
+  - **Gate 6 (tests that pass when the code does nothing):** the migration constraint tests would have passed even if migrations created no tables, because an insert into a missing table also fails. They now assert the exact constraint name, and the run-twice test inserts and reads a row.
+  - **Test infra:** the node test project now excludes `.stryker-tmp`, `dist`, `coverage` and `reports`, because Stryker's sandbox copies were being picked up.
+
+## admin-content (planned)
+
+- **Spec, design and plan**: Wrote `docs/specs/admin-content.md`, `docs/design/admin-content.md` and `docs/plans/admin-content.md`, and added glossary terms. Why: the admin should manage credentials and the Home/About profile text without code changes. The plan has 10 units; it folds the feeds into `api/content/[kind]` to stay at 11 of 12 Vercel functions. No code changed yet.
+- **U18 final gate run**:
+  - Lint, typecheck and build pass. Tests: 222 of 222 pass, with coverage 91.5% statements, 86.6% branches, 89.4% functions, 95.4% lines.
+  - jscpd finds 0 clones, and knip is clean.
+  - `npm audit --omit=dev` finds 0 vulnerabilities. There are 20 moderate advisories, all in dev-only tooling: esbuild (drizzle-kit), minimatch (ESLint 9) and qs (Stryker). The only fixes npm offers are breaking downgrades.
+  - The final run caught two type/lint errors in the new test files: an unused import, and an untyped `db.execute` result, now replaced by a typed Drizzle select.
+- **Mutation gate skipped (your decision)**: Stryker was stopped from outside the session at 498 of 575 mutants (85 survived) and was not rerun. `stryker.config.json` and `npm run quality:mutation` are ready to resume.

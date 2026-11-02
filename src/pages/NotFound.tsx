@@ -1,7 +1,7 @@
 import { Link } from 'react-router';
 import { Seo } from '../components/Seo';
 
-export function NotFound({ what = 'page' }: { what?: string }) {
+export default function NotFound({ what = 'page' }: { what?: string }) {
   return (
     <section className="py-20">
       <Seo title="Not found" path={window.location.pathname} />
@@ -14,4 +14,3 @@ export function NotFound({ what = 'page' }: { what?: string }) {
   );
 }
 
-export default NotFound;

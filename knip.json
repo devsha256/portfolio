@@ -1,0 +1,10 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "entry": ["api/**/*.ts", "!api/_lib/**"],
+  "project": ["src/**/*.{ts,tsx}", "api/**/*.ts", "db/**/*.ts", "dev/**/*.ts"],
+  "ignoreDependencies": [
+    "tailwindcss",
+    "@fontsource-variable/bricolage-grotesque",
+    "@fontsource-variable/source-serif-4"
+  ]
+}

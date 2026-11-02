@@ -13,7 +13,7 @@ export default defineConfig({
       },
       {
         extends: true,
-        test: { name: 'node', environment: 'node', testTimeout: 20_000, hookTimeout: 20_000, include: ['**/*.test.ts'], exclude: ['node_modules/**'] },
+        test: { name: 'node', environment: 'node', testTimeout: 20_000, hookTimeout: 20_000, include: ['**/*.test.ts'], exclude: ['node_modules/**', '.stryker-tmp/**', 'dist/**', 'coverage/**', 'reports/**'] },
       },
     ],
     coverage: { include: ['src/**', 'api/**', 'db/**'], exclude: ['**/*.test.*', 'src/test/**', 'db/migrations/**'] },

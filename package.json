@@ -7,7 +7,7 @@
     "node": ">=22"
   },
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 192.168.1.4",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "lint": "eslint .",
@@ -15,7 +15,10 @@
     "test": "vitest run",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "tsx --env-file-if-exists=.env.local db/migrate.ts",
-    "db:seed": "tsx --env-file-if-exists=.env.local db/seed.ts"
+    "db:seed": "tsx --env-file-if-exists=.env.local db/seed.ts",
+    "quality:dup": "jscpd src api --min-lines 6 --reporters console",
+    "quality:mutation": "stryker run",
+    "quality:dead": "knip"
   },
   "dependencies": {
     "@fontsource-variable/bricolage-grotesque": "^5.3.0",
@@ -32,6 +35,8 @@
   "devDependencies": {
     "@electric-sql/pglite": "^0.5.14",
     "@eslint/js": "^9.39.5",
+    "@stryker-mutator/core": "^10.1.1",
+    "@stryker-mutator/vitest-runner": "^10.1.1",
     "@tailwindcss/vite": "^4.3.3",
     "@testing-library/dom": "^10.4.2",
     "@testing-library/jest-dom": "^7.0.1",
@@ -48,6 +53,8 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "globals": "^17.14.0",
     "happy-dom": "^21.0.4",
+    "jscpd": "^5.4.2",
+    "knip": "^6.44.1",
     "tailwindcss": "^4.3.3",
     "tsx": "^4.23.15",
     "typescript": "^6.0.3",
