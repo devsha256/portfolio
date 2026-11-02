@@ -162,3 +162,12 @@ Each entry records what was done and why. Newest entries go last.
   - Verified: 4 tests red (no rows) → green (6, 15 and 309 rows plus 1 profile after two runs; MCD-L2 mapped field by field; profile equals `DEFAULT_PROFILE`; an admin-edited tagline survives a reseed).
   - Ran `npm run db:seed` twice on local PGlite with the same counts. The credentials table is 352 kB with indexes, negligible against Neon's 0.5 GB.
   - Final checks: lint, typecheck and build pass (the Credentials chunk is unchanged at 100 KB until A7), and 249 of 249 tests pass.
+- **A4**: Added the repositories.
+  - `credentials-repo.ts`:
+    - `listByKind` returns one kind, newest first (served by the `(kind, issued_on DESC)` index).
+    - `listAllCredentials` (admin) sorts by kind name, which is also the tab order, then newest first.
+    - Get, create, update (only the sent fields; the link can be cleared with `null`) and idempotent delete.
+    - `constrained()` maps duplicate certificates to `ConflictError` ("This certificate is already listed") and an image outside `/img` to `InvalidError`.
+  - `profile-repo.ts`: `getProfile` returns row 1, or `DEFAULT_PROFILE` when none exists, so a fresh DB never renders an empty hero. `saveProfile` is a single upsert on `id = 1` that stamps `updated_at`.
+  - Why: unit A4. Queries live in one place, following the shape of `projects-repo`.
+  - Verified: 12 tests red (modules missing) → green. Lint, typecheck and 261 of 261 tests pass.
