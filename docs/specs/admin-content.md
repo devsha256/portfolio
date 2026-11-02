@@ -16,7 +16,7 @@ In portfolio-v1, credentials are static JSON in `src/content/*.json`, and the Ho
 **Credential editor.** When the admin creates or edits a credential:
 - The fields are kind, name, issuer, date, credential ID (optional), image (picked from `/img/**`), verify link (optional) and certificate link.
 - Invalid fields show the contract's message next to the field, and no request is sent.
-- A duplicate of an existing credential (same kind, name and date) returns 409, shown as an alert.
+- A duplicate of an existing credential (same kind and certificate link) returns 409, shown as an alert. Two different certificates may share a name and date.
 
 **Deleting a credential.** Given a credential exists, when the admin confirms Delete, it disappears from the admin and public lists. Deleting twice returns 204.
 

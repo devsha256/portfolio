@@ -148,3 +148,8 @@ Each entry records what was done and why. Newest entries go last.
   - Verified: 7 tests red (relation does not exist) → green. Each CHECK and UNIQUE is asserted by constraint name; the same name is allowed under another kind; only profile row 1 is allowed; the down script followed by migrate restores the tables.
   - Ran `npm run db:migrate` twice on the local PGlite database (`.data/dev`, never production), and 2 migrations are recorded. The empty tables take 48 kB; about 330 rows will add roughly 150 kB, negligible against Neon's 0.5 GB.
   - Final checks: drizzle-kit reports no drift; lint, typecheck and 244 of 244 tests pass.
+- **A3 prerequisite, migration 0002**: Changed the credentials natural key from `(kind, name, issued_on)` to `(kind, proof)`.
+  - Why: the learning history has 3 pairs of distinct LinkedIn Learning certificates (different certificate files) that share a title and date. The A2 key could not hold all 309 entries, and dropping or renaming any of them would have changed your content. You chose to key on the certificate link: one certificate file is one credential, and re-entering the same certificate still returns 409.
+  - `0002_credentials_proof_key` only swaps a constraint; no data changes. `down/0002` restores the old key and intentionally fails if rows that share a name and date exist, rather than dropping any. Down scripts run newest first.
+  - Updated the spec and design.
+  - Verified: tests red→green (a duplicate certificate is rejected by `credentials_kind_proof_key`, a shared name and date is allowed, and the down 0002 → down 0001 → migrate round trip works). Migrated the local DB twice; lint and typecheck pass.

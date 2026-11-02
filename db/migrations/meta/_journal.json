@@ -15,6 +15,13 @@
       "when": 1793581652586,
       "tag": "0001_admin_content",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1793585942286,
+      "tag": "0002_credentials_proof_key",
+      "breakpoints": true
     }
   ]
 }
