@@ -178,3 +178,11 @@ Each entry records what was done and why. Newest entries go last.
   - Why: unit A5. One function for all public reads keeps headroom under the Hobby limit.
   - Verified: 14 tests red (module missing) → green. Lint, typecheck and 270 of 270 tests pass. Live through your dev server: profile, credentials and projects all return 200 with seeded data.
   - **Process note:** your dev server (`vite --host 192.168.1.4`, running since 05:43) was up while I ran `db:migrate` and `db:seed` for A2 and A3 against the same local PGlite folder. A PGlite folder must only be opened by one process. I found no damage: your server reads the new tables and seeded counts correctly. From now on I check for a running server before any `db:*` script. That `package.json` dev-script change entered git through my `7ab5a1a` commit (`git add -A`).
+- **A6**: Added the admin API for credentials and the profile.
+  - `api/admin/content/[kind].ts` (GET/POST credentials, GET/PUT profile) dispatches by kind: unknown kinds return 404 through a `Map`, and unsupported methods return 405.
+  - `api/admin/credentials/[id].ts` provides GET/PATCH/DELETE through the existing `item` factory with a new credential resource.
+  - New `profile` singleton: GET, and PUT validated with `SiteProfile` (a summary without `{years}` returns 400 on `summaryMd`).
+  - Refactor: the factories now return unguarded handlers, and `guarded()` wraps each exported method once. Why: the content dispatcher would otherwise run `requireAdmin` twice per request. I chose explicit per-shape wrappers over a generic map because the generic version needed an `as` cast, which the lint rules ban.
+  - The function manifest test now allows PUT. Function count is 11 of 12.
+  - Why: unit A6.
+  - Verified: 18 tests red (exports missing) → green (401 on every method of both routes; 403 for a cross-origin PUT; create 201, list no-store, partial PATCH, delete twice 204, 404 after; 409 "This certificate is already listed"; 400 for an image outside `/img`; profile fallback, save and read back; 400 without `{years}`; 404 and 405). The existing posts and projects admin tests pass unchanged on the refactored factories. Lint, typecheck and 288 of 288 tests pass.
