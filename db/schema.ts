@@ -78,7 +78,8 @@ export const credentials = pgTable(
   (t) => [
     check('credentials_kind_check', sql`${t.kind} in ('certification', 'feedback', 'learning')`),
     check('credentials_image_check', sql`${t.image} like '/img/%'`),
-    unique('credentials_kind_name_issued_on_key').on(t.kind, t.name, t.issuedOn),
+    // One certificate file is one credential; LinkedIn issues distinct certificates with the same title and date.
+    unique('credentials_kind_proof_key').on(t.kind, t.proof),
     index('credentials_kind_issued_on_idx').on(t.kind, t.issuedOn.desc()),
   ],
 );

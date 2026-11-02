@@ -17,7 +17,7 @@
 | `created_at` | timestamptz |
 | `updated_at` | timestamptz |
 
-- `UNIQUE (kind, name, issued_on)` is the natural key, so the seed can upsert and duplicates return 409.
+- `UNIQUE (kind, proof)` is the natural key (one certificate file is one credential), so the seed can upsert and duplicates return 409. Changed in A3 by migration 0002: the learning history has 3 pairs of distinct LinkedIn certificates sharing a title and date, which `(kind, name, issued_on)` could not hold.
 - `INDEX (kind, issued_on DESC)` serves the public list path.
 
 ### `site_profile` table

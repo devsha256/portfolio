@@ -5,6 +5,7 @@ import { credentials, posts, siteProfile } from './schema';
 import { testDb } from './test-db';
 
 const DOWN_0001 = new URL('./migrations/down/0001_admin_content.sql', import.meta.url);
+const DOWN_0002 = new URL('./migrations/down/0002_credentials_proof_key.sql', import.meta.url);
 
 function sqlStatements(script: string): string[] {
   const code = script
@@ -48,11 +49,11 @@ describe('migrations', () => {
   });
 });
 
-describe('migration 0001_admin_content', () => {
-  const credential = (overrides: { kind?: string; name?: string; image?: string } = {}) => {
-    const { kind = 'certification', name = 'MCD Level 1', image = '/img/certifications/mcd-l1.png' } = overrides;
+describe('migrations 0001_admin_content and 0002_credentials_proof_key', () => {
+  const credential = (overrides: { kind?: string; name?: string; image?: string; proof?: string } = {}) => {
+    const { kind = 'certification', name = 'MCD Level 1', image = '/img/certifications/mcd-l1.png', proof = 'https://drive.google.com/x' } = overrides;
     return sql`insert into credentials (kind, name, authority, issued_on, image, proof)
-               values (${kind}, ${name}, 'MuleSoft', '2020-12-05', ${image}, 'https://drive.google.com/x')`;
+               values (${kind}, ${name}, 'MuleSoft', '2020-12-05', ${image}, ${proof})`;
   };
   const profile = (id: number) =>
     sql`insert into site_profile (id, tagline, career_start, summary_md) values (${id}, 't', '2020-02-24', 'With {years}')`;
@@ -74,10 +75,16 @@ describe('migration 0001_admin_content', () => {
     await expectViolation(await testDb(), credential({ image: 'https://evil.dev/x.png' }), 'credentials_image_check');
   });
 
-  it('rejects the same credential twice (kind, name, date)', async () => {
+  it('rejects the same certificate twice within a kind', async () => {
     const db = await testDb();
     await db.execute(credential());
-    await expectViolation(db, credential(), 'credentials_kind_name_issued_on_key');
+    await expectViolation(db, credential({ name: 'Renamed' }), 'credentials_kind_proof_key');
+  });
+
+  it('allows two certificates that share a name and date', async () => {
+    const db = await testDb();
+    await db.execute(credential());
+    await expect(db.execute(credential({ proof: 'https://drive.google.com/y' }))).resolves.toBeDefined();
   });
 
   it('allows the same name under another kind', async () => {
@@ -93,11 +100,13 @@ describe('migration 0001_admin_content', () => {
     await expectViolation(db, profile(1), 'site_profile_pkey');
   });
 
-  it('can be reversed with the down script and applied again', async () => {
+  it('can be reversed newest first with the down scripts and applied again', async () => {
     const database = await openDatabase('pglite://memory');
     await database.migrate();
     // The driver runs one statement per call; psql or the Neon SQL editor would run the file as is.
-    for (const statement of sqlStatements(readFileSync(DOWN_0001, 'utf8'))) await database.db.execute(sql.raw(statement));
+    for (const script of [DOWN_0002, DOWN_0001]) {
+      for (const statement of sqlStatements(readFileSync(script, 'utf8'))) await database.db.execute(sql.raw(statement));
+    }
     await expect(database.db.execute(sql`select 1 from credentials`)).rejects.toMatchObject({
       cause: { message: expect.stringContaining('does not exist') },
     });
