@@ -1,9 +1,10 @@
+import { Link } from 'react-router';
 import type { CredentialDto, CredentialKind } from '../domain/contracts';
 import { useCredentials } from '../hooks/useCredentials';
 import { formatDate } from '../lib/format';
 
-/** Issuer logo, name, issuer and date, with links to verify and to the certificate copy. */
-function CredentialCard({ credential }: { credential: CredentialDto }) {
+/** Issuer logo, name, issuer and date, with links to verify and to the certificate copy; admin lists add an edit link. */
+function CredentialCard({ credential, editTo }: { credential: CredentialDto; editTo?: string | undefined }) {
   return (
     <div className="flex h-full items-center gap-4 rounded-lg border border-line bg-panel p-4">
       {/* Issuer logos are drawn for light backgrounds, so they sit on a white tile in both themes. */}
@@ -23,18 +24,25 @@ function CredentialCard({ credential }: { credential: CredentialDto }) {
         <p className="mt-1 flex gap-4 text-sm">
           {credential.link && <a href={credential.link}>Verify</a>}
           <a href={credential.proof}>Certificate</a>
+          {editTo && (
+            <Link to={editTo} aria-label={`Edit ${credential.name}`} className="font-medium">
+              Edit
+            </Link>
+          )}
         </p>
       </div>
     </div>
   );
 }
 
-export function CredentialGrid({ items }: { items: readonly CredentialDto[] }) {
+export type EditHref = (credential: CredentialDto) => string;
+
+export function CredentialGrid({ items, editHref }: { items: readonly CredentialDto[]; editHref?: EditHref | undefined }) {
   return (
     <ul className="grid gap-4 sm:grid-cols-2">
       {items.map((item) => (
         <li key={item.id}>
-          <CredentialCard credential={item} />
+          <CredentialCard credential={item} editTo={editHref?.(item)} />
         </li>
       ))}
     </ul>

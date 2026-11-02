@@ -1,6 +1,15 @@
 import type { z } from 'zod';
-import { PostInput, ProjectInput, type PostDto, type ProjectDto } from '../domain/contracts';
+import {
+  CredentialInput,
+  PostInput,
+  ProjectInput,
+  type CredentialDto,
+  type CredentialKind,
+  type PostDto,
+  type ProjectDto,
+} from '../domain/contracts';
 import { slugify } from '../domain/slug';
+import { KNOWN_IMAGES } from './images';
 
 /** What the editors hold: plain strings for inputs, converted to contract types only on save. */
 export type PostDraft = { title: string; slug: string; excerpt: string; tags: string; featured: boolean; bodyMd: string };
@@ -51,4 +60,28 @@ export function projectDraftFrom(project?: ProjectDto): ProjectDraft {
 
 export function toProjectInput(draft: ProjectDraft): Parsed<ProjectInput> {
   return parse(ProjectInput, { ...draft, endMonth: draft.endMonth || null, skills: splitList(draft.skills) });
+}
+
+export type CredentialDraft = {
+  kind: CredentialKind;
+  name: string;
+  authority: string;
+  issuedOn: string;
+  credentialId: string;
+  image: string;
+  link: string;
+  proof: string;
+};
+
+export function credentialDraftFrom(credential: CredentialDto | undefined, kind: CredentialKind): CredentialDraft {
+  if (!credential) {
+    return { kind, name: '', authority: '', issuedOn: '', credentialId: '', image: KNOWN_IMAGES[0], link: '', proof: '' };
+  }
+  const { id: _id, ...fields } = credential;
+  return { ...fields, credentialId: credential.credentialId ?? '', link: credential.link ?? '' };
+}
+
+/** Empty optional inputs become null, so saving an edit can clear them. */
+export function toCredentialInput(draft: CredentialDraft): Parsed<CredentialInput> {
+  return parse(CredentialInput, { ...draft, credentialId: draft.credentialId || null, link: draft.link || null });
 }
