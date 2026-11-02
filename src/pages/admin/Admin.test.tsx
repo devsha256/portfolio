@@ -1,7 +1,7 @@
 import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Route, Routes } from 'react-router';
-import { mockApi } from '../../test/api';
+import { mockApi, stubApi } from '../../test/api';
 import { postSummary } from '../../test/fixtures';
 import { renderAt } from '../../test/render';
 import AdminLayout from './AdminLayout';
@@ -19,20 +19,6 @@ function renderAdmin(path: string) {
     </Routes>,
     path,
   );
-}
-
-/** Answers admin reads from `routes`, records writes, and replies to writes with `reply`. */
-function adminApi(routes: Record<string, unknown>, reply: (method: string, body: unknown) => Response) {
-  const writes: { method: string; url: string; body: unknown }[] = [];
-  vi.spyOn(globalThis, 'fetch').mockImplementation(async (input, init) => {
-    const url = String(input);
-    const method = init?.method ?? 'GET';
-    if (method === 'GET') return url in routes ? Response.json(routes[url]) : Response.json({}, { status: 404 });
-    const body: unknown = init?.body ? JSON.parse(String(init.body)) : undefined;
-    writes.push({ method, url, body });
-    return reply(method, body);
-  });
-  return writes;
 }
 
 afterEach(() => {
@@ -58,7 +44,7 @@ describe('AdminLayout', () => {
 describe('PostEditor', () => {
   it('shows field errors from the shared contract without calling the API', async () => {
     const user = userEvent.setup();
-    const writes = adminApi({ '/api/auth/me': { login: 'devsha256' } }, () => Response.json({}));
+    const writes = stubApi({ '/api/auth/me': { login: 'devsha256' } }, () => Response.json({}));
     renderAdmin('/admin/posts/new');
     await user.click(await screen.findByRole('button', { name: 'Save draft' }));
     expect(screen.getByLabelText('Title')).toHaveAttribute('aria-invalid', 'true');
@@ -68,7 +54,7 @@ describe('PostEditor', () => {
 
   it('fills the slug from the title and creates the post', async () => {
     const user = userEvent.setup();
-    const writes = adminApi({ '/api/auth/me': { login: 'devsha256' } }, (_m, body) =>
+    const writes = stubApi({ '/api/auth/me': { login: 'devsha256' } }, (body) =>
       Response.json({ ...draft, ...(typeof body === 'object' ? body : {}), id: 9 }, { status: 201 }),
     );
     renderAdmin('/admin/posts/new');
@@ -82,7 +68,7 @@ describe('PostEditor', () => {
 
   it('publishes a draft and says so', async () => {
     const user = userEvent.setup();
-    const writes = adminApi({ '/api/auth/me': { login: 'devsha256' }, '/api/admin/posts/7': draft }, () =>
+    const writes = stubApi({ '/api/auth/me': { login: 'devsha256' }, '/api/admin/posts/7': draft }, () =>
       Response.json({ ...draft, status: 'published', publishedAt: '2026-11-01T10:00:00.000Z' }),
     );
     renderAdmin('/admin/posts/7');
@@ -94,7 +80,7 @@ describe('PostEditor', () => {
 
   it('shows a server conflict next to the slug', async () => {
     const user = userEvent.setup();
-    adminApi({ '/api/auth/me': { login: 'devsha256' }, '/api/admin/posts/7': draft }, () =>
+    stubApi({ '/api/auth/me': { login: 'devsha256' }, '/api/admin/posts/7': draft }, () =>
       Response.json({ error: 'A post with this slug already exists' }, { status: 409 }),
     );
     renderAdmin('/admin/posts/7');

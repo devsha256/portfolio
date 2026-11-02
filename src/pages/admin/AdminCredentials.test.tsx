@@ -1,6 +1,7 @@
 import { screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Route, Routes } from 'react-router';
+import { stubApi } from '../../test/api';
 import { credential, learningHistory } from '../../test/fixtures';
 import { renderAt } from '../../test/render';
 import CredentialEditor from './CredentialEditor';
@@ -21,19 +22,6 @@ function routes() {
   );
 }
 
-/** Serves GETs from `reads`; records writes and answers them with `reply`. */
-function api(reads: Record<string, unknown>, reply: () => Response = () => Response.json({})) {
-  const writes: { method: string; url: string; body: unknown }[] = [];
-  vi.spyOn(globalThis, 'fetch').mockImplementation(async (input, init) => {
-    const url = String(input);
-    const method = init?.method ?? 'GET';
-    if (method === 'GET') return url in reads ? Response.json(reads[url]) : Response.json({}, { status: 404 });
-    writes.push({ method, url, body: init?.body ? JSON.parse(String(init.body)) : undefined });
-    return reply();
-  });
-  return writes;
-}
-
 afterEach(() => {
   vi.restoreAllMocks();
   vi.unstubAllGlobals();
@@ -41,7 +29,7 @@ afterEach(() => {
 
 describe('CredentialsAdmin', () => {
   it('shows a tab per kind with its count and lists that kind with edit links', async () => {
-    api({ '/api/admin/content/credentials': { items: ALL } });
+    stubApi({ '/api/admin/content/credentials': { items: ALL } });
     renderAt(routes(), '/admin/credentials');
     expect(await screen.findByRole('tab', { name: 'Certifications (1)' })).toHaveAttribute('aria-selected', 'true');
     expect(screen.getByRole('tab', { name: 'Feedback (1)' })).toBeInTheDocument();
@@ -56,7 +44,7 @@ describe('CredentialsAdmin', () => {
 
   it('searches within the selected tab', async () => {
     const user = userEvent.setup();
-    api({ '/api/admin/content/credentials': { items: ALL } });
+    stubApi({ '/api/admin/content/credentials': { items: ALL } });
     renderAt(routes(), '/admin/credentials?tab=learning');
     await user.type(await screen.findByRole('searchbox', { name: 'Search learning history' }), 'course 2');
     expect(screen.getByText('Showing 1 of 1')).toBeInTheDocument();
@@ -64,7 +52,7 @@ describe('CredentialsAdmin', () => {
   });
 
   it('starts a new credential of the selected kind', async () => {
-    api({ '/api/admin/content/credentials': { items: ALL } });
+    stubApi({ '/api/admin/content/credentials': { items: ALL } });
     renderAt(routes(), '/admin/credentials?tab=feedback');
     expect(await screen.findByRole('link', { name: 'New credential' })).toHaveAttribute('href', '/admin/credentials/new?kind=feedback');
   });
@@ -73,7 +61,7 @@ describe('CredentialsAdmin', () => {
 describe('CredentialEditor', () => {
   it('preselects the kind from the link and shows contract errors without sending anything', async () => {
     const user = userEvent.setup();
-    const writes = api({});
+    const writes = stubApi({});
     renderAt(routes(), '/admin/credentials/new?kind=learning');
     expect(await screen.findByRole('radio', { name: 'Learning history' })).toBeChecked();
     await user.click(screen.getByRole('button', { name: 'Create credential' }));
@@ -84,7 +72,7 @@ describe('CredentialEditor', () => {
 
   it('previews the image picked from the list', async () => {
     const user = userEvent.setup();
-    api({});
+    stubApi({});
     renderAt(routes(), '/admin/credentials/new?kind=certification');
     await user.selectOptions(await screen.findByLabelText('Image'), '/img/logos/udemy.png');
     expect(screen.getByRole('img', { name: 'Selected logo' })).toHaveAttribute('src', '/img/logos/udemy.png');
@@ -92,7 +80,7 @@ describe('CredentialEditor', () => {
 
   it('creates a credential and sends empty optional fields as null', async () => {
     const user = userEvent.setup();
-    const writes = api({}, () => Response.json(credential({ id: 9 }), { status: 201 }));
+    const writes = stubApi({}, () => Response.json(credential({ id: 9 }), { status: 201 }));
     renderAt(routes(), '/admin/credentials/new?kind=certification');
     await user.type(await screen.findByLabelText('Name'), 'MCD Level 1');
     await user.type(screen.getByLabelText('Issuer'), 'MuleSoft');
@@ -110,7 +98,7 @@ describe('CredentialEditor', () => {
 
   it('shows a duplicate certificate as an alert', async () => {
     const user = userEvent.setup();
-    api({ '/api/admin/credentials/1': credential() }, () =>
+    stubApi({ '/api/admin/credentials/1': credential() }, () =>
       Response.json({ error: 'This certificate is already listed' }, { status: 409 }),
     );
     renderAt(routes(), '/admin/credentials/1');
@@ -121,7 +109,7 @@ describe('CredentialEditor', () => {
   it('deletes after confirmation and returns to the list', async () => {
     const user = userEvent.setup();
     vi.stubGlobal('confirm', () => true);
-    const writes = api(
+    const writes = stubApi(
       { '/api/admin/credentials/1': credential(), '/api/admin/content/credentials': { items: [] } },
       () => new Response(null, { status: 204 }),
     );
@@ -134,7 +122,7 @@ describe('CredentialEditor', () => {
   it('keeps the credential when the confirmation is cancelled', async () => {
     const user = userEvent.setup();
     vi.stubGlobal('confirm', () => false);
-    const writes = api({ '/api/admin/credentials/1': credential() });
+    const writes = stubApi({ '/api/admin/credentials/1': credential() });
     renderAt(routes(), '/admin/credentials/1');
     await user.click(await screen.findByRole('button', { name: 'Delete credential' }));
     expect(writes).toHaveLength(0);

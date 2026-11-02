@@ -1,37 +1,24 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { DEFAULT_PROFILE } from '../../domain/site';
+import { stubApi } from '../../test/api';
+import { freezeDate } from '../../test/clock';
 import { renderAt } from '../../test/render';
 import ProfileEditor from './ProfileEditor';
 
+const echo = (body: unknown) => Response.json(body);
 const SAVED = { ...DEFAULT_PROFILE, tagline: 'APIs that outlive their authors', summaryMd: 'Over {years} of integration work.\n\nSecond paragraph.' };
+const READS = { '/api/admin/content/profile': SAVED };
 
-/** Serves the profile GET; records writes and answers them with `reply`. */
-function api(reply: (body: unknown) => Response = (body) => Response.json(body)) {
-  const writes: { method: string; url: string; body: unknown }[] = [];
-  vi.spyOn(globalThis, 'fetch').mockImplementation(async (input, init) => {
-    const method = init?.method ?? 'GET';
-    if (method === 'GET') return Response.json(SAVED);
-    const body: unknown = init?.body ? JSON.parse(String(init.body)) : undefined;
-    writes.push({ method, url: String(input), body });
-    return reply(body);
-  });
-  return writes;
-}
-
-beforeEach(() => {
-  vi.useFakeTimers({ toFake: ['Date'] });
-  vi.setSystemTime(new Date('2026-11-01T12:00:00Z'));
-});
+freezeDate('2026-11-01T12:00:00Z');
 afterEach(() => {
-  vi.useRealTimers();
   vi.restoreAllMocks();
 });
 
 describe('ProfileEditor', () => {
   it('loads the saved profile and saves changes with a status', async () => {
     const user = userEvent.setup();
-    const writes = api();
+    const writes = stubApi(READS, echo);
     renderAt(<ProfileEditor />);
     const tagline = await screen.findByLabelText('Tagline');
     expect(tagline).toHaveValue('APIs that outlive their authors');
@@ -46,7 +33,7 @@ describe('ProfileEditor', () => {
 
   it('flags a summary without {years} and sends nothing', async () => {
     const user = userEvent.setup();
-    const writes = api();
+    const writes = stubApi(READS, echo);
     renderAt(<ProfileEditor />);
     const summary = await screen.findByLabelText('Summary');
     await user.clear(summary);
@@ -59,7 +46,7 @@ describe('ProfileEditor', () => {
 
   it('shows the years the summary will print, updating with the career start', async () => {
     const user = userEvent.setup();
-    api();
+    stubApi(READS, echo);
     renderAt(<ProfileEditor />);
     expect(await screen.findByText('Years shown today: 6 Years 9 Months')).toBeInTheDocument();
     const start = screen.getByLabelText('Career start');
@@ -70,7 +57,7 @@ describe('ProfileEditor', () => {
 
   it('previews the summary exactly as the public pages print it', async () => {
     const user = userEvent.setup();
-    api();
+    stubApi(READS, echo);
     renderAt(<ProfileEditor />);
     await user.click(await screen.findByRole('button', { name: 'Preview summary' }));
     expect(screen.getByText('Over 6 Years 9 Months of integration work.')).toBeInTheDocument();
@@ -79,7 +66,7 @@ describe('ProfileEditor', () => {
 
   it('shows the server message when saving fails', async () => {
     const user = userEvent.setup();
-    api(() => Response.json({ error: 'Sign in required' }, { status: 401 }));
+    stubApi(READS, () => Response.json({ error: 'Sign in required' }, { status: 401 }));
     renderAt(<ProfileEditor />);
     await user.click(await screen.findByRole('button', { name: 'Save profile' }));
     expect(await screen.findByRole('alert')).toHaveTextContent('Sign in required');

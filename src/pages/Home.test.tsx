@@ -1,16 +1,13 @@
 import { screen } from '@testing-library/react';
 import { DEFAULT_PROFILE } from '../domain/site';
 import { mockApi } from '../test/api';
+import { freezeDate } from '../test/clock';
 import { page, postSummary } from '../test/fixtures';
 import { renderAt } from '../test/render';
 import Home from './Home';
 
-beforeEach(() => {
-  vi.useFakeTimers({ toFake: ['Date'] });
-  vi.setSystemTime(new Date('2026-11-01T12:00:00Z'));
-});
+freezeDate('2026-11-01T12:00:00Z');
 afterEach(() => {
-  vi.useRealTimers();
   vi.restoreAllMocks();
 });
 

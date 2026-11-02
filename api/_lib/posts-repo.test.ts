@@ -53,6 +53,8 @@ describe('posts repo', () => {
   it('list items carry no body', async () => {
     await published('x', day(1));
     const { items } = await repo.listPublished(db, { page: 1, limit: 10 });
+    expect(items).toHaveLength(1);
+    expect(items[0]).toMatchObject({ slug: 'x', title: 'A' });
     expect(items[0]).not.toHaveProperty('bodyMd');
   });
 
