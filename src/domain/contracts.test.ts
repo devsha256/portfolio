@@ -1,4 +1,5 @@
-import { PostInput, PostListQuery, ProjectInput } from './contracts';
+import { CredentialDto, CredentialInput, CredentialPatch, PostInput, PostListQuery, ProjectInput, SiteProfile } from './contracts';
+import { DEFAULT_PROFILE } from './site';
 
 const post = { slug: 'hello-world', title: 'Hello', excerpt: 'Hi', bodyMd: '# Hi' };
 const project = {
@@ -46,5 +47,73 @@ describe('ProjectInput', () => {
 
   it('rejects an impossible month', () => {
     expect(ProjectInput.safeParse({ ...project, startMonth: '2025-13' }).success).toBe(false);
+  });
+});
+
+describe('CredentialInput', () => {
+  const credential = {
+    kind: 'certification',
+    name: 'MuleSoft Certified Developer - Level 2',
+    authority: 'MuleSoft',
+    issuedOn: '2022-07-31',
+    image: '/img/certifications/mcd-l2.png',
+    proof: 'https://drive.google.com/file/d/x/view',
+  };
+
+  it('accepts a credential without the optional ID and verify link', () => {
+    expect(CredentialInput.parse(credential)).toEqual(credential);
+  });
+
+  it.each(['award', '', 'Certification'])('rejects kind %j', (kind) => {
+    expect(CredentialInput.safeParse({ ...credential, kind }).success).toBe(false);
+  });
+
+  it.each(['/public/img/x.png', 'https://evil.dev/img/x.png', 'img/x.png'])('rejects image %j outside /img', (image) => {
+    const result = CredentialInput.safeParse({ ...credential, image });
+    expect(result.success ? null : result.error.issues[0]?.message).toBe('Pick an image under /img');
+  });
+
+  it('names the empty fields in plain words', () => {
+    const result = CredentialInput.safeParse({ ...credential, name: ' ', authority: '' });
+    expect(result.success ? [] : result.error.issues.map((issue) => issue.message)).toEqual(['Enter a name', 'Enter the issuer']);
+  });
+});
+
+describe('CredentialPatch', () => {
+  it('is partial and adds nothing the caller did not send', () => {
+    expect(CredentialPatch.parse({ name: 'Renamed' })).toEqual({ name: 'Renamed' });
+  });
+
+  it('can clear the optional verify link', () => {
+    expect(CredentialPatch.parse({ link: null })).toEqual({ link: null });
+  });
+});
+
+describe('CredentialDto', () => {
+  it('carries the id and null optionals from the database', () => {
+    const row = { id: 3, kind: 'feedback', name: 'Award', authority: 'TCS', issuedOn: '2025-02-24', credentialId: null, image: '/img/logos/tcs.png', link: null, proof: 'https://drive.google.com/x' };
+    expect(CredentialDto.parse(row)).toEqual(row);
+  });
+});
+
+describe('SiteProfile', () => {
+  it('accepts the ported default profile', () => {
+    expect(SiteProfile.parse(DEFAULT_PROFILE)).toEqual(DEFAULT_PROFILE);
+  });
+
+  it('requires {years} in the summary', () => {
+    const result = SiteProfile.safeParse({ ...DEFAULT_PROFILE, summaryMd: 'Ten years of integration work.' });
+    expect(result.success ? null : result.error.issues[0]).toMatchObject({
+      path: ['summaryMd'],
+      message: 'Keep {years} where the experience should appear',
+    });
+  });
+
+  it('rejects a career start that is not a date', () => {
+    expect(SiteProfile.safeParse({ ...DEFAULT_PROFILE, careerStart: '2020-02' }).success).toBe(false);
+  });
+
+  it('allows an empty About introduction', () => {
+    expect(SiteProfile.parse({ ...DEFAULT_PROFILE, aboutMd: '' }).aboutMd).toBe('');
   });
 });
