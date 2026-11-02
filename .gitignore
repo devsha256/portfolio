@@ -9,3 +9,5 @@ reports/
 .env.*.local
 .vercel/
 *.log
+.vscode/
+.vscode/**
