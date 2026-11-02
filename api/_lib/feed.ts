@@ -1,6 +1,6 @@
 import type { PostSummary } from '../../src/domain/contracts';
 import { PUBLIC_PAGES, SITE } from '../../src/domain/site';
-import { notFound, pathParam, type Handler } from './http';
+import type { Handler } from './http';
 import { listPublished } from './posts-repo';
 
 const FEED_LIMIT = 50;
@@ -37,19 +37,18 @@ export function robotsTxt(_posts: readonly PostSummary[], appUrl: string): strin
   return `User-agent: *\nDisallow: /admin\nDisallow: /api/\n\nSitemap: ${appUrl}/sitemap.xml\n`;
 }
 
-const FORMATS = new Map([
-  ['rss', { build: rssXml, type: 'application/rss+xml; charset=utf-8' }],
-  ['sitemap', { build: sitemapXml, type: 'application/xml; charset=utf-8' }],
-  ['robots', { build: robotsTxt, type: 'text/plain; charset=utf-8' }],
-]);
+type Build = (posts: readonly PostSummary[], appUrl: string) => string;
 
-/** `api/feed/[kind]`, served at /rss.xml and /sitemap.xml through vercel.json rewrites. */
-export const feed: Handler = async (request, ctx) => {
-  const format = FORMATS.get(pathParam(request));
-  if (!format) throw notFound('Feed');
-  const { items } = await listPublished(ctx.db, { page: 1, limit: FEED_LIMIT });
-  const appUrl = ctx.appUrl();
-  return new Response(format.build(items, appUrl), {
-    headers: { 'content-type': format.type, 'cache-control': FEED_CACHE },
-  });
-};
+function feedHandler(build: Build, type: string): Handler {
+  return async (_request, ctx) => {
+    const { items } = await listPublished(ctx.db, { page: 1, limit: FEED_LIMIT });
+    return new Response(build(items, ctx.appUrl()), { headers: { 'content-type': type, 'cache-control': FEED_CACHE } });
+  };
+}
+
+/** Served at /rss.xml, /sitemap.xml and /robots.txt through vercel.json rewrites to api/content/[kind]. */
+export const feeds: ReadonlyArray<[string, Handler]> = [
+  ['rss', feedHandler(rssXml, 'application/rss+xml; charset=utf-8')],
+  ['sitemap', feedHandler(sitemapXml, 'application/xml; charset=utf-8')],
+  ['robots', feedHandler(robotsTxt, 'text/plain; charset=utf-8')],
+];

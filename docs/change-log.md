@@ -171,3 +171,10 @@ Each entry records what was done and why. Newest entries go last.
   - `profile-repo.ts`: `getProfile` returns row 1, or `DEFAULT_PROFILE` when none exists, so a fresh DB never renders an empty hero. `saveProfile` is a single upsert on `id = 1` that stamps `updated_at`.
   - Why: unit A4. Queries live in one place, following the shape of `projects-repo`.
   - Verified: 12 tests red (modules missing) → green. Lint, typecheck and 261 of 261 tests pass.
+- **A5**: Added the public content endpoint `api/content/[kind]` and removed `api/feed/[kind]`.
+  - Kinds: `credentials?kind=` (zod-validated, 400 when missing or bad; newest first), `profile` (falls back to `DEFAULT_PROFILE`), and `rss`, `sitemap` and `robots` (handlers from `feed.ts`, which now exports only its builders and a list of feed handlers).
+  - Responses are CDN-cached (5 min for data, 1 h for feeds). Unknown kinds, including `toString` and `constructor`, return 404 through a `Map` lookup.
+  - The `vercel.json` rewrites now point at `/api/content/*`. The handler tests moved from `feed.test.ts` to `content.test.ts`; the builder tests stay. Function count stays at 9 of 12, pinned by `api/functions.test.ts`.
+  - Why: unit A5. One function for all public reads keeps headroom under the Hobby limit.
+  - Verified: 14 tests red (module missing) → green. Lint, typecheck and 270 of 270 tests pass. Live through your dev server: profile, credentials and projects all return 200 with seeded data.
+  - **Process note:** your dev server (`vite --host 192.168.1.4`, running since 05:43) was up while I ran `db:migrate` and `db:seed` for A2 and A3 against the same local PGlite folder. A PGlite folder must only be opened by one process. I found no damage: your server reads the new tables and seeded counts correctly. From now on I check for a running server before any `db:*` script. That `package.json` dev-script change entered git through my `7ab5a1a` commit (`git add -A`).
