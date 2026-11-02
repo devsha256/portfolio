@@ -1,6 +1,6 @@
 import { sql } from 'drizzle-orm';
-import { bigint, boolean, check, date, index, pgTable, text, timestamp, unique } from 'drizzle-orm/pg-core';
-import { POST_STATUSES } from '../src/domain/contracts';
+import { bigint, boolean, check, date, index, pgTable, smallint, text, timestamp, unique } from 'drizzle-orm/pg-core';
+import { CREDENTIAL_KINDS, POST_STATUSES } from '../src/domain/contracts';
 
 const id = () => bigint('id', { mode: 'number' }).primaryKey().generatedAlwaysAsIdentity();
 const createdAt = () => timestamp('created_at', { withTimezone: true }).notNull().defaultNow();
@@ -58,4 +58,41 @@ export const adminSessions = pgTable(
     createdAt: createdAt(),
   },
   (t) => [index('admin_sessions_expires_at_idx').on(t.expiresAt)],
+);
+
+export const credentials = pgTable(
+  'credentials',
+  {
+    id: id(),
+    kind: text('kind', { enum: CREDENTIAL_KINDS }).notNull(),
+    name: text('name').notNull(),
+    authority: text('authority').notNull(),
+    issuedOn: date('issued_on', { mode: 'string' }).notNull(),
+    credentialId: text('credential_id'),
+    image: text('image').notNull(),
+    link: text('link'),
+    proof: text('proof').notNull(),
+    createdAt: createdAt(),
+    updatedAt: updatedAt(),
+  },
+  (t) => [
+    check('credentials_kind_check', sql`${t.kind} in ('certification', 'feedback', 'learning')`),
+    check('credentials_image_check', sql`${t.image} like '/img/%'`),
+    unique('credentials_kind_name_issued_on_key').on(t.kind, t.name, t.issuedOn),
+    index('credentials_kind_issued_on_idx').on(t.kind, t.issuedOn.desc()),
+  ],
+);
+
+/** A single row (id = 1) holding the editable Home/About text; writes upsert on the key. */
+export const siteProfile = pgTable(
+  'site_profile',
+  {
+    id: smallint('id').primaryKey(),
+    tagline: text('tagline').notNull(),
+    careerStart: date('career_start', { mode: 'string' }).notNull(),
+    summaryMd: text('summary_md').notNull(),
+    aboutMd: text('about_md').notNull().default(''),
+    updatedAt: updatedAt(),
+  },
+  (t) => [check('site_profile_id_check', sql`${t.id} = 1`)],
 );

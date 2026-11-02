@@ -140,3 +140,11 @@ Each entry records what was done and why. Newest entries go last.
   - Moved `SITE.tagline`, `SITE.careerStart` and `SITE.summary` into a typed `DEFAULT_PROFILE` in `src/domain/site.ts`. The summary is one Markdown string with paragraphs separated by blank lines. `summaryParagraphs` and the Home tagline read from it.
   - Why: the design keeps these fields only as the fallback and seed source, so the text stays in one place.
   - Verified: 15 new tests red (exports missing) → green. The existing Home test pins the rendered summary through the refactor. Lint, typecheck and 237 of 237 tests pass.
+- **A2 (/06-db)**: Added the `credentials` and `site_profile` tables and migration `0001_admin_content`.
+  - `credentials`: identity key; `kind` uses a CHECK constraint rather than an enum type, with its values taken from `CREDENTIAL_KINDS` in the contracts; an image CHECK enforces `/img/%`; `UNIQUE (kind, name, issued_on)` is the natural key used for seed upserts and 409s; and an index on `(kind, issued_on DESC)` serves the public list-by-kind query, which the unique key's column order cannot.
+  - `site_profile`: a single row (`smallint` key with `CHECK (id = 1)`) and an `about_md` default of `''`.
+  - Reversible: drizzle-kit only generates forward migrations, so `db/migrations/down/0001_admin_content.sql` drops both tables and deletes 0001's journal row so `migrate` can re-apply it. It is destructive by design and meant for local or branch databases only.
+  - Why: phase A2 of the admin-content plan, following the postgres skill.
+  - Verified: 7 tests red (relation does not exist) → green. Each CHECK and UNIQUE is asserted by constraint name; the same name is allowed under another kind; only profile row 1 is allowed; the down script followed by migrate restores the tables.
+  - Ran `npm run db:migrate` twice on the local PGlite database (`.data/dev`, never production), and 2 migrations are recorded. The empty tables take 48 kB; about 330 rows will add roughly 150 kB, negligible against Neon's 0.5 GB.
+  - Final checks: drizzle-kit reports no drift; lint, typecheck and 244 of 244 tests pass.
