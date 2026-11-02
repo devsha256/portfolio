@@ -1,16 +1,9 @@
-import type { Credential } from '../content/schema';
+import { credential } from '../test/fixtures';
 import { searchCredentials } from './credentials';
 
-const item = (name: string, authority: string): Credential => ({
-  id: crypto.randomUUID(),
-  name,
-  authority,
-  date: '2024-01-01',
-  image: '/img/logos/udemy.png',
-  proof: 'https://drive.google.com/x',
-});
+const item = (id: number, name: string, authority: string) => credential({ id, name, authority });
 
-const list = [item('Python for Beginners', 'Udemy'), item('Git Essentials', 'Udemy'), item('MCP by Anthropic', 'LinkedIn Learning')];
+const list = [item(1, 'Python for Beginners', 'Udemy'), item(2, 'Git Essentials', 'Udemy'), item(3, 'MCP by Anthropic', 'LinkedIn Learning')];
 
 describe('searchCredentials', () => {
   it('matches name or issuer, ignoring case and extra spaces', () => {
