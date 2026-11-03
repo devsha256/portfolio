@@ -127,3 +127,14 @@ describe('behind a vercel.json rewrite', () => {
     expect(res.status).toBe(200);
   });
 });
+
+/** Vercel hands a rewritten request to the function with its original URL, e.g. /rss.xml, and no route param. */
+it.each([
+  ['/rss.xml', '<rss'],
+  ['/sitemap.xml', '<urlset'],
+  ['/robots.txt', 'Sitemap:'],
+])('serves %s when reached through a vercel.json rewrite', async (path, marker) => {
+  const res = await get(ctx, path);
+  expect(res.status).toBe(200);
+  expect(await res.text()).toContain(marker);
+});

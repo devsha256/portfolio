@@ -21,7 +21,8 @@ const KINDS = new Map<string, Handler>([['credentials', credentials], ['profile'
 
 /** `api/content/[resource]`: every public, CDN-cached read that is not a post or project, in one function. */
 export const content: Handler = (request, ctx) => {
-  const handler = KINDS.get(pathParam(request, 'resource'));
+  // Through a vercel.json rewrite the function sees the original URL (/rss.xml) and no route param.
+  const handler = KINDS.get(pathParam(request, 'resource').replace(/.(xml|txt)$/, ''));
   if (!handler) throw notFound('Content');
   return handler(request, ctx);
 };
