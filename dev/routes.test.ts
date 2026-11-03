@@ -1,11 +1,11 @@
-import { readFileSync } from 'node:fs';
+import { readdirSync, readFileSync } from 'node:fs';
 import { applyRewrites, resolveRoute } from './routes.js';
 
 const files = [
   'admin/posts/[id].ts',
   'admin/posts/index.ts',
   'auth/[action].ts',
-  'content/[kind].ts',
+  'content/[resource].ts',
   'posts/[slug].ts',
   'posts/index.ts',
   'posts/featured.ts',
@@ -51,6 +51,18 @@ describe('vercel.json', () => {
   it('serves the uptime check at /api/health from the content function', () => {
     const path = applyRewrites('/api/health', rewrites);
     expect(path).toBe('/api/content/health');
-    expect(resolveRoute(path, files)).toBe('content/[kind].ts');
+    expect(resolveRoute(path, files)).toBe('content/[resource].ts');
+  });
+});
+
+describe('api function files', () => {
+  /** Query keys read by handlers: PostListQuery, the credentials filter and the OAuth callback. */
+  const QUERY_KEYS = ['page', 'limit', 'tag', 'kind', 'code', 'state'];
+  const params = readdirSync(new URL('../api', import.meta.url), { recursive: true, encoding: 'utf8' })
+    .flatMap((file) => [...file.matchAll(/\[(\w+)\]/g)].map((match) => match[1] ?? ''));
+
+  it('never name a [param] after a query key (Vercel adds the param to the query string)', () => {
+    expect(params).toContain('resource');
+    expect(params.filter((param) => QUERY_KEYS.includes(param))).toEqual([]);
   });
 });

@@ -108,3 +108,22 @@ describe('GET /api/content/health', () => {
     expect(await res.json()).toEqual({ status: 'ok' });
   });
 });
+
+describe('behind a vercel.json rewrite', () => {
+  /** Vercel keeps the original path on a rewrite and adds the file's [resource] to the query string. */
+  it.each([
+    ['/rss.xml?resource=rss', 'application/rss+xml'],
+    ['/sitemap.xml?resource=sitemap', 'application/xml'],
+    ['/robots.txt?resource=robots', 'text/plain'],
+    ['/api/health?resource=health', 'application/json'],
+  ])('serves %s', async (path, type) => {
+    const res = await get(ctx, path);
+    expect(res.status).toBe(200);
+    expect(res.headers.get('content-type')).toContain(type);
+  });
+
+  it('reads the credentials filter, not the resource, from ?kind=', async () => {
+    const res = await get(ctx, '/api/content/credentials?kind=learning&resource=credentials');
+    expect(res.status).toBe(200);
+  });
+});

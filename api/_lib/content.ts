@@ -19,9 +19,9 @@ const health: Handler = async () => json({ status: 'ok' }, { headers: { 'cache-c
 
 const KINDS = new Map<string, Handler>([['credentials', credentials], ['profile', profile], ['health', health], ...feeds]);
 
-/** `api/content/[kind]`: every public, CDN-cached read that is not a post or project, in one function. */
+/** `api/content/[resource]`: every public, CDN-cached read that is not a post or project, in one function. */
 export const content: Handler = (request, ctx) => {
-  const handler = KINDS.get(pathParam(request));
+  const handler = KINDS.get(pathParam(request, 'resource'));
   if (!handler) throw notFound('Content');
   return handler(request, ctx);
 };

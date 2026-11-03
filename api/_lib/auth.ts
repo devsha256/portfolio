@@ -58,7 +58,7 @@ const actions = new Map<string, Handler>(Object.entries({ login, callback, me, l
 
 /** `api/auth/[action]`: one Vercel function for login, callback, me and logout. */
 export const authAction: Handler = (request, ctx) => {
-  const action = actions.get(pathParam(request));
+  const action = actions.get(pathParam(request, 'action'));
   if (!action) throw notFound('Auth action');
   return action(request, ctx);
 };
