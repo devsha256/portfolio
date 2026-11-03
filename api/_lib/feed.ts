@@ -46,7 +46,7 @@ function feedHandler(build: Build, type: string): Handler {
   };
 }
 
-/** Served at /rss.xml, /sitemap.xml and /robots.txt through vercel.json rewrites to api/content/[kind]. */
+/** Served at /rss.xml, /sitemap.xml and /robots.txt through vercel.json rewrites to api/content/[resource]. */
 export const feeds: ReadonlyArray<[string, Handler]> = [
   ['rss', feedHandler(rssXml, 'application/rss+xml; charset=utf-8')],
   ['sitemap', feedHandler(sitemapXml, 'application/xml; charset=utf-8')],

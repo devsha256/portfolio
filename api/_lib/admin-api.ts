@@ -64,7 +64,7 @@ function collection<Input, Patch>(r: Resource<Input, Patch>) {
 }
 
 function item<Input, Patch>(r: Resource<Input, Patch>) {
-  const id = (request: Request) => parseWith(Id, pathParam(request));
+  const id = (request: Request) => parseWith(Id, pathParam(request, 'id'));
   return {
     GET: (async (request, { db }) => found(r.name, await r.get(db, id(request)))) satisfies Handler,
     PATCH: (async (request, { db, now }) =>
@@ -83,10 +83,10 @@ const profile = {
     json(await saveProfile(db, await readJson(request, SiteProfile), now()), { headers: PRIVATE })) satisfies Handler,
 };
 
-/** `[kind]` routing inside one function: unknown kinds are 404, unsupported methods 405. */
+/** `[resource]` routing inside one function: unknown kinds are 404, unsupported methods 405. */
 function byKind(kinds: ReadonlyMap<string, Methods>, method: keyof Methods): Handler {
   return (request, ctx) => {
-    const methods = kinds.get(pathParam(request));
+    const methods = kinds.get(pathParam(request, 'resource'));
     if (!methods) throw notFound('Content');
     const handler = methods[method];
     if (!handler) throw new HttpError(405, `${method} is not supported here`);

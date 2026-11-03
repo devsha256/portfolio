@@ -67,10 +67,14 @@ export function queryOf(request: Request): Record<string, string> {
   return Object.fromEntries(new URL(request.url).searchParams);
 }
 
-/** The last path segment, i.e. the `[param]` of a Vercel dynamic route file. */
-export function pathParam(request: Request): string {
-  const segment = new URL(request.url).pathname.split('/').filter(Boolean).at(-1) ?? '';
-  return decodeURIComponent(segment);
+/**
+ * The `[param]` of a Vercel dynamic route file. Vercel puts it in the query string, which also holds behind a
+ * vercel.json rewrite (the path stays `/rss.xml`); the local dev server only has it as the last path segment.
+ */
+export function pathParam(request: Request, name: string): string {
+  const url = new URL(request.url);
+  const segment = url.pathname.split('/').filter(Boolean).at(-1) ?? '';
+  return url.searchParams.get(name) ?? decodeURIComponent(segment);
 }
 
 export function notFound(what: string): HttpError {

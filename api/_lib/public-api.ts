@@ -9,7 +9,7 @@ export const listPublishedPosts: Handler = async (request, { db }) => {
 };
 
 export const getPublishedPost: Handler = async (request, { db }) => {
-  const slug = parseWith(Slug, pathParam(request));
+  const slug = parseWith(Slug, pathParam(request, 'slug'));
   const post = await getPublishedBySlug(db, slug);
   if (!post) throw notFound('Post');
   return cachedJson(post);

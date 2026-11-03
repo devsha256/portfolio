@@ -108,3 +108,33 @@ describe('GET /api/content/health', () => {
     expect(await res.json()).toEqual({ status: 'ok' });
   });
 });
+
+describe('behind a vercel.json rewrite', () => {
+  /** Vercel keeps the original path on a rewrite and adds the file's [resource] to the query string. */
+  it.each([
+    ['/rss.xml?resource=rss', 'application/rss+xml'],
+    ['/sitemap.xml?resource=sitemap', 'application/xml'],
+    ['/robots.txt?resource=robots', 'text/plain'],
+    ['/api/health?resource=health', 'application/json'],
+  ])('serves %s', async (path, type) => {
+    const res = await get(ctx, path);
+    expect(res.status).toBe(200);
+    expect(res.headers.get('content-type')).toContain(type);
+  });
+
+  it('reads the credentials filter, not the resource, from ?kind=', async () => {
+    const res = await get(ctx, '/api/content/credentials?kind=learning&resource=credentials');
+    expect(res.status).toBe(200);
+  });
+});
+
+/** Vercel hands a rewritten request to the function with its original URL, e.g. /rss.xml, and no route param. */
+it.each([
+  ['/rss.xml', '<rss'],
+  ['/sitemap.xml', '<urlset'],
+  ['/robots.txt', 'Sitemap:'],
+])('serves %s when reached through a vercel.json rewrite', async (path, marker) => {
+  const res = await get(ctx, path);
+  expect(res.status).toBe(200);
+  expect(await res.text()).toContain(marker);
+});

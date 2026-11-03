@@ -50,7 +50,7 @@ Free-tier figures were checked on 2026-11-03 against the vendors' own pages (sou
 
 | # | Gap | Fix |
 |---|---|---|
-| G1 | No `/api/health`, which `/11-deploy` expects | **Done**: a `health` kind in `api/content/[kind].ts` plus a `/api/health` rewrite. It returns `{ "status": "ok" }` with `no-store` and never queries the DB. Function count stays at 11 of 12 |
+| G1 | No `/api/health`, which `/11-deploy` expects | **Done**: a `health` kind in `api/content/[resource].ts` plus a `/api/health` rewrite. It returns `{ "status": "ok" }` with `no-store` and never queries the DB. Function count stays at 11 of 12 |
 | G2 | No CI | **Done**: `.github/workflows/main.yml` runs the gates on PRs; on push to `main`/`master` it also migrates Neon, deploys with the Vercel CLI and smoke-tests (rolls back on failure). Stryker stays local |
 | G3 | The Neon driver has never run | Dry run against a Neon `preview` branch (D4) before production |
 | G4 | Functions run in `iad1` by default, possibly far from the database | Pin `regions` in `vercel.json` to the region next to your Neon project |
