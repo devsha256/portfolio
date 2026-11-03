@@ -1,4 +1,4 @@
-import { openDatabase } from './client';
+import { openDatabase } from './client.js';
 
 /** A fresh, migrated in-memory Postgres for one test. */
 export async function testDb() {

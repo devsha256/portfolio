@@ -1,7 +1,7 @@
-import { PostListQuery, Slug } from '../../src/domain/contracts';
-import { cachedJson, notFound, parseWith, pathParam, queryOf, type Handler } from './http';
-import { getPublishedBySlug, listPublished } from './posts-repo';
-import { listProjects } from './projects-repo';
+import { PostListQuery, Slug } from '../../src/domain/contracts.js';
+import { cachedJson, notFound, parseWith, pathParam, queryOf, type Handler } from './http.js';
+import { getPublishedBySlug, listPublished } from './posts-repo.js';
+import { listProjects } from './projects-repo.js';
 
 export const listPublishedPosts: Handler = async (request, { db }) => {
   const query = parseWith(PostListQuery, queryOf(request));

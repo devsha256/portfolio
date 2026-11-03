@@ -1,7 +1,7 @@
 import { z } from 'zod';
-import type { Db } from '../../db/client';
-import type { Env } from './env';
-import { ConflictError, InvalidError } from './errors';
+import type { Db } from '../../db/client.js';
+import type { Env } from './env.js';
+import { ConflictError, InvalidError } from './errors.js';
 
 export type Context = {
   db: Db;

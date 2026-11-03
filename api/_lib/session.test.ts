@@ -1,7 +1,7 @@
-import { adminSessions } from '../../db/schema';
-import type { Db } from '../../db/client';
-import { testDb } from '../../db/test-db';
-import { createSession, deleteSession, findSession, readCookie, sessionCookie } from './session';
+import { adminSessions } from '../../db/schema.js';
+import type { Db } from '../../db/client.js';
+import { testDb } from '../../db/test-db.js';
+import { createSession, deleteSession, findSession, readCookie, sessionCookie } from './session.js';
 
 const now = new Date('2026-11-01T10:00:00Z');
 const days = (n: number) => new Date(now.getTime() + n * 86_400_000);

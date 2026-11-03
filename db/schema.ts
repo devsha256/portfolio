@@ -1,6 +1,6 @@
 import { sql } from 'drizzle-orm';
 import { bigint, boolean, check, date, index, pgTable, smallint, text, timestamp, unique } from 'drizzle-orm/pg-core';
-import { CREDENTIAL_KINDS, POST_STATUSES } from '../src/domain/contracts';
+import { CREDENTIAL_KINDS, POST_STATUSES } from '../src/domain/contracts.js';
 
 const id = () => bigint('id', { mode: 'number' }).primaryKey().generatedAlwaysAsIdentity();
 const createdAt = () => timestamp('created_at', { withTimezone: true }).notNull().defaultNow();

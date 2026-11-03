@@ -16,6 +16,7 @@
     "db:generate": "drizzle-kit generate",
     "db:migrate": "tsx --env-file-if-exists=.env.local db/migrate.ts",
     "db:seed": "tsx --env-file-if-exists=.env.local db/seed.ts",
+    "db:setup": "npm run db:migrate && npm run db:seed",
     "quality:dup": "jscpd src api --min-lines 6 --reporters console",
     "quality:mutation": "stryker run",
     "quality:dead": "knip"

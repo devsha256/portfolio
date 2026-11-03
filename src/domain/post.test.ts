@@ -1,4 +1,4 @@
-import { readingMinutes } from './post';
+import { readingMinutes } from './post.js';
 
 describe('readingMinutes', () => {
   it('rounds up at 220 words per minute', () => {

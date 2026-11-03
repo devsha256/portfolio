@@ -1,6 +1,6 @@
-import { openDatabase, type Database } from '../../db/client';
-import { readAppUrl, readDatabaseUrl, readEnv } from './env';
-import { json, respond, type Context, type Handler } from './http';
+import { openDatabase, type Database } from '../../db/client.js';
+import { readAppUrl, readDatabaseUrl, readEnv } from './env.js';
+import { json, respond, type Context, type Handler } from './http.js';
 
 /**
  * Connection reuse only, not application state: Neon HTTP clients are stateless, and the local PGlite

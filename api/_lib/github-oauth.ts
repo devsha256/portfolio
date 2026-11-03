@@ -1,6 +1,6 @@
 import { z } from 'zod';
-import type { Env } from './env';
-import { HttpError } from './http';
+import type { Env } from './env.js';
+import { HttpError } from './http.js';
 
 const AUTHORIZE_URL = 'https://github.com/login/oauth/authorize';
 const TOKEN_URL = 'https://github.com/login/oauth/access_token';

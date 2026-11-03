@@ -1,8 +1,8 @@
-import { adminSessions } from '../../db/schema';
-import { authAction, requireAdmin } from './auth';
-import { respond, type Context } from './http';
-import { createSession } from './session';
-import { testContext } from './test-context';
+import { adminSessions } from '../../db/schema.js';
+import { authAction, requireAdmin } from './auth.js';
+import { respond, type Context } from './http.js';
+import { createSession } from './session.js';
+import { testContext } from './test-context.js';
 
 const APP = 'http://localhost:5173';
 

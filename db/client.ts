@@ -1,6 +1,6 @@
 import { mkdir } from 'node:fs/promises';
 import type { PgDatabase, PgQueryResultHKT } from 'drizzle-orm/pg-core';
-import * as schema from './schema';
+import * as schema from './schema.js';
 
 export type Db = PgDatabase<PgQueryResultHKT, typeof schema>;
 export type Database = { db: Db; migrate: () => Promise<void>; close: () => Promise<void> };

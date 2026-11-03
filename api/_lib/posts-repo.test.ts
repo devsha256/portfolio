@@ -1,8 +1,8 @@
-import type { Db } from '../../db/client';
-import { testDb } from '../../db/test-db';
-import type { PostInput } from '../../src/domain/contracts';
-import { ConflictError } from './errors';
-import * as repo from './posts-repo';
+import type { Db } from '../../db/client.js';
+import { testDb } from '../../db/test-db.js';
+import type { PostInput } from '../../src/domain/contracts.js';
+import { ConflictError } from './errors.js';
+import * as repo from './posts-repo.js';
 
 const base: PostInput = { slug: 'a', title: 'A', excerpt: 'e', bodyMd: 'body', tags: ['mulesoft'], featured: false };
 const day = (d: number) => new Date(Date.UTC(2025, 0, d));

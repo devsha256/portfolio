@@ -1,8 +1,8 @@
 import { readFileSync } from 'node:fs';
 import { sql, type SQL } from 'drizzle-orm';
-import { openDatabase, type Db } from './client';
-import { credentials, posts, siteProfile } from './schema';
-import { testDb } from './test-db';
+import { openDatabase, type Db } from './client.js';
+import { credentials, posts, siteProfile } from './schema.js';
+import { testDb } from './test-db.js';
 
 const DOWN_0001 = new URL('./migrations/down/0001_admin_content.sql', import.meta.url);
 const DOWN_0002 = new URL('./migrations/down/0002_credentials_proof_key.sql', import.meta.url);

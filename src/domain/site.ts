@@ -1,4 +1,4 @@
-import type { SiteProfile } from './contracts';
+import type { SiteProfile } from './contracts.js';
 
 /** Facts about the site owner and its public pages; ported from the Jekyll `_config.yml`. */
 export const SITE = {

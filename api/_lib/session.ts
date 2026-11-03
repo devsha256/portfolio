@@ -1,6 +1,6 @@
 import { eq, lt } from 'drizzle-orm';
-import type { Db } from '../../db/client';
-import { adminSessions } from '../../db/schema';
+import type { Db } from '../../db/client.js';
+import { adminSessions } from '../../db/schema.js';
 
 export const SESSION_COOKIE = 'session';
 const SESSION_DAYS = 7;

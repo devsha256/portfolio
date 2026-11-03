@@ -1,10 +1,10 @@
 import { count } from 'drizzle-orm';
-import type { Db } from '../../db/client';
-import { siteProfile } from '../../db/schema';
-import { testDb } from '../../db/test-db';
-import type { SiteProfile } from '../../src/domain/contracts';
-import { DEFAULT_PROFILE } from '../../src/domain/site';
-import { getProfile, saveProfile } from './profile-repo';
+import type { Db } from '../../db/client.js';
+import { siteProfile } from '../../db/schema.js';
+import { testDb } from '../../db/test-db.js';
+import type { SiteProfile } from '../../src/domain/contracts.js';
+import { DEFAULT_PROFILE } from '../../src/domain/site.js';
+import { getProfile, saveProfile } from './profile-repo.js';
 
 const edited: SiteProfile = {
   tagline: 'Integration architect',
