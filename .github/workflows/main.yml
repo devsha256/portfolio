@@ -1,0 +1,105 @@
+# Pull requests: quality gates only.
+# Push to main/master: gates, then Neon migrations, Vercel production deploy and a live smoke test.
+# The seed never runs here: rerunning it overwrites admin edits to seeded rows.
+name: CI and deploy
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  # Never cancel a run on main/master: it may be halfway through a migration.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  NODE_VERSION: '24'
+  VERCEL_CLI: vercel@65.9.0
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test -- --coverage
+      - run: npm run build
+      - run: npm run quality:dup
+      - run: npm run quality:dead
+      # Known advisories are moderate and dev-only; production dependencies must have no high ones.
+      - run: npm audit --omit=dev --audit-level=high
+
+  deploy:
+    needs: verify
+    if: github.event_name != 'pull_request' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: production
+      url: ${{ vars.APP_URL }}
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      APP_URL: ${{ vars.APP_URL }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - run: npm ci
+
+      - name: Apply database migrations (Neon)
+        run: npm run db:migrate
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+      - name: Build for Vercel
+        run: |
+          npx --yes "$VERCEL_CLI" pull --yes --environment=production --token="$VERCEL_TOKEN"
+          npx --yes "$VERCEL_CLI" build --prod --token="$VERCEL_TOKEN"
+
+      - name: Deploy to production
+        id: deploy
+        run: npx --yes "$VERCEL_CLI" deploy --prebuilt --prod --token="$VERCEL_TOKEN"
+
+      - name: Smoke test the live site
+        run: |
+          check() { # path, expected status, optional text the body must contain
+            local status body
+            for attempt in 1 2 3 4 5; do
+              body=$(curl -sS -o - -w '\n%{http_code}' "$APP_URL$1") || true
+              status=${body##*$'\n'}
+              if [ "$status" = "$2" ] && { [ -z "${3:-}" ] || grep -qF -- "$3" <<<"$body"; }; then
+                echo "ok   $1 -> $status"; return 0
+              fi
+              sleep $((attempt * 5))
+            done
+            echo "FAIL $1 -> $status (expected $2${3:+ with \"$3\"})"; return 1
+          }
+          check /api/health 200 '"status":"ok"'
+          check / 200 'Saddam Hossain'
+          check '/api/posts?limit=1' 200 '"items"'
+          check /rss.xml 200 '<rss'
+          check /sitemap.xml 200 '<urlset'
+          check /api/admin/posts 401
+
+      - name: Roll back when the smoke test fails
+        if: failure() && steps.deploy.outcome == 'success'
+        run: |
+          npx --yes "$VERCEL_CLI" rollback --yes --token="$VERCEL_TOKEN"
+          echo "::error::Smoke test failed; production was rolled back. Migrations stay applied (down scripts: db/migrations/down)."
