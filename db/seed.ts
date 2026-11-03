@@ -1,6 +1,6 @@
-import { readDatabaseUrl } from '../api/_lib/env';
-import { openDatabase } from './client';
-import { seed } from './seeder';
+import { readDatabaseUrl } from '../api/_lib/env.js';
+import { openDatabase } from './client.js';
+import { seed } from './seeder.js';
 
 const database = await openDatabase(readDatabaseUrl());
 await seed(database.db);

@@ -1,8 +1,8 @@
 import { asc, desc, eq, getTableColumns } from 'drizzle-orm';
-import type { Db } from '../../db/client';
-import { credentials } from '../../db/schema';
-import type { CredentialDto, CredentialInput, CredentialKind, CredentialPatch } from '../../src/domain/contracts';
-import { constrained } from './errors';
+import type { Db } from '../../db/client.js';
+import { credentials } from '../../db/schema.js';
+import type { CredentialDto, CredentialInput, CredentialKind, CredentialPatch } from '../../src/domain/contracts.js';
+import { constrained } from './errors.js';
 
 const RULES = {
   unique: 'This certificate is already listed',

@@ -1,8 +1,8 @@
-import { DEFAULT_PROFILE } from '../../src/domain/site';
-import { adminContent, adminCredential } from './admin-api';
-import { respond, type Context, type Handler } from './http';
-import { createSession } from './session';
-import { testContext } from './test-context';
+import { DEFAULT_PROFILE } from '../../src/domain/site.js';
+import { adminContent, adminCredential } from './admin-api.js';
+import { respond, type Context, type Handler } from './http.js';
+import { createSession } from './session.js';
+import { testContext } from './test-context.js';
 
 const APP = 'http://localhost:5173';
 const credential = {

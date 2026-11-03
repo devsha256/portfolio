@@ -1,4 +1,4 @@
-import { cachedJson, cdnCached } from './http';
+import { cachedJson, cdnCached } from './http.js';
 
 describe('public caching', () => {
   it('lets the CDN keep a copy but makes browsers revalidate every time', () => {

@@ -1,5 +1,5 @@
-import { CredentialDto, CredentialInput, CredentialPatch, PostInput, PostListQuery, ProjectInput, SiteProfile } from './contracts';
-import { DEFAULT_PROFILE } from './site';
+import { CredentialDto, CredentialInput, CredentialPatch, PostInput, PostListQuery, ProjectInput, SiteProfile } from './contracts.js';
+import { DEFAULT_PROFILE } from './site.js';
 
 const post = { slug: 'hello-world', title: 'Hello', excerpt: 'Hi', bodyMd: '# Hi' };
 const project = {

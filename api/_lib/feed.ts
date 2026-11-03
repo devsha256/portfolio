@@ -1,7 +1,7 @@
-import type { PostSummary } from '../../src/domain/contracts';
-import { PUBLIC_PAGES, SITE } from '../../src/domain/site';
-import { cdnCached, type Handler } from './http';
-import { listPublished } from './posts-repo';
+import type { PostSummary } from '../../src/domain/contracts.js';
+import { PUBLIC_PAGES, SITE } from '../../src/domain/site.js';
+import { cdnCached, type Handler } from './http.js';
+import { listPublished } from './posts-repo.js';
 
 const FEED_LIMIT = 50;
 const FEED_CDN_SECONDS = 3600;

@@ -1,8 +1,8 @@
 import { and, arrayContains, count, desc, eq, getTableColumns, sql } from 'drizzle-orm';
-import type { Db } from '../../db/client';
-import { posts } from '../../db/schema';
-import type { PostDto, PostInput, PostListQuery, PostPatch, PostSummary } from '../../src/domain/contracts';
-import { constrained } from './errors';
+import type { Db } from '../../db/client.js';
+import { posts } from '../../db/schema.js';
+import type { PostDto, PostInput, PostListQuery, PostPatch, PostSummary } from '../../src/domain/contracts.js';
+import { constrained } from './errors.js';
 
 type PostRow = typeof posts.$inferSelect;
 

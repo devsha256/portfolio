@@ -1,8 +1,8 @@
 import { desc, eq, getTableColumns } from 'drizzle-orm';
-import type { Db } from '../../db/client';
-import { projects } from '../../db/schema';
-import { PERIOD_ORDER_MESSAGE, type ProjectDto, type ProjectInput, type ProjectPatch } from '../../src/domain/contracts';
-import { constrained } from './errors';
+import type { Db } from '../../db/client.js';
+import { projects } from '../../db/schema.js';
+import { PERIOD_ORDER_MESSAGE, type ProjectDto, type ProjectInput, type ProjectPatch } from '../../src/domain/contracts.js';
+import { constrained } from './errors.js';
 
 const PERIOD_RULES = {
   unique: 'A project for this company already starts in that month',

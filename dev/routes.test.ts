@@ -1,4 +1,5 @@
-import { applyRewrites, resolveRoute } from './routes';
+import { readFileSync } from 'node:fs';
+import { applyRewrites, resolveRoute } from './routes.js';
 
 const files = [
   'admin/posts/[id].ts',
@@ -41,5 +42,15 @@ describe('applyRewrites', () => {
 
   it('leaves pattern rewrites to Vite (the SPA fallback)', () => {
     expect(applyRewrites('/blog/x', rewrites)).toBe('/blog/x');
+  });
+});
+
+describe('vercel.json', () => {
+  const { rewrites } = JSON.parse(readFileSync(new URL('../vercel.json', import.meta.url), 'utf8'));
+
+  it('serves the uptime check at /api/health from the content function', () => {
+    const path = applyRewrites('/api/health', rewrites);
+    expect(path).toBe('/api/content/health');
+    expect(resolveRoute(path, files)).toBe('content/[kind].ts');
   });
 });

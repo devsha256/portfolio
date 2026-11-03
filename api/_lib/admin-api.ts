@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { Db } from '../../db/client';
+import type { Db } from '../../db/client.js';
 import {
   CredentialInput,
   CredentialPatch,
@@ -8,13 +8,13 @@ import {
   ProjectInput,
   ProjectPatch,
   SiteProfile,
-} from '../../src/domain/contracts';
-import { requireAdmin } from './auth';
-import * as credentials from './credentials-repo';
-import { HttpError, json, noContent, notFound, parseWith, pathParam, readJson, type Handler } from './http';
-import * as posts from './posts-repo';
-import { getProfile, saveProfile } from './profile-repo';
-import * as projects from './projects-repo';
+} from '../../src/domain/contracts.js';
+import { requireAdmin } from './auth.js';
+import * as credentials from './credentials-repo.js';
+import { HttpError, json, noContent, notFound, parseWith, pathParam, readJson, type Handler } from './http.js';
+import * as posts from './posts-repo.js';
+import { getProfile, saveProfile } from './profile-repo.js';
+import * as projects from './projects-repo.js';
 
 type Resource<Input, Patch> = {
   name: string;

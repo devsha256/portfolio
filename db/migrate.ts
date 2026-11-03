@@ -1,5 +1,5 @@
-import { readDatabaseUrl } from '../api/_lib/env';
-import { openDatabase } from './client';
+import { readDatabaseUrl } from '../api/_lib/env.js';
+import { openDatabase } from './client.js';
 
 const database = await openDatabase(readDatabaseUrl());
 await database.migrate();

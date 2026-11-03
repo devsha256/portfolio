@@ -1,14 +1,14 @@
 import { sql } from 'drizzle-orm';
 import { z } from 'zod';
-import { CredentialInput, PostInput, ProjectInput, type CredentialKind } from '../src/domain/contracts';
-import { DEFAULT_PROFILE } from '../src/domain/site';
-import type { Db } from './client';
-import { credentials, posts, projects, siteProfile } from './schema';
-import certificationData from './seed-data/credentials/certifications.json';
-import feedbackData from './seed-data/credentials/feedbacks.json';
-import learningData from './seed-data/credentials/learning.json';
-import postData from './seed-data/posts.json';
-import projectData from './seed-data/projects.json';
+import { CredentialInput, PostInput, ProjectInput, type CredentialKind } from '../src/domain/contracts.js';
+import { DEFAULT_PROFILE } from '../src/domain/site.js';
+import type { Db } from './client.js';
+import { credentials, posts, projects, siteProfile } from './schema.js';
+import certificationData from './seed-data/credentials/certifications.json' with { type: 'json' };
+import feedbackData from './seed-data/credentials/feedbacks.json' with { type: 'json' };
+import learningData from './seed-data/credentials/learning.json' with { type: 'json' };
+import postData from './seed-data/posts.json' with { type: 'json' };
+import projectData from './seed-data/projects.json' with { type: 'json' };
 
 const SeedPost = PostInput.extend({ publishedAt: z.iso.datetime().transform((value) => new Date(value)) });
 

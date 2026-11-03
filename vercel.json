@@ -1,6 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "git": { "deploymentEnabled": { "main": false, "master": false } },
   "rewrites": [
+    { "source": "/api/health", "destination": "/api/content/health" },
     { "source": "/rss.xml", "destination": "/api/content/rss" },
     { "source": "/sitemap.xml", "destination": "/api/content/sitemap" },
     { "source": "/robots.txt", "destination": "/api/content/robots" },

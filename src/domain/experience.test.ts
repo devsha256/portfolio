@@ -1,4 +1,4 @@
-import { experienceSince } from './experience';
+import { experienceSince } from './experience.js';
 
 const start = '2020-02-24';
 

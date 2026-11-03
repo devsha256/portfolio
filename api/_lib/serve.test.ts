@@ -1,5 +1,5 @@
-import type { Context } from './http';
-import { serve } from './serve';
+import type { Context } from './http.js';
+import { serve } from './serve.js';
 
 describe('serve', () => {
   beforeEach(() => {

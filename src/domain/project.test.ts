@@ -1,4 +1,4 @@
-import { collectSkills, filterBySkill, formatPeriod } from './project';
+import { collectSkills, filterBySkill, formatPeriod } from './project.js';
 
 const projects = [
   { startMonth: '2025-07-01', endMonth: null, skills: ['DataWeave', 'Boomi'] },

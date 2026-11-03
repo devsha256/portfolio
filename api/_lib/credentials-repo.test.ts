@@ -1,8 +1,8 @@
-import type { Db } from '../../db/client';
-import { testDb } from '../../db/test-db';
-import type { CredentialInput } from '../../src/domain/contracts';
-import { ConflictError, InvalidError } from './errors';
-import * as repo from './credentials-repo';
+import type { Db } from '../../db/client.js';
+import { testDb } from '../../db/test-db.js';
+import type { CredentialInput } from '../../src/domain/contracts.js';
+import { ConflictError, InvalidError } from './errors.js';
+import * as repo from './credentials-repo.js';
 
 const base: CredentialInput = {
   kind: 'certification',

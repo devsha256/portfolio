@@ -1,4 +1,4 @@
-import { EnvError, readAppUrl, readDatabaseUrl, readEnv } from './env';
+import { EnvError, readAppUrl, readDatabaseUrl, readEnv } from './env.js';
 
 const valid = {
   DATABASE_URL: 'pglite://memory',

@@ -1,8 +1,8 @@
-import type { Db } from '../../db/client';
-import { testDb } from '../../db/test-db';
-import type { ProjectInput } from '../../src/domain/contracts';
-import { ConflictError } from './errors';
-import * as repo from './projects-repo';
+import type { Db } from '../../db/client.js';
+import { testDb } from '../../db/test-db.js';
+import type { ProjectInput } from '../../src/domain/contracts.js';
+import { ConflictError } from './errors.js';
+import * as repo from './projects-repo.js';
 
 const base: ProjectInput = {
   title: 'Migration',

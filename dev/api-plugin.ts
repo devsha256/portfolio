@@ -3,7 +3,7 @@ import type { IncomingMessage, ServerResponse } from 'node:http';
 import { join, relative } from 'node:path';
 import { loadEnv, type Plugin, type ViteDevServer } from 'vite';
 import { z } from 'zod';
-import { applyRewrites, resolveRoute } from './routes';
+import { applyRewrites, resolveRoute } from './routes.js';
 
 const VercelConfig = z.object({ rewrites: z.array(z.object({ source: z.string(), destination: z.string() })) });
 const FunctionModule = z.record(z.string(), z.unknown());

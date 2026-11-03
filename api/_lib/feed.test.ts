@@ -1,5 +1,5 @@
-import type { PostSummary } from '../../src/domain/contracts';
-import { robotsTxt, rssXml, sitemapXml } from './feed';
+import type { PostSummary } from '../../src/domain/contracts.js';
+import { robotsTxt, rssXml, sitemapXml } from './feed.js';
 
 const APP = 'https://devsha256.dev';
 const summary: PostSummary = {

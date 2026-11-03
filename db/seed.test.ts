@@ -1,8 +1,8 @@
 import { count, eq } from 'drizzle-orm';
-import { DEFAULT_PROFILE } from '../src/domain/site';
-import { credentials, posts, projects, siteProfile } from './schema';
-import { seed } from './seeder';
-import { testDb } from './test-db';
+import { DEFAULT_PROFILE } from '../src/domain/site.js';
+import { credentials, posts, projects, siteProfile } from './schema.js';
+import { seed } from './seeder.js';
+import { testDb } from './test-db.js';
 
 describe('seed', () => {
   it('ports 3 published posts and 7 projects, and is safe to run twice', async () => {

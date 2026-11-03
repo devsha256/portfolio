@@ -1,7 +1,7 @@
 import { z } from 'zod';
-import { authorizeUrl, githubLogin } from './github-oauth';
-import { HttpError, json, noContent, notFound, parseWith, pathParam, queryOf, type Context, type Handler } from './http';
-import { SESSION_COOKIE, cookie, createSession, deleteSession, findSession, randomToken, readCookie, sessionCookie } from './session';
+import { authorizeUrl, githubLogin } from './github-oauth.js';
+import { HttpError, json, noContent, notFound, parseWith, pathParam, queryOf, type Context, type Handler } from './http.js';
+import { SESSION_COOKIE, cookie, createSession, deleteSession, findSession, randomToken, readCookie, sessionCookie } from './session.js';
 
 const STATE_COOKIE = 'oauth_state';
 const STATE_SECONDS = 600;

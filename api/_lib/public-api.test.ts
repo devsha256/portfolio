@@ -1,8 +1,8 @@
-import { createPost, updatePost } from './posts-repo';
-import { createProject } from './projects-repo';
-import { respond, type Context } from './http';
-import { getPublishedPost, listPublishedPosts, listPublicProjects } from './public-api';
-import { testContext } from './test-context';
+import { createPost, updatePost } from './posts-repo.js';
+import { createProject } from './projects-repo.js';
+import { respond, type Context } from './http.js';
+import { getPublishedPost, listPublishedPosts, listPublicProjects } from './public-api.js';
+import { testContext } from './test-context.js';
 
 const url = (path: string) => new Request(`http://localhost${path}`);
 

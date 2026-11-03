@@ -1,5 +1,5 @@
-import { testDb } from '../../db/test-db';
-import type { Context } from './http';
+import { testDb } from '../../db/test-db.js';
+import type { Context } from './http.js';
 
 const TEST_ENV = {
   DATABASE_URL: 'pglite://memory',

@@ -1,11 +1,11 @@
-import type { CredentialInput } from '../../src/domain/contracts';
-import { DEFAULT_PROFILE } from '../../src/domain/site';
-import { content } from './content';
-import { createCredential } from './credentials-repo';
-import { respond, type Context } from './http';
-import { createPost, updatePost } from './posts-repo';
-import { saveProfile } from './profile-repo';
-import { testContext } from './test-context';
+import type { CredentialInput } from '../../src/domain/contracts.js';
+import { DEFAULT_PROFILE } from '../../src/domain/site.js';
+import { content } from './content.js';
+import { createCredential } from './credentials-repo.js';
+import { respond, type Context } from './http.js';
+import { createPost, updatePost } from './posts-repo.js';
+import { saveProfile } from './profile-repo.js';
+import { testContext } from './test-context.js';
 
 const get = (ctx: Context, path: string) => respond(content, new Request(`http://localhost${path}`), ctx);
 
@@ -91,4 +91,20 @@ describe('GET /api/content/{rss,sitemap,robots}', () => {
 
 it.each(['atom', 'toString', 'constructor'])('returns 404 for the unknown kind %s', async (kind) => {
   expect((await get(ctx, `/api/content/${kind}`)).status).toBe(404);
+});
+
+describe('GET /api/content/health', () => {
+  /** Uptime checks run every 5 minutes; touching Neon would keep it awake all month (free-tier guard). */
+  const untouchableDb: Context['db'] = new Proxy(Object.create(null), {
+    get() {
+      throw new Error('health must not touch the database');
+    },
+  });
+
+  it('reports ok without the database, uncached', async () => {
+    const res = await get({ ...ctx, db: untouchableDb }, '/api/content/health');
+    expect(res.status).toBe(200);
+    expect(res.headers.get('cache-control')).toBe('no-store');
+    expect(await res.json()).toEqual({ status: 'ok' });
+  });
 });
